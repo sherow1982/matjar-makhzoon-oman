@@ -20,15 +20,35 @@ async function fetchProducts() {
         const productSlug = urlParams.get('product');
 
         if (productSlug) {
-            // عرض صفحة المنتج الفردي
             renderSingleProduct(productSlug);
         } else {
-            // عرض الصفحة الرئيسية
             renderHomePage();
         }
     } catch (error) {
         console.error("Error loading products:", error);
-        document.getElementById('app-content').innerHTML = '<p class="text-center">عذراً، حدث خطأ في تحميل المنتجات.</p>';
+        document.getElementById('app-content').innerHTML = '<p class="text-center">جار تحميل المنتجات...</p>';
+    }
+}
+
+// دالة مساعدة لتحديد السعر الفعلي (البيع أو الأصلي)
+function getProductPrice(product) {
+    // إذا كان هناك سعر تخفيض (Sale Price) نستخدمه، وإلا نستخدم السعر العادي
+    return product['sale price'] ? product['sale price'] : product.price;
+}
+
+// دالة مساعدة لعرض السعر بشكل جميل (مع الشطب إذا وجد خصم)
+function renderPriceHTML(product) {
+    const currentPrice = getProductPrice(product);
+    
+    if (product['sale price'] && product['sale price'] < product.price) {
+        return `
+            <div class="price-box">
+                <span class="old-price" style="text-decoration: line-through; color: #999; font-size: 0.9em;">${product.price} درهم</span>
+                <span class="current-price" style="color: var(--uae-red); font-weight: bold; font-size: 1.1em;">${currentPrice} درهم</span>
+            </div>
+        `;
+    } else {
+        return `<span class="current-price" style="color: var(--uae-green); font-weight: bold;">${currentPrice} درهم</span>`;
     }
 }
 
@@ -36,30 +56,38 @@ async function fetchProducts() {
 function renderHomePage() {
     const app = document.getElementById('app-content');
     
-    // هيرو سكشن بسيط (اختياري)
     let html = `
-        <div class="hero-banner" style="background: linear-gradient(45deg, #00732f, #000); color: white; padding: 40px; border-radius: 10px; margin-top: 20px; text-align: center;">
-            <h1>أهلاً بك في مخزون الإمارات</h1>
-            <p>أفضل المنتجات بأفضل الأسعار - الدفع عند الاستلام</p>
+        <div class="hero-banner" style="background: linear-gradient(45deg, var(--uae-green), #000); color: white; padding: 40px; border-radius: 10px; margin-top: 20px; text-align: center;">
+            <h1 style="margin-bottom:10px">عروض متجر مخزون الإمارات</h1>
+            <p>خصومات حصرية - الدفع عند الاستلام - شحن سريع</p>
         </div>
-        <h2 style="margin-top: 40px; border-right: 5px solid var(--uae-red); padding-right: 15px;">أحدث المنتجات</h2>
         <div class="products-grid">
     `;
 
     allProducts.forEach(product => {
-        // إنشاء رابط عربي للمنتج (استبدال المسافات بشرطات)
-        const slug = encodeURIComponent(product.name.replace(/\s+/g, '-'));
+        // نستخدم title بدلاً من name
+        const slug = encodeURIComponent(product.title.replace(/\s+/g, '-'));
+        // نستخدم ['image link'] لأن الاسم يحتوي مسافة
+        const imageSrc = product['image link']; 
         
+        // حساب نسبة الخصم للعرض (اختياري)
+        let discountBadge = '';
+        if (product['sale price'] && product['sale price'] < product.price) {
+            const saved = Math.round(((product.price - product['sale price']) / product.price) * 100);
+            discountBadge = `<span style="position:absolute; top:10px; right:10px; background:var(--uae-red); color:#fff; padding:2px 8px; border-radius:3px; font-size:12px;">خصم ${saved}%</span>`;
+        }
+
         html += `
             <div class="product-card">
+                ${discountBadge}
                 <div class="product-img-wrapper">
                     <a href="?product=${slug}">
-                        <img src="${product.image}" alt="${product.name}">
+                        <img src="${imageSrc}" alt="${product.title}" loading="lazy">
                     </a>
                 </div>
                 <div class="product-info">
-                    <a href="?product=${slug}" class="product-title">${product.name}</a>
-                    <span class="product-price">${product.price} درهم</span>
+                    <a href="?product=${slug}" class="product-title">${product.title}</a>
+                    ${renderPriceHTML(product)}
                     <button class="btn-add" onclick="addToCart(${product.id})">
                         <i class="fas fa-cart-plus"></i> أضف للسلة
                     </button>
@@ -74,10 +102,9 @@ function renderHomePage() {
 
 // 2. عرض صفحة المنتج الفردي
 function renderSingleProduct(slug) {
-    // فك التشفير للبحث عن الاسم
     const productName = decodeURIComponent(slug).replace(/-/g, ' ');
-    // البحث عن المنتج (يفضل استخدام ID لكن الاسم يعمل للروابط العربية الجميلة)
-    const product = allProducts.find(p => p.name === productName) || allProducts.find(p => p.name.includes(productName));
+    // البحث بالعنوان title
+    const product = allProducts.find(p => p.title === productName) || allProducts.find(p => p.title.includes(productName));
 
     const app = document.getElementById('app-content');
 
@@ -86,28 +113,52 @@ function renderSingleProduct(slug) {
         return;
     }
 
-    // محاكاة صفحة المنتج
+    const currentPrice = getProductPrice(product);
+    const imageSrc = product['image link'];
+    const additionalImage = product['additional image link'];
+
+    // منطق لعرض صورة إضافية إذا وجدت
+    let galleryHTML = `<img id="main-img" src="${imageSrc}" alt="${product.title}">`;
+    if (additionalImage) {
+        galleryHTML += `
+            <div style="display:flex; gap:10px; margin-top:10px;">
+                <img src="${imageSrc}" style="width:60px; height:60px; object-fit:cover; border:1px solid #ddd; cursor:pointer;" onclick="document.getElementById('main-img').src='${imageSrc}'">
+                <img src="${additionalImage}" style="width:60px; height:60px; object-fit:cover; border:1px solid #ddd; cursor:pointer;" onclick="document.getElementById('main-img').src='${additionalImage}'">
+            </div>
+        `;
+    }
+
     app.innerHTML = `
-        <div class="breadcrumb" style="margin: 20px 0; color: #777;">
-            <a href="index.html">الرئيسية</a> / <span>${product.name}</span>
+        <div class="breadcrumb" style="margin: 20px 0; font-size: 14px; color: #777;">
+            <a href="index.html">الرئيسية</a> / <span style="color:var(--uae-black)">${product.title}</span>
         </div>
         <div class="single-product-container">
             <div class="single-img">
-                <img src="${product.image}" alt="${product.name}">
+                ${galleryHTML}
             </div>
             <div class="single-details">
-                <h1>${product.name}</h1>
-                <span class="single-price">${product.price} درهم</span>
-                <p style="color: #666; margin-bottom: 20px;">${product.description || 'وصف تفصيلي للمنتج متوفر عند الطلب.'}</p>
+                <h1>${product.title}</h1>
+                <div style="margin-bottom:15px">
+                   ${renderPriceHTML(product)}
+                </div>
                 
+                <div style="margin-bottom: 20px; color: #555; font-size: 14px;">
+                    <p><strong>كود المنتج (SKU):</strong> ${product.sku}</p>
+                    <p><strong>الحالة:</strong> ${product.condition === 'new' ? 'جديد أصلي' : 'مستخدم'}</p>
+                    <p><strong>التوفر:</strong> ${product.availability === 'in_stock' ? '<span style="color:green">متوفر في المخزون</span>' : '<span style="color:red">نفذت الكمية</span>'}</p>
+                </div>
+
                 <div class="policy-box">
-                    <strong><i class="fas fa-info-circle"></i> تنويه هام:</strong>
-                    <br> سياسة الاسترجاع 14 يوم (لا تشمل منتجات التجميل المفتوحة).
-                    <br> الشحن من 1-3 أيام عمل لكافة الإمارات.
+                    <strong><i class="fas fa-shield-alt"></i> ضمان مخزون الإمارات:</strong>
+                    <ul style="margin-top:5px; font-size:13px; list-style:inside;">
+                        <li>الدفع عند الاستلام متاح.</li>
+                        <li>شحن سريع 1-3 أيام عمل.</li>
+                        <li>استرجاع 14 يوم (لا يشمل منتجات التجميل).</li>
+                    </ul>
                 </div>
 
                 <div class="buy-actions">
-                    <button class="btn-whatsapp-large" onclick="directOrder('${product.name}', ${product.price})">
+                    <button class="btn-whatsapp-large" onclick="directOrder('${product.title}', ${currentPrice})">
                         <i class="fab fa-whatsapp"></i> اطلب الآن عبر واتساب
                     </button>
                     <button class="btn-add" style="width: auto; padding: 0 30px;" onclick="addToCart(${product.id})">
@@ -127,11 +178,19 @@ function addToCart(productId) {
     if (existingItem) {
         existingItem.qty++;
     } else {
-        cart.push({ ...product, qty: 1 });
+        // نخزن السعر الحالي (بعد الخصم) في السلة
+        const finalPrice = getProductPrice(product);
+        cart.push({ 
+            id: product.id,
+            title: product.title,
+            image: product['image link'], // تخزين الصورة للعرض في السلة
+            price: finalPrice,
+            qty: 1 
+        });
     }
 
     saveCart();
-    toggleCart(true); // فتح السلة تلقائياً
+    toggleCart(true);
 }
 
 function removeFromCart(productId) {
@@ -149,11 +208,9 @@ function updateCartUI() {
     const cartItemsContainer = document.getElementById('cart-items');
     const cartTotal = document.getElementById('cart-total');
     
-    // تحديث العدد
     const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
     cartCount.innerText = totalQty;
 
-    // تحديث القائمة
     cartItemsContainer.innerHTML = '';
     let totalAmount = 0;
 
@@ -161,12 +218,12 @@ function updateCartUI() {
         totalAmount += item.price * item.qty;
         cartItemsContainer.innerHTML += `
             <div class="cart-item">
-                <img src="${item.image}" alt="${item.name}">
+                <img src="${item.image}" alt="${item.title}">
                 <div style="flex: 1;">
-                    <h5 style="margin-bottom: 5px;">${item.name}</h5>
+                    <h5 style="margin-bottom: 5px; font-size:14px">${item.title}</h5>
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span style="color: var(--uae-green); font-weight: bold;">${item.price} x ${item.qty}</span>
-                        <span style="color: red; cursor: pointer;" onclick="removeFromCart(${item.id})"><i class="fas fa-trash"></i></span>
+                        <span style="color: var(--uae-green); font-weight: bold; font-size:13px">${item.price} x ${item.qty}</span>
+                        <span style="color: #c00; cursor: pointer;" onclick="removeFromCart(${item.id})"><i class="fas fa-trash-alt"></i></span>
                     </div>
                 </div>
             </div>
@@ -189,32 +246,38 @@ function toggleCart(forceOpen = false) {
     }
 }
 
-// 4. إتمام الطلب (Checkout)
+// 4. إتمام الطلب عبر واتساب
 function checkoutWhatsApp() {
     if (cart.length === 0) {
         alert("السلة فارغة!");
         return;
     }
 
-    let message = `*طلب جديد من متجر مخزون الإمارات*%0a---------------------------%0a`;
+    let message = `*طلب جديد من موقع مخزون الإمارات*%0a`;
+    message += `---------------------------%0a`;
     let total = 0;
 
     cart.forEach(item => {
-        message += `▪️ ${item.name} (العدد: ${item.qty}) - ${item.price * item.qty} درهم%0a`;
-        total += item.price * item.qty;
+        let subtotal = item.price * item.qty;
+        message += `📦 *${item.title}*%0a`;
+        message += `   العدد: ${item.qty} | السعر: ${subtotal} درهم%0a`;
+        total += subtotal;
     });
 
-    message += `---------------------------%0a*الإجمالي: ${total} درهم*%0a`;
-    message += `%0aيرجى تأكيد الطلب وتزويدي بالعنوان وتفاصيل الشحن.`;
+    message += `---------------------------%0a`;
+    message += `💰 *الإجمالي النهائي: ${total} درهم*%0a`;
+    message += `%0a📍 *يرجى إرسال الموقع (Location) لتأكيد الشحن.*`;
 
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
 }
 
-// طلب مباشر لمنتج واحد
-function directOrder(name, price) {
-    let message = `*طلب سريع من متجر مخزون الإمارات*%0a---------------------------%0a`;
-    message += `▪️ المنتج: ${name}%0a`;
-    message += `▪️ السعر: ${price} درهم%0a`;
-    message += `%0aيرجى التواصل لتأكيد الطلب.`;
+// طلب مباشر
+function directOrder(title, price) {
+    let message = `*استفسار/طلب عن منتج*%0a`;
+    message += `---------------------------%0a`;
+    message += `🛍️ المنتج: ${title}%0a`;
+    message += `💵 السعر: ${price} درهم%0a`;
+    message += `---------------------------%0a`;
+    message += `هل المنتج متوفر؟ وأرغب في الطلب.`;
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
 }
