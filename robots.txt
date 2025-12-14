@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: /checkout.html
+Disallow: /pages/checkout.html
+Disallow: /thankyou.html
+Disallow: /pages/thankyou.html
+Disallow: /404.html
+
+# حجب البوتات السيئة المعروفة (اختياري لزيادة الأمان)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+# رابط خريطة الموقع (هام جداً لجوجل)
+Sitemap: https://sherow1982.github.io/matager-makhzoon-alemarat/sitemap.xml
