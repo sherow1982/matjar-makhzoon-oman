@@ -1,6 +1,7 @@
 // =========================================
 // 1. إعدادات المتجر
 // =========================================
+
 const WHATSAPP_NUMBER = "201110760081";
 let allProducts = [];
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -10,8 +11,11 @@ const BATCH_SIZE = 24;
 // =========================================
 // 2. التحميل الأولي
 // =========================================
+
 document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
+
+    // تحديد المسار الصحيح للملفات بناءً على مكان الصفحة الحالية
     const isInsidePages = window.location.pathname.includes('/pages/');
     const jsonPath = isInsidePages ? '../products.json' : 'products.json';
 
@@ -23,25 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // =========================================
-// دالة تحسين الصور (مع إمكانية الفشل الآمن)
-// =========================================
-function optimizeImage(url, width = 400) {
-    if (!url) return 'images/icon-192.png';
-    // الصور المحلية تبقى كما هي
-    if (url.startsWith('images/') || url.startsWith('./') || url.startsWith('../')) {
-        return url;
-    }
-    // الصور الخارجية تمر عبر المحسن
-    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&q=75&output=webp`;
-}
-
-// =========================================
 // 3. جلب البيانات والتوجيه
 // =========================================
+
 async function fetchProducts(path) {
     try {
         const response = await fetch(path);
         allProducts = await response.json();
+
         const urlParams = new URLSearchParams(window.location.search);
         const productSlug = urlParams.get('product');
 
@@ -60,7 +53,9 @@ async function fetchProducts(path) {
 }
 
 // دوال مساعدة
+
 function getProductPrice(product) {
+    // التأكد من أن سعر الخصم رقم صحيح وأقل من السعر الأصلي
     return (product['sale price'] && product['sale price'] < product.price) ? product['sale price'] : product.price;
 }
 
@@ -85,32 +80,21 @@ function getProductDescriptionHTML(product) {
     `;
 }
 
-// =========================================================
-// دالة توليد بطاقة المنتج (الذكية: سريعة + آمنة)
-// =========================================================
+// دالة توليد بطاقة المنتج (للاستخدام المتكرر)
 function generateProductCardHTML(product) {
     const slug = encodeURIComponent(product.title.replace(/\s+/g, '-'));
-    const originalImage = product['image link'];
-    const optimizedImage = optimizeImage(originalImage, 400);
+    const imageSrc = product['image link'];
 
     let discountBadge = '';
     if (product['sale price'] && product['sale price'] < product.price) {
         const saved = Math.round(((product.price - product['sale price']) / product.price) * 100);
         discountBadge = `<span style="position:absolute; top:10px; right:10px; background:var(--uae-red); color:#fff; padding:3px 10px; border-radius:4px; font-size:12px; font-weight:bold; z-index:2">خصم ${saved}%</span>`;
     }
-    
-    // لاحظ كود onerror: إذا فشل المحسن، عد فوراً للصورة الأصلية
     return `
         <div class="product-card fade-in">
             ${discountBadge}
             <div class="product-img-wrapper">
-                <a href="?product=${slug}">
-                    <img src="${optimizedImage}" 
-                         alt="${product.title}" 
-                         loading="lazy" 
-                         width="400" height="400"
-                         onerror="this.onerror=null; this.src='${originalImage}';">
-                </a>
+                <a href="?product=${slug}"><img src="${imageSrc}" alt="${product.title}" loading="lazy"></a>
             </div>
             <div class="product-info">
                 <a href="?product=${slug}" class="product-title">${product.title}</a>
@@ -124,6 +108,7 @@ function generateProductCardHTML(product) {
 // =========================================
 // 4. SEO & Schema
 // =========================================
+
 function updateSEOAndSchema(product) {
     const currentPrice = getProductPrice(product);
     const plainDesc = product.description ? product.description.replace(/<[^>]*>?/gm, '') : `تسوق ${product.title} أونلاين في الإمارات.`;
@@ -132,10 +117,24 @@ function updateSEOAndSchema(product) {
     
     document.title = `${product.title} | مخزون الإمارات`;
 
+    // Meta Description
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) { metaDesc = document.createElement('meta'); metaDesc.name = "description"; document.head.appendChild(metaDesc); }
     metaDesc.content = plainDesc;
 
+    // Open Graph
+    const setMetaTag = (property, content) => {
+        let tag = document.querySelector(`meta[property="${property}"]`);
+        if (!tag) { tag = document.createElement('meta'); tag.setAttribute('property', property); document.head.appendChild(tag); }
+        tag.content = content;
+    };
+
+    setMetaTag('og:title', product.title);
+    setMetaTag('og:description', plainDesc);
+    setMetaTag('og:image', imageUrl);
+    setMetaTag('og:url', productUrl);
+
+    // Schema JSON-LD
     const oldScript = document.getElementById('dynamic-schema');
     if (oldScript) oldScript.remove();
 
@@ -167,6 +166,7 @@ function updateSEOAndSchema(product) {
 // =========================================
 // 5. الصفحة الرئيسية
 // =========================================
+
 function renderHomePage() {
     document.title = "متجر مخزون الإمارات | تسوق بذكاء";
     const app = document.getElementById('app-content');
@@ -205,6 +205,7 @@ function loadNextBatch() {
 // =========================================
 // 6. صفحة المنتج الفردي
 // =========================================
+
 function renderSingleProduct(slug) {
     const productName = decodeURIComponent(slug).replace(/-/g, ' ');
     const product = allProducts.find(p => p.title === productName) || allProducts.find(p => p.title.includes(productName));
@@ -218,33 +219,19 @@ function renderSingleProduct(slug) {
 
     updateSEOAndSchema(product);
     const currentPrice = getProductPrice(product);
-    
-    // تحسين الصور لصفحة المنتج
-    const originalMain = product['image link'];
-    const optimizedMain = optimizeImage(originalMain, 800);
-    const originalAdd = product['additional image link'];
-    const optimizedAdd = originalAdd ? optimizeImage(originalAdd, 800) : null;
-    
+    const imageSrc = product['image link'];
+    const additionalImage = product['additional image link'];
     const descriptionHTML = getProductDescriptionHTML(product);
 
-    let galleryHTML = `<img id="main-img" src="${optimizedMain}" alt="${product.title}" 
-                            style="width:100%; border-radius:8px;"
-                            onerror="this.onerror=null; this.src='${originalMain}';">`;
-    
-    if (originalAdd) {
+    let galleryHTML = `<img id="main-img" src="${imageSrc}" alt="${product.title}">`;
+    if (additionalImage) {
         galleryHTML += `<div style="display:flex; gap:10px; margin-top:10px;">
-            <img src="${optimizedMain}" 
-                 style="width:70px; height:70px; object-fit:cover; border:1px solid #ddd; cursor:pointer; border-radius:4px" 
-                 onclick="document.getElementById('main-img').src='${optimizedMain}'; document.getElementById('main-img').onerror=function(){this.src='${originalMain}'}"
-                 onerror="this.onerror=null; this.src='${originalMain}';">
-                 
-            <img src="${optimizedAdd}" 
-                 style="width:70px; height:70px; object-fit:cover; border:1px solid #ddd; cursor:pointer; border-radius:4px" 
-                 onclick="document.getElementById('main-img').src='${optimizedAdd}'; document.getElementById('main-img').onerror=function(){this.src='${originalAdd}'}"
-                 onerror="this.onerror=null; this.src='${originalAdd}';">
+            <img src="${imageSrc}" style="width:70px; height:70px; object-fit:cover; border:1px solid #ddd; cursor:pointer; border-radius:4px" onclick="document.getElementById('main-img').src='${imageSrc}'">
+            <img src="${additionalImage}" style="width:70px; height:70px; object-fit:cover; border:1px solid #ddd; cursor:pointer; border-radius:4px" onclick="document.getElementById('main-img').src='${additionalImage}'">
         </div>`;
     }
 
+    // هنا يتم بناء صفحة المنتج
     app.innerHTML = `
         <div class="breadcrumb">
             <a href="index.html">الرئيسية</a> / <span>${product.title}</span>
@@ -276,12 +263,15 @@ function renderSingleProduct(slug) {
                 </button>
             </div>
         </div>
+        
+        <!-- قسم منتجات ذات صلة -->
         <div class="related-products-section" style="margin-top:60px; border-top:1px solid #eee; padding-top:40px;">
             <h3 style="margin-bottom:20px; font-size:22px; color:var(--uae-black)">قد يعجبك أيضاً</h3>
             <div class="products-grid" id="related-products-container"></div>
         </div>
     `;
 
+    // استدعاء دالة عرض المنتجات ذات الصلة
     renderRelatedProducts(product);
 }
 
@@ -290,7 +280,10 @@ function renderRelatedProducts(currentProduct) {
     const container = document.getElementById('related-products-container');
     if (!container) return;
 
+    // فلترة المنتجات لاستبعاد المنتج الحالي
     const otherProducts = allProducts.filter(p => p.id !== currentProduct.id);
+    
+    // خلط عشوائي بسيط واختيار 4 منتجات
     const shuffled = otherProducts.sort(() => 0.5 - Math.random());
     const selected = shuffled.slice(0, 4);
 
@@ -301,6 +294,7 @@ function renderRelatedProducts(currentProduct) {
 // =========================================
 // 7. التحكم في النوافذ والسلة والبحث
 // =========================================
+
 function openPolicyModal() { const modal = document.getElementById('policyModal'); if (modal) modal.style.display = "block"; }
 function closePolicyModal() { const modal = document.getElementById('policyModal'); if (modal) modal.style.display = "none"; }
 window.onclick = function(event) { const modal = document.getElementById('policyModal'); if (event.target == modal) modal.style.display = "none"; }
@@ -312,14 +306,7 @@ function addToCart(productId) {
     if (existingItem) {
         existingItem.qty++;
     } else {
-        // صورة السلة صغيرة أيضاً
-        cart.push({ 
-            id: product.id, 
-            title: product.title, 
-            image: optimizeImage(product['image link'], 100), 
-            price: getProductPrice(product), 
-            qty: 1 
-        });
+        cart.push({ id: product.id, title: product.title, image: product['image link'], price: getProductPrice(product), qty: 1 });
     }
     
     saveCart();
@@ -352,7 +339,7 @@ function updateCartUI() {
             totalAmount += item.price * item.qty;
             cartItemsContainer.innerHTML += `
                 <div class="cart-item" style="display:flex; gap:10px; margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:10px">
-                    <img src="${item.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px" onerror="this.onerror=null; this.src='images/icon-192.png';">
+                    <img src="${item.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px">
                     <div style="flex:1">
                         <h5 style="font-size:13px; margin-bottom:5px">${item.title}</h5>
                         <div style="display:flex; justify-content:space-between">
@@ -404,7 +391,7 @@ function loadCheckoutItems() {
     let total = 0;
     cart.forEach(item => {
         total += item.price * item.qty;
-        container.innerHTML += `<div class="summary-item"><div><img src="${item.image}" alt="${item.title}" onerror="this.onerror=null; this.src='images/icon-192.png';"></div><div><h4>${item.title}</h4><span>${item.qty} x ${item.price}</span></div><div style="margin-right:auto">${item.qty * item.price}</div></div>`;
+        container.innerHTML += `<div class="summary-item"><div><img src="${item.image}" alt="${item.title}"></div><div><h4>${item.title}</h4><span>${item.qty} x ${item.price}</span></div><div style="margin-right:auto">${item.qty * item.price}</div></div>`;
     });
 
     const sub = document.getElementById('sub-total');
