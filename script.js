@@ -1,7 +1,6 @@
 // =========================================
 // 1. إعدادات المتجر
 // =========================================
-
 const WHATSAPP_NUMBER = "201110760081";
 let allProducts = [];
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -11,11 +10,12 @@ const BATCH_SIZE = 24;
 // =========================================
 // 2. التحميل الأولي
 // =========================================
-
 document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
+    
+    // إضافة زر البحث للموبايل
+    setupMobileSearch();
 
-    // تحديد المسار الصحيح للملفات بناءً على مكان الصفحة الحالية
     const isInsidePages = window.location.pathname.includes('/pages/');
     const jsonPath = isInsidePages ? '../products.json' : 'products.json';
 
@@ -27,14 +27,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // =========================================
+// تحسين الصور (داخلي)
+// =========================================
+function optimizeImage(url, width = 400) {
+    if (!url) return 'images/icon-192.png';
+    // نعتمد على الصور الأصلية الآن لأنها الأضمن
+    // إذا كنت تستخدم WSrv.nl سابقاً، يمكنك إرجاعه هنا
+    return url;
+}
+
+// =========================================
 // 3. جلب البيانات والتوجيه
 // =========================================
-
 async function fetchProducts(path) {
     try {
         const response = await fetch(path);
         allProducts = await response.json();
-
         const urlParams = new URLSearchParams(window.location.search);
         const productSlug = urlParams.get('product');
 
@@ -53,9 +61,7 @@ async function fetchProducts(path) {
 }
 
 // دوال مساعدة
-
 function getProductPrice(product) {
-    // التأكد من أن سعر الخصم رقم صحيح وأقل من السعر الأصلي
     return (product['sale price'] && product['sale price'] < product.price) ? product['sale price'] : product.price;
 }
 
@@ -80,7 +86,9 @@ function getProductDescriptionHTML(product) {
     `;
 }
 
-// دالة توليد بطاقة المنتج (للاستخدام المتكرر)
+// =========================================
+// دالة توليد البطاقة
+// =========================================
 function generateProductCardHTML(product) {
     const slug = encodeURIComponent(product.title.replace(/\s+/g, '-'));
     const imageSrc = product['image link'];
@@ -90,11 +98,14 @@ function generateProductCardHTML(product) {
         const saved = Math.round(((product.price - product['sale price']) / product.price) * 100);
         discountBadge = `<span style="position:absolute; top:10px; right:10px; background:var(--uae-red); color:#fff; padding:3px 10px; border-radius:4px; font-size:12px; font-weight:bold; z-index:2">خصم ${saved}%</span>`;
     }
+    
     return `
         <div class="product-card fade-in">
             ${discountBadge}
             <div class="product-img-wrapper">
-                <a href="?product=${slug}"><img src="${imageSrc}" alt="${product.title}" loading="lazy"></a>
+                <a href="?product=${slug}">
+                    <img src="${imageSrc}" alt="${product.title}" loading="lazy" style="width:100%; height:100%; object-fit:contain;" onerror="this.onerror=null; this.src='images/icon-192.png';">
+                </a>
             </div>
             <div class="product-info">
                 <a href="?product=${slug}" class="product-title">${product.title}</a>
@@ -108,7 +119,6 @@ function generateProductCardHTML(product) {
 // =========================================
 // 4. SEO & Schema
 // =========================================
-
 function updateSEOAndSchema(product) {
     const currentPrice = getProductPrice(product);
     const plainDesc = product.description ? product.description.replace(/<[^>]*>?/gm, '') : `تسوق ${product.title} أونلاين في الإمارات.`;
@@ -117,24 +127,10 @@ function updateSEOAndSchema(product) {
     
     document.title = `${product.title} | مخزون الإمارات`;
 
-    // Meta Description
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) { metaDesc = document.createElement('meta'); metaDesc.name = "description"; document.head.appendChild(metaDesc); }
     metaDesc.content = plainDesc;
 
-    // Open Graph
-    const setMetaTag = (property, content) => {
-        let tag = document.querySelector(`meta[property="${property}"]`);
-        if (!tag) { tag = document.createElement('meta'); tag.setAttribute('property', property); document.head.appendChild(tag); }
-        tag.content = content;
-    };
-
-    setMetaTag('og:title', product.title);
-    setMetaTag('og:description', plainDesc);
-    setMetaTag('og:image', imageUrl);
-    setMetaTag('og:url', productUrl);
-
-    // Schema JSON-LD
     const oldScript = document.getElementById('dynamic-schema');
     if (oldScript) oldScript.remove();
 
@@ -166,7 +162,6 @@ function updateSEOAndSchema(product) {
 // =========================================
 // 5. الصفحة الرئيسية
 // =========================================
-
 function renderHomePage() {
     document.title = "متجر مخزون الإمارات | تسوق بذكاء";
     const app = document.getElementById('app-content');
@@ -203,15 +198,30 @@ function loadNextBatch() {
 }
 
 // =========================================
-// 6. صفحة المنتج الفردي
+// 6. صفحة المنتج الفردي (المحسنة للعربية)
 // =========================================
-
 function renderSingleProduct(slug) {
-    const productName = decodeURIComponent(slug).replace(/-/g, ' ');
-    const product = allProducts.find(p => p.title === productName) || allProducts.find(p => p.title.includes(productName));
-    const app = document.getElementById('app-content');
+    // دالة لتنظيف النص العربي وتوحيده
+    const normalizeText = (text) => {
+        if (!text) return "";
+        return decodeURIComponent(text)
+            .replace(/-/g, ' ')
+            .replace(/[أإآ]/g, 'ا')
+            .replace(/ة/g, 'ه')
+            .replace(/ى/g, 'ي')
+            .trim();
+    };
 
+    const targetName = normalizeText(slug);
+
+    const product = allProducts.find(p => {
+        const productName = normalizeText(p.title);
+        return productName === targetName || productName.includes(targetName) || targetName.includes(productName);
+    });
+
+    const app = document.getElementById('app-content');
     if (!app) return;
+
     if (!product) { 
         app.innerHTML = '<div class="text-center" style="padding:50px"><h2>المنتج غير موجود</h2><a href="index.html" class="btn-add" style="width:200px; margin:20px auto">العودة للرئيسية</a></div>'; 
         return; 
@@ -223,70 +233,48 @@ function renderSingleProduct(slug) {
     const additionalImage = product['additional image link'];
     const descriptionHTML = getProductDescriptionHTML(product);
 
-    let galleryHTML = `<img id="main-img" src="${imageSrc}" alt="${product.title}">`;
+    let galleryHTML = `<img id="main-img" src="${imageSrc}" alt="${product.title}" 
+                            style="width:100%; border-radius:8px;"
+                            onerror="this.onerror=null; this.src='images/icon-192.png';">`;
+    
     if (additionalImage) {
         galleryHTML += `<div style="display:flex; gap:10px; margin-top:10px;">
-            <img src="${imageSrc}" style="width:70px; height:70px; object-fit:cover; border:1px solid #ddd; cursor:pointer; border-radius:4px" onclick="document.getElementById('main-img').src='${imageSrc}'">
-            <img src="${additionalImage}" style="width:70px; height:70px; object-fit:cover; border:1px solid #ddd; cursor:pointer; border-radius:4px" onclick="document.getElementById('main-img').src='${additionalImage}'">
+            <img src="${imageSrc}" style="width:70px; height:70px; object-fit:cover; border:1px solid #ddd; cursor:pointer; border-radius:4px" 
+                 onclick="document.getElementById('main-img').src='${imageSrc}'">
+            <img src="${additionalImage}" style="width:70px; height:70px; object-fit:cover; border:1px solid #ddd; cursor:pointer; border-radius:4px" 
+                 onclick="document.getElementById('main-img').src='${additionalImage}'">
         </div>`;
     }
 
-    // هنا يتم بناء صفحة المنتج
     app.innerHTML = `
-        <div class="breadcrumb">
-            <a href="index.html">الرئيسية</a> / <span>${product.title}</span>
-        </div>
+        <div class="breadcrumb"><a href="index.html">الرئيسية</a> / <span>${product.title}</span></div>
         <div class="single-product-container">
             <div class="single-img">${galleryHTML}</div>
             <div class="single-details">
                 <h1>${product.title}</h1>
                 <div style="margin-bottom:20px">${renderPriceHTML(product)}</div>
-                
-                <div class="product-description" style="margin-bottom:25px; color:#555; line-height:1.8; font-size:15px;">
-                    ${descriptionHTML}
-                </div>
-                <div style="margin-bottom: 25px; background:#f9f9f9; padding:15px; border-radius:5px; font-size:14px; color:#555;">
-                    <p><strong>SKU:</strong> ${product.sku}</p>
-                    <p><strong>الحالة:</strong> ${product.condition === 'new' ? 'جديد أصلي' : 'مستخدم'}</p>
-                    <p><strong>التوفر:</strong> ${product.availability === 'in_stock' ? '<span style="color:green; font-weight:bold">متوفر</span>' : '<span style="color:red">غير متوفر</span>'}</p>
-                </div>
+                <div class="product-description" style="margin-bottom:25px; color:#555; line-height:1.8; font-size:15px;">${descriptionHTML}</div>
                 <div class="buy-actions">
-                    <button class="btn-whatsapp-large" onclick="directOrder('${product.title}', ${currentPrice})">
-                        <i class="fab fa-whatsapp"></i> اطلب الآن عبر واتساب
-                    </button>
-                    <button class="btn-add" onclick="addToCart(${product.id})">
-                        <i class="fas fa-cart-plus"></i> إضافة للسلة
-                    </button>
+                    <button class="btn-whatsapp-large" onclick="directOrder('${product.title}', ${currentPrice})"><i class="fab fa-whatsapp"></i> اطلب الآن عبر واتساب</button>
+                    <button class="btn-add" onclick="addToCart(${product.id})"><i class="fas fa-cart-plus"></i> إضافة للسلة</button>
                 </div>
-                <button class="policy-btn-trigger" onclick="openPolicyModal()">
-                    <i class="fas fa-shield-alt"></i> سياسة الشحن والضمان والاسترجاع
-                </button>
+                <button class="policy-btn-trigger" onclick="openPolicyModal()"><i class="fas fa-shield-alt"></i> سياسة الشحن والضمان والاسترجاع</button>
             </div>
         </div>
-        
-        <!-- قسم منتجات ذات صلة -->
         <div class="related-products-section" style="margin-top:60px; border-top:1px solid #eee; padding-top:40px;">
             <h3 style="margin-bottom:20px; font-size:22px; color:var(--uae-black)">قد يعجبك أيضاً</h3>
             <div class="products-grid" id="related-products-container"></div>
         </div>
     `;
-
-    // استدعاء دالة عرض المنتجات ذات الصلة
     renderRelatedProducts(product);
 }
 
-// دالة عرض المنتجات ذات الصلة
 function renderRelatedProducts(currentProduct) {
     const container = document.getElementById('related-products-container');
     if (!container) return;
-
-    // فلترة المنتجات لاستبعاد المنتج الحالي
     const otherProducts = allProducts.filter(p => p.id !== currentProduct.id);
-    
-    // خلط عشوائي بسيط واختيار 4 منتجات
     const shuffled = otherProducts.sort(() => 0.5 - Math.random());
     const selected = shuffled.slice(0, 4);
-
     const html = selected.map(p => generateProductCardHTML(p)).join('');
     container.innerHTML = html;
 }
@@ -294,7 +282,6 @@ function renderRelatedProducts(currentProduct) {
 // =========================================
 // 7. التحكم في النوافذ والسلة والبحث
 // =========================================
-
 function openPolicyModal() { const modal = document.getElementById('policyModal'); if (modal) modal.style.display = "block"; }
 function closePolicyModal() { const modal = document.getElementById('policyModal'); if (modal) modal.style.display = "none"; }
 window.onclick = function(event) { const modal = document.getElementById('policyModal'); if (event.target == modal) modal.style.display = "none"; }
@@ -302,13 +289,11 @@ window.onclick = function(event) { const modal = document.getElementById('policy
 function addToCart(productId) {
     const product = allProducts.find(p => p.id === productId);
     const existingItem = cart.find(item => item.id === productId);
-
     if (existingItem) {
         existingItem.qty++;
     } else {
         cart.push({ id: product.id, title: product.title, image: product['image link'], price: getProductPrice(product), qty: 1 });
     }
-    
     saveCart();
     toggleCart(true);
 }
@@ -328,13 +313,10 @@ function updateCartUI() {
     const cartCount = document.getElementById('cart-count');
     const cartItemsContainer = document.getElementById('cart-items');
     const cartTotal = document.getElementById('cart-total');
-
     if (cartCount) cartCount.innerText = cart.reduce((sum, item) => sum + item.qty, 0);
-
     if (cartItemsContainer && cartTotal) {
         cartItemsContainer.innerHTML = '';
         let totalAmount = 0;
-
         cart.forEach(item => {
             totalAmount += item.price * item.qty;
             cartItemsContainer.innerHTML += `
@@ -357,7 +339,6 @@ function toggleCart(forceOpen = false) {
     const sidebar = document.getElementById('cart-sidebar');
     const overlay = document.getElementById('overlay');
     if (!sidebar) return;
-
     if (forceOpen) {
         sidebar.classList.add('active');
         overlay.classList.add('active');
@@ -379,21 +360,18 @@ function checkoutPage() {
 function loadCheckoutItems() {
     const container = document.getElementById('checkout-items');
     if (!container) return;
-
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     if (cart.length === 0) {
         if (window.location.pathname.includes('/pages/')) window.location.href = '../index.html';
         else window.location.href = 'index.html';
         return;
     }
-
     container.innerHTML = '';
     let total = 0;
     cart.forEach(item => {
         total += item.price * item.qty;
         container.innerHTML += `<div class="summary-item"><div><img src="${item.image}" alt="${item.title}"></div><div><h4>${item.title}</h4><span>${item.qty} x ${item.price}</span></div><div style="margin-right:auto">${item.qty * item.price}</div></div>`;
     });
-
     const sub = document.getElementById('sub-total');
     const final = document.getElementById('final-total');
     if (sub) sub.innerText = total + ' درهم';
@@ -407,9 +385,13 @@ function directOrder(title, price) {
 
 function searchProducts() {
     const searchInput = document.getElementById('search-input');
-    if (!searchInput) return;
+    // إذا لم يجد المربع العادي، ابحث عن المربع الموبايل
+    const mobileInput = document.getElementById('mobile-search-input');
+    const finalInput = searchInput && searchInput.offsetParent !== null ? searchInput : mobileInput;
 
-    const query = searchInput.value.toLowerCase().trim();
+    if (!finalInput) return;
+
+    const query = finalInput.value.toLowerCase().trim();
     const app = document.getElementById('app-content');
 
     if (!query) { renderHomePage(); return; }
@@ -418,16 +400,49 @@ function searchProducts() {
 
     app.innerHTML = `
         <div class="search-header" style="text-align:center; margin:30px 0;">
-            <h2>نتائج البحث عن: "${searchInput.value}"</h2>
+            <h2>نتائج البحث عن: "${finalInput.value}"</h2>
             <p style="color:#777">${filteredProducts.length} منتج مطابق</p>
-            <button onclick="document.getElementById('search-input').value=''; renderHomePage()" class="btn-add" style="width:auto; display:inline-block; background:#555; margin-top:10px; padding:8px 20px">عودة للرئيسية</button>
+            <button onclick="window.location.reload()" class="btn-add" style="width:auto; display:inline-block; background:#555; margin-top:10px; padding:8px 20px">عودة للرئيسية</button>
         </div>
         <div class="products-grid">
             ${filteredProducts.map(product => generateProductCardHTML(product)).join('')}
         </div>
     `;
-
     if (filteredProducts.length === 0) { app.innerHTML += '<div style="text-align:center; margin-bottom:50px; color:#999">لا توجد منتجات.</div>'; }
 }
 
 function handleEnter(e) { if (e.key === 'Enter') searchProducts(); }
+
+// =========================================
+// 8. زر البحث العائم (للموبايل)
+// =========================================
+function setupMobileSearch() {
+    // إنشاء زر البحث العائم إذا لم يكن موجوداً
+    if (!document.getElementById('mobile-search-btn')) {
+        const btn = document.createElement('div');
+        btn.id = 'mobile-search-btn';
+        btn.innerHTML = '<i class="fas fa-search"></i>';
+        btn.style.cssText = "position:fixed; bottom:20px; left:20px; background:var(--uae-green); color:white; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(0,0,0,0.3); z-index:999; cursor:pointer;";
+        
+        // إخفاؤه على الشاشات الكبيرة
+        const style = document.createElement('style');
+        style.innerHTML = "@media(min-width:768px){ #mobile-search-btn { display:none !important; } }";
+        document.head.appendChild(style);
+
+        document.body.appendChild(btn);
+
+        // إنشاء نافذة البحث المنبثقة
+        const modal = document.createElement('div');
+        modal.id = 'mobile-search-modal';
+        modal.style.cssText = "position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.95); z-index:1000; display:none; flex-direction:column; padding:20px;";
+        modal.innerHTML = `
+            <div style="display:flex; justify-content:flex-end;"><span style="font-size:30px; cursor:pointer;" onclick="document.getElementById('mobile-search-modal').style.display='none'">&times;</span></div>
+            <h3 style="text-align:center; margin-top:20%; color:#333">بحث عن منتج</h3>
+            <input type="text" id="mobile-search-input" placeholder="اكتب اسم المنتج..." style="padding:15px; border:2px solid #ddd; border-radius:8px; font-size:16px; margin-top:20px;">
+            <button onclick="searchProducts(); document.getElementById('mobile-search-modal').style.display='none'" style="margin-top:15px; padding:12px; background:var(--uae-black); color:white; border:none; border-radius:8px; font-size:16px;">بحث</button>
+        `;
+        document.body.appendChild(modal);
+
+        btn.onclick = () => document.getElementById('mobile-search-modal').style.display = 'flex';
+    }
+}
