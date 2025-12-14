@@ -3,32 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر مخزون الإمارات | تسوق بذكاء</title>
-    <meta name="description" content="أفضل متجر إلكتروني في الإمارات. دفع عند الاستلام، شحن مجاني وسريع.">
+    <title>متجر مخزون الإمارات | تسوق بذكاء - دفع عند الاستلام</title>
+    
+    <!-- وصف وميتا تاج احترافية -->
+    <meta name="description" content="المتجر الإماراتي الأول للتسوق الذكي. نوفر لك أفضل المنتجات العالمية مع خدمة توصيل سريع لجميع إمارات الدولة والدفع عند الاستلام.">
+    <meta name="keywords" content="تسوق الإمارات, متجر دبي, دفع عند الاستلام, شحن مجاني أبوظبي, مخزون الإمارات">
+    <meta name="author" content="مخزون الإمارات">
 
-    <!-- 1. تحسين سرعة الاتصال بسيرفرات جوجل -->
+    <!-- إعدادات الأيقونات -->
+    <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">
+    <link rel="apple-touch-icon" href="images/icon-192.png">
+    <meta name="theme-color" content="#009739">
+
+    <!-- إعدادات المشاركة (Facebook / WhatsApp) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="مخزون الإمارات" />
+    <meta property="og:url" content="https://sherow1982.github.io/matager-makhzoon-alemarat/index.html" />
+    <meta property="og:title" content="مخزون الإمارات | الجودة والثقة بين يديك" />
+    <meta property="og:description" content="تسوق الآن واحصل على شحن سريع لجميع مناطق الدولة. منتجات أصلية، ضمان استرجاع، ودفع آمن عند الاستلام." />
+    <!-- الصورة بصيغة JPG كما اتفقنا -->
+    <meta property="og:image" content="https://sherow1982.github.io/matager-makhzoon-alemarat/images/og-default.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:locale" content="ar_AE" />
+
+    <!-- إعدادات تويتر -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="مخزون الإمارات | تسوق بذكاء" />
+    <meta name="twitter:description" content="أفضل العروض في الإمارات مع خدمة الدفع عند الاستلام." />
+    <meta name="twitter:image" content="https://sherow1982.github.io/matager-makhzoon-alemarat/images/og-default.jpg" />
+
+    <!-- تحسينات السرعة -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- 2. تحميل خط كايرو بشكل محسن -->
+    <!-- الخطوط والأيقونات -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- 3. تحميل أيقونات FontAwesome بدون تعطيل الصفحة -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
 
-    <!-- 4. ملف الاستايل الأساسي -->
+    <!-- ملفات التنسيق والسكربت -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- 5. ملف الجافاسكربت (يعمل في الخلفية لزيادة السرعة) -->
     <script src="script.js" defer></script>
+
+    <!-- تنسيق خاص لقسم الخريطة (يمكنك نقله لملف style.css لاحقاً) -->
+    <style>
+        .uae-map-section { background: #fff; padding: 60px 0; border-top: 5px solid #f4f4f4; text-align: center; }
+        .uae-map-section h2 { margin-bottom: 30px; color: var(--uae-black); font-size: 24px; }
+        .uae-map-section h2 span { color: var(--uae-red); }
+        .emirates-list { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
+        .emirate-badge { background: #f9f9f9; padding: 8px 15px; border-radius: 20px; border: 1px solid #eee; font-size: 14px; color: #555; display: flex; align-items: center; gap: 5px; }
+        .emirate-badge i { color: var(--uae-green); }
+        .map-frame { width: 100%; height: 350px; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 2px solid #eee; }
+    </style>
 </head>
 <body>
 
-    <!-- الشريط العلوي الاحترافي -->
+    <!-- الشريط العلوي -->
     <div class="top-bar">
         <div class="container flex-between">
-            <!-- روابط التواصل السريع -->
             <div class="contact-info">
                 <a href="https://wa.me/201110760081" target="_blank" class="top-link">
                     <i class="fab fa-whatsapp"></i> 201110760081+
@@ -38,8 +72,6 @@
                     <i class="fas fa-envelope"></i> info@arabsad.com
                 </a>
             </div>
-            
-            <!-- روابط الصفحات الهامة -->
             <div class="shipping-note">
                 <a href="pages/shipping.html" class="top-link">الشحن المجاني</a>
                 <span class="sep">|</span>
@@ -52,19 +84,16 @@
 
     <!-- الهيدر الرئيسي -->
     <header class="main-header">
-        <div class="container flex-between">
-            <!-- الشعار -->
+        <div class="container flex-between header-content-wrap">
             <a href="index.html" class="logo">
                 <span class="uae-red">مخزون</span> <span class="uae-green">الإمارات</span>
             </a>
             
-            <!-- مربع البحث -->
             <div class="search-box">
                 <input type="text" id="search-input" placeholder="ابحث عن منتج (مثال: عطر، ساعة)..." onkeypress="handleEnter(event)">
                 <button onclick="searchProducts()"><i class="fas fa-search"></i></button>
             </div>
 
-            <!-- أيقونة السلة -->
             <div class="header-icons">
                 <div class="cart-icon" onclick="toggleCart()">
                     <i class="fas fa-shopping-bag"></i>
@@ -75,8 +104,8 @@
         </div>
     </header>
 
-    <!-- منطقة المحتوى المتغيرة (يتم تحميل المنتجات هنا) -->
-    <main id="app-content" class="container"></main>
+    <!-- المحتوى المتغير -->
+    <main id="app-content" class="container main-content-area"></main>
 
     <!-- القائمة الجانبية للسلة -->
     <div class="cart-sidebar" id="cart-sidebar">
@@ -84,25 +113,22 @@
             <h3><i class="fas fa-shopping-cart"></i> سلة المشتريات</h3>
             <span class="close-cart" onclick="toggleCart()">&times;</span>
         </div>
-        <div class="cart-items" id="cart-items">
-            <!-- يتم تعبئة المنتجات هنا بالجافاسكربت -->
-        </div>
+        <div class="cart-items" id="cart-items"></div>
         <div class="cart-footer">
             <div class="total-row-cart">
                 <span>المجموع:</span>
                 <span id="cart-total" class="uae-green">0.00 درهم</span>
             </div>
-            <p style="font-size:12px; color:#777; margin-bottom:10px; text-align:center;">الشحن والضريبة يحسبان عند إتمام الطلب</p>
+            <p class="tax-note">الشحن والضريبة يحسبان عند إتمام الطلب</p>
             <button class="checkout-btn" onclick="checkoutPage()">
                 <i class="fas fa-check-circle"></i> إتمام الطلب
             </button>
         </div>
     </div>
 
-    <!-- طبقة التعتيم الخلفية -->
     <div class="overlay" id="overlay" onclick="toggleCart()"></div>
 
-    <!-- النافذة المنبثقة للسياسات السريعة (Modal) -->
+    <!-- نافذة السياسات -->
     <div id="policyModal" class="modal-window">
         <div class="modal-content">
             <span class="close-modal" onclick="closePolicyModal()">&times;</span>
@@ -127,54 +153,69 @@
         </div>
     </div>
 
-    <!-- الفوتر الثابت -->
+    <!-- قسم تغطية الإمارات (الجديد والمميز) -->
+    <section class="uae-map-section">
+        <div class="container">
+            <h2>نصلك أينما كنت في <span>الإمارات العربية المتحدة</span></h2>
+            
+            <!-- قائمة الإمارات -->
+            <div class="emirates-list">
+                <span class="emirate-badge"><i class="fas fa-check-circle"></i> أبوظبي</span>
+                <span class="emirate-badge"><i class="fas fa-check-circle"></i> دبي</span>
+                <span class="emirate-badge"><i class="fas fa-check-circle"></i> الشارقة</span>
+                <span class="emirate-badge"><i class="fas fa-check-circle"></i> عجمان</span>
+                <span class="emirate-badge"><i class="fas fa-check-circle"></i> أم القيوين</span>
+                <span class="emirate-badge"><i class="fas fa-check-circle"></i> رأس الخيمة</span>
+                <span class="emirate-badge"><i class="fas fa-check-circle"></i> الفجيرة</span>
+            </div>
+
+            <!-- الخريطة -->
+            <div class="map-frame">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.178510024345!2d55.2707828!3d25.2048493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sae!4v1700000000000!5m2!1sen!2sae" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <!-- العمود الأول: عن المتجر -->
                 <div class="footer-col">
                     <h4>مخزون الإمارات</h4>
                     <p>وجهتك الأولى للتسوق الإلكتروني في الإمارات. نوفر لك منتجات أصلية بجودة عالية وأسعار تنافسية مع خدمة دفع عند الاستلام.</p>
                 </div>
-
-                <!-- العمود الثاني: روابط قانونية -->
                 <div class="footer-col">
                     <h4>معلومات قانونية</h4>
-                    <ul>
+                    <ul class="footer-links">
                         <li><a href="pages/shipping.html">سياسة الشحن المجاني</a></li>
                         <li><a href="pages/returns.html">سياسة الاسترجاع والاستبدال</a></li>
                         <li><a href="pages/terms.html">الشروط والأحكام</a></li>
                         <li><a href="pages/privacy.html">سياسة الخصوصية</a></li>
                     </ul>
                 </div>
-
-                <!-- العمود الثالث: تواصل معنا -->
                 <div class="footer-col">
                     <h4>تواصل معنا</h4>
                     <ul class="contact-list">
-                        <li style="margin-bottom: 10px;">
-                            <a href="https://wa.me/201110760081" target="_blank" style="display: flex; align-items: center; gap: 10px;">
-                                <i class="fab fa-whatsapp" style="color: #25D366; font-size: 18px;"></i>
-                                <span>201110760081+</span>
+                        <li>
+                            <a href="https://wa.me/201110760081" target="_blank">
+                                <i class="fab fa-whatsapp whatsapp-icon"></i> 201110760081+
                             </a>
                         </li>
-                        <li style="margin-bottom: 10px;">
-                            <a href="mailto:info@arabsad.com" style="display: flex; align-items: center; gap: 10px;">
-                                <i class="fas fa-envelope" style="color: #ccc; font-size: 18px;"></i>
-                                <span>info@arabsad.com</span>
+                        <li>
+                            <a href="mailto:info@arabsad.com">
+                                <i class="fas fa-envelope"></i> info@arabsad.com
                             </a>
                         </li>
-                        <li style="margin-bottom: 10px;">
-                            <a href="mailto:sherow1982@gmail.com" style="display: flex; align-items: center; gap: 10px;">
-                                <i class="fas fa-envelope" style="color: #ccc; font-size: 18px;"></i>
-                                <span>sherow1982@gmail.com</span>
-                            </a>
-                        </li>
-                        <li style="margin-top: 15px;">
-                            <div style="display: flex; align-items: center; gap: 10px;">
-                                <i class="fas fa-map-marker-alt" style="color: var(--uae-red);"></i>
-                                <span>دبي، الإمارات العربية المتحدة</span>
-                            </div>
+                        <li class="location-item">
+                            <i class="fas fa-map-marker-alt"></i> دبي، الإمارات العربية المتحدة
                         </li>
                     </ul>
                 </div>
