@@ -12,7 +12,6 @@ const BATCH_SIZE = 24;
 // =========================================
 document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
-
     const isInsidePages = window.location.pathname.includes('/pages/');
     const jsonPath = isInsidePages ? '../products.json' : 'products.json';
 
@@ -24,16 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // =========================================
-// دالة تحسين الصور السحرية (Image CDN)
+// دالة تحسين الصور (مع إمكانية الفشل الآمن)
 // =========================================
 function optimizeImage(url, width = 400) {
-    if (!url) return 'images/icon-192.png'; // صورة احتياطية
-    // إذا كانت الصورة محلية (تبدأ بـ images/) اتركها كما هي
+    if (!url) return 'images/icon-192.png';
+    // الصور المحلية تبقى كما هي
     if (url.startsWith('images/') || url.startsWith('./') || url.startsWith('../')) {
         return url;
     }
-    // إذا كانت رابط خارجي، استخدم خدمة الضغط السريع
-    // w: العرض المطلوب، q: الجودة (75 ممتازة)، output: الصيغة webp
+    // الصور الخارجية تمر عبر المحسن
     return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&q=75&output=webp`;
 }
 
@@ -44,7 +42,6 @@ async function fetchProducts(path) {
     try {
         const response = await fetch(path);
         allProducts = await response.json();
-
         const urlParams = new URLSearchParams(window.location.search);
         const productSlug = urlParams.get('product');
 
@@ -88,23 +85,31 @@ function getProductDescriptionHTML(product) {
     `;
 }
 
-// دالة توليد بطاقة المنتج (للاستخدام المتكرر)
+// =========================================================
+// دالة توليد بطاقة المنتج (الذكية: سريعة + آمنة)
+// =========================================================
 function generateProductCardHTML(product) {
     const slug = encodeURIComponent(product.title.replace(/\s+/g, '-'));
-    // استخدام المحسن مع عرض 400 بكسل (مناسب للشبكة)
-    const imageSrc = optimizeImage(product['image link'], 400);
+    const originalImage = product['image link'];
+    const optimizedImage = optimizeImage(originalImage, 400);
 
     let discountBadge = '';
     if (product['sale price'] && product['sale price'] < product.price) {
         const saved = Math.round(((product.price - product['sale price']) / product.price) * 100);
         discountBadge = `<span style="position:absolute; top:10px; right:10px; background:var(--uae-red); color:#fff; padding:3px 10px; border-radius:4px; font-size:12px; font-weight:bold; z-index:2">خصم ${saved}%</span>`;
     }
+    
+    // لاحظ كود onerror: إذا فشل المحسن، عد فوراً للصورة الأصلية
     return `
         <div class="product-card fade-in">
             ${discountBadge}
             <div class="product-img-wrapper">
                 <a href="?product=${slug}">
-                    <img src="${imageSrc}" alt="${product.title}" loading="lazy" width="400" height="400">
+                    <img src="${optimizedImage}" 
+                         alt="${product.title}" 
+                         loading="lazy" 
+                         width="400" height="400"
+                         onerror="this.onerror=null; this.src='${originalImage}';">
                 </a>
             </div>
             <div class="product-info">
@@ -131,7 +136,6 @@ function updateSEOAndSchema(product) {
     if (!metaDesc) { metaDesc = document.createElement('meta'); metaDesc.name = "description"; document.head.appendChild(metaDesc); }
     metaDesc.content = plainDesc;
 
-    // Schema JSON-LD
     const oldScript = document.getElementById('dynamic-schema');
     if (oldScript) oldScript.remove();
 
@@ -214,17 +218,30 @@ function renderSingleProduct(slug) {
 
     updateSEOAndSchema(product);
     const currentPrice = getProductPrice(product);
-    // استخدام المحسن مع عرض أكبر (800) لصفحة المنتج
-    const imageSrc = optimizeImage(product['image link'], 800);
-    const additionalImage = product['additional image link'] ? optimizeImage(product['additional image link'], 800) : null;
+    
+    // تحسين الصور لصفحة المنتج
+    const originalMain = product['image link'];
+    const optimizedMain = optimizeImage(originalMain, 800);
+    const originalAdd = product['additional image link'];
+    const optimizedAdd = originalAdd ? optimizeImage(originalAdd, 800) : null;
+    
     const descriptionHTML = getProductDescriptionHTML(product);
 
-    let galleryHTML = `<img id="main-img" src="${imageSrc}" alt="${product.title}" style="width:100%; border-radius:8px;">`;
+    let galleryHTML = `<img id="main-img" src="${optimizedMain}" alt="${product.title}" 
+                            style="width:100%; border-radius:8px;"
+                            onerror="this.onerror=null; this.src='${originalMain}';">`;
     
-    if (product['additional image link']) {
+    if (originalAdd) {
         galleryHTML += `<div style="display:flex; gap:10px; margin-top:10px;">
-            <img src="${imageSrc}" style="width:70px; height:70px; object-fit:cover; border:1px solid #ddd; cursor:pointer; border-radius:4px" onclick="document.getElementById('main-img').src='${imageSrc}'">
-            <img src="${additionalImage}" style="width:70px; height:70px; object-fit:cover; border:1px solid #ddd; cursor:pointer; border-radius:4px" onclick="document.getElementById('main-img').src='${additionalImage}'">
+            <img src="${optimizedMain}" 
+                 style="width:70px; height:70px; object-fit:cover; border:1px solid #ddd; cursor:pointer; border-radius:4px" 
+                 onclick="document.getElementById('main-img').src='${optimizedMain}'; document.getElementById('main-img').onerror=function(){this.src='${originalMain}'}"
+                 onerror="this.onerror=null; this.src='${originalMain}';">
+                 
+            <img src="${optimizedAdd}" 
+                 style="width:70px; height:70px; object-fit:cover; border:1px solid #ddd; cursor:pointer; border-radius:4px" 
+                 onclick="document.getElementById('main-img').src='${optimizedAdd}'; document.getElementById('main-img').onerror=function(){this.src='${originalAdd}'}"
+                 onerror="this.onerror=null; this.src='${originalAdd}';">
         </div>`;
     }
 
@@ -295,8 +312,14 @@ function addToCart(productId) {
     if (existingItem) {
         existingItem.qty++;
     } else {
-        // تخزين صورة صغيرة للسلة
-        cart.push({ id: product.id, title: product.title, image: optimizeImage(product['image link'], 100), price: getProductPrice(product), qty: 1 });
+        // صورة السلة صغيرة أيضاً
+        cart.push({ 
+            id: product.id, 
+            title: product.title, 
+            image: optimizeImage(product['image link'], 100), 
+            price: getProductPrice(product), 
+            qty: 1 
+        });
     }
     
     saveCart();
@@ -329,7 +352,7 @@ function updateCartUI() {
             totalAmount += item.price * item.qty;
             cartItemsContainer.innerHTML += `
                 <div class="cart-item" style="display:flex; gap:10px; margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:10px">
-                    <img src="${item.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px">
+                    <img src="${item.image}" style="width:60px; height:60px; object-fit:cover; border-radius:4px" onerror="this.onerror=null; this.src='images/icon-192.png';">
                     <div style="flex:1">
                         <h5 style="font-size:13px; margin-bottom:5px">${item.title}</h5>
                         <div style="display:flex; justify-content:space-between">
@@ -381,7 +404,7 @@ function loadCheckoutItems() {
     let total = 0;
     cart.forEach(item => {
         total += item.price * item.qty;
-        container.innerHTML += `<div class="summary-item"><div><img src="${item.image}" alt="${item.title}"></div><div><h4>${item.title}</h4><span>${item.qty} x ${item.price}</span></div><div style="margin-right:auto">${item.qty * item.price}</div></div>`;
+        container.innerHTML += `<div class="summary-item"><div><img src="${item.image}" alt="${item.title}" onerror="this.onerror=null; this.src='images/icon-192.png';"></div><div><h4>${item.title}</h4><span>${item.qty} x ${item.price}</span></div><div style="margin-right:auto">${item.qty * item.price}</div></div>`;
     });
 
     const sub = document.getElementById('sub-total');
