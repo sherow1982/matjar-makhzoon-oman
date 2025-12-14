@@ -13,20 +13,25 @@ const BATCH_SIZE = 24;
 document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
     
-    // تحديد الصفحة الحالية وتشغيل الكود المناسب
+    // تحديد المسار الصحيح لملف المنتجات بناءً على مكان الصفحة
+    // إذا كنا داخل مجلد pages، نعود للخلف خطوة، وإلا نقرأ مباشرة
+    const isInsidePages = window.location.pathname.includes('/pages/');
+    const jsonPath = isInsidePages ? '../products.json' : 'products.json';
+
+    // تشغيل المنطق المناسب للصفحة
     if (document.getElementById('checkout-items')) {
         loadCheckoutItems(); 
     } else if (document.getElementById('app-content')) {
-        fetchProducts();
+        fetchProducts(jsonPath);
     }
 });
 
 // =========================================
 // 3. جلب البيانات والتوجيه
 // =========================================
-async function fetchProducts() {
+async function fetchProducts(path) {
     try {
-        const response = await fetch('products.json');
+        const response = await fetch(path);
         allProducts = await response.json();
         
         const urlParams = new URLSearchParams(window.location.search);
@@ -39,12 +44,15 @@ async function fetchProducts() {
         }
     } catch (error) {
         console.error("Error loading products:", error);
+        // لا نعرض رسالة خطأ في الصفحات القانونية لأنها لا تحتاج المنتجات
         const app = document.getElementById('app-content');
-        if(app) app.innerHTML = '<p class="text-center" style="padding:50px">جاري تحميل المنتجات...</p>';
+        if(app && !window.location.pathname.includes('legal')) {
+             app.innerHTML = '<p class="text-center" style="padding:50px">جاري تحميل المنتجات...</p>';
+        }
     }
 }
 
-// دوال مساعدة للسعر
+// دوال مساعدة
 function getProductPrice(product) {
     return product['sale price'] ? product['sale price'] : product.price;
 }
@@ -61,8 +69,23 @@ function renderPriceHTML(product) {
     }
 }
 
+// === دالة توليد الوصف الاحترافي ===
+function getProductDescription(product) {
+    // 1. إذا كان الوصف موجوداً في الجيسون وليس فارغاً، استخدمه
+    if (product.description && product.description.trim().length > 0) {
+        return product.description;
+    }
+
+    // 2. إذا لم يوجد، قم بتوليد وصف احترافي بناءً على الاسم
+    return `
+        <p>نقدم لك <strong>${product.title}</strong>، الخيار الأمثل لمن يبحث عن التميز والجودة العالية.</p>
+        <p>تم اختيار هذا المنتج بعناية في <strong>مخزون الإمارات</strong> ليوفر لك تجربة استخدام عملية ومريحة. يتميز بخامات عالية الجودة وتصميم عصري يلبي كافة احتياجاتك اليومية.</p>
+        <p>احصل عليه الآن بسعر منافس واستفد من خدمة الشحن السريع والدفع عند الاستلام.</p>
+    `;
+}
+
 // =========================================
-// 4. الصفحة الرئيسية (مع تحميل المزيد)
+// 4. الصفحة الرئيسية
 // =========================================
 function renderHomePage() {
     const app = document.getElementById('app-content');
@@ -85,8 +108,8 @@ function renderHomePage() {
 function loadNextBatch() {
     const container = document.getElementById('products-grid-container');
     const loadMoreBtn = document.getElementById('load-more-btn');
-    
-    // قص المنتجات حسب العدد المطلوب
+    if(!container) return;
+
     const nextProducts = allProducts.slice(currentIndex, currentIndex + BATCH_SIZE);
     
     let htmlBatch = '';
@@ -118,7 +141,6 @@ function loadNextBatch() {
     container.insertAdjacentHTML('beforeend', htmlBatch);
     currentIndex += BATCH_SIZE;
 
-    // إخفاء الزر إذا انتهت المنتجات
     if (currentIndex >= allProducts.length && loadMoreBtn) {
         loadMoreBtn.style.display = 'none';
     }
@@ -138,6 +160,8 @@ function renderSingleProduct(slug) {
     const currentPrice = getProductPrice(product);
     const imageSrc = product['image link'];
     const additionalImage = product['additional image link'];
+    // استدعاء دالة الوصف الجديدة
+    const descriptionHTML = getProductDescription(product);
 
     let galleryHTML = `<img id="main-img" src="${imageSrc}" alt="${product.title}">`;
     if (additionalImage) {
@@ -157,6 +181,11 @@ function renderSingleProduct(slug) {
                 <h1>${product.title}</h1>
                 <div style="margin-bottom:20px">${renderPriceHTML(product)}</div>
                 
+                <!-- قسم الوصف -->
+                <div class="product-description" style="margin-bottom:25px; color:#555; line-height:1.8; font-size:15px;">
+                    ${descriptionHTML}
+                </div>
+
                 <div style="margin-bottom: 25px; background:#f9f9f9; padding:15px; border-radius:5px; font-size:14px; color:#555;">
                     <p><strong>SKU:</strong> ${product.sku}</p>
                     <p><strong>الحالة:</strong> ${product.condition === 'new' ? 'جديد أصلي' : 'مستخدم'}</p>
@@ -172,7 +201,6 @@ function renderSingleProduct(slug) {
                     </button>
                 </div>
 
-                <!-- زر عرض السياسة -->
                 <button class="policy-btn-trigger" onclick="openPolicyModal()">
                     <i class="fas fa-shield-alt"></i> سياسة الشحن والضمان والاسترجاع
                 </button>
@@ -182,19 +210,16 @@ function renderSingleProduct(slug) {
 }
 
 // =========================================
-// 6. التحكم في النافذة المنبثقة (Modal)
+// 6. التحكم في النافذة المنبثقة
 // =========================================
 function openPolicyModal() {
     const modal = document.getElementById('policyModal');
     if(modal) modal.style.display = "block";
 }
-
 function closePolicyModal() {
     const modal = document.getElementById('policyModal');
     if(modal) modal.style.display = "none";
 }
-
-// إغلاق النافذة عند الضغط خارجها
 window.onclick = function(event) {
     const modal = document.getElementById('policyModal');
     if (event.target == modal) {
@@ -203,20 +228,14 @@ window.onclick = function(event) {
 }
 
 // =========================================
-// 7. وظائف السلة والدفع
+// 7. السلة والدفع
 // =========================================
 function addToCart(productId) {
     const product = allProducts.find(p => p.id === productId);
     const existingItem = cart.find(item => item.id === productId);
     if (existingItem) existingItem.qty++;
     else {
-        cart.push({ 
-            id: product.id, 
-            title: product.title, 
-            image: product['image link'], 
-            price: getProductPrice(product), 
-            qty: 1 
-        });
+        cart.push({ id: product.id, title: product.title, image: product['image link'], price: getProductPrice(product), qty: 1 });
     }
     saveCart();
     toggleCart(true);
@@ -238,13 +257,10 @@ function updateCartUI() {
     const cartItemsContainer = document.getElementById('cart-items');
     const cartTotal = document.getElementById('cart-total');
     
-    // تحديث رقم العداد
     if(cartCount) {
-        const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-        cartCount.innerText = totalQty;
+        cartCount.innerText = cart.reduce((sum, item) => sum + item.qty, 0);
     }
     
-    // تحديث قائمة السلة الجانبية
     if(cartItemsContainer && cartTotal) {
         cartItemsContainer.innerHTML = '';
         let totalAmount = 0;
@@ -270,43 +286,36 @@ function toggleCart(forceOpen = false) {
     const sidebar = document.getElementById('cart-sidebar');
     const overlay = document.getElementById('overlay');
     if(!sidebar) return;
-    
-    if (forceOpen) { 
-        sidebar.classList.add('active'); 
-        overlay.classList.add('active'); 
-    } else { 
-        sidebar.classList.toggle('active'); 
-        overlay.classList.toggle('active'); 
-    }
+    if (forceOpen) { sidebar.classList.add('active'); overlay.classList.add('active'); }
+    else { sidebar.classList.toggle('active'); overlay.classList.toggle('active'); }
 }
 
 function checkoutPage() {
     if (cart.length === 0) { alert("السلة فارغة!"); return; }
-    // التوجيه للمجلد الفرعي
-    window.location.href = 'pages/checkout.html';
+    // التعامل مع المسارات سواء كنا في الرئيسية أو في صفحة فرعية
+    if (window.location.pathname.includes('/pages/')) {
+        window.location.href = 'checkout.html';
+    } else {
+        window.location.href = 'pages/checkout.html';
+    }
 }
 
 function loadCheckoutItems() {
     const container = document.getElementById('checkout-items');
     if (!container) return; 
-    
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    if(cart.length === 0) { window.location.href = '../index.html'; return; }
+    // العودة للرئيسية إذا السلة فارغة
+    if(cart.length === 0) { 
+        if(window.location.pathname.includes('/pages/')) window.location.href = '../index.html';
+        else window.location.href = 'index.html';
+        return; 
+    }
     
     container.innerHTML = '';
     let total = 0;
-    
     cart.forEach(item => {
         total += item.price * item.qty;
-        container.innerHTML += `
-            <div class="summary-item">
-                <img src="${item.image}" alt="${item.title}">
-                <div>
-                    <h4>${item.title}</h4>
-                    <span>${item.qty} x ${item.price} درهم</span>
-                </div>
-                <div style="margin-right:auto">${item.qty * item.price}</div>
-            </div>`;
+        container.innerHTML += `<div class="summary-item"><div><img src="${item.image}" alt="${item.title}"></div><div><h4>${item.title}</h4><span>${item.qty} x ${item.price}</span></div><div style="margin-right:auto">${item.qty * item.price}</div></div>`;
     });
     
     const sub = document.getElementById('sub-total');
