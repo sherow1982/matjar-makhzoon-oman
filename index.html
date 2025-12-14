@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>متجر مخزون الإمارات | تسوق بذكاء</title>
     <meta name="description" content="أفضل متجر إلكتروني في الإمارات. دفع عند الاستلام، شحن مجاني وسريع.">
-    <!-- خط كايرو -->
+
+    <!-- 1. تحسين سرعة الاتصال بسيرفرات جوجل -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- 2. تحميل خط كايرو بشكل محسن -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <!-- أيقونات FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- ملف الاستايل -->
+
+    <!-- 3. تحميل أيقونات FontAwesome بدون تعطيل الصفحة -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+
+    <!-- 4. ملف الاستايل الأساسي -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- 5. ملف الجافاسكربت (يعمل في الخلفية لزيادة السرعة) -->
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -87,6 +98,7 @@
             </button>
         </div>
     </div>
+
     <!-- طبقة التعتيم الخلفية -->
     <div class="overlay" id="overlay" onclick="toggleCart()"></div>
 
@@ -136,7 +148,7 @@
                     </ul>
                 </div>
 
-                <!-- العمود الثالث: تواصل معنا (محدث) -->
+                <!-- العمود الثالث: تواصل معنا -->
                 <div class="footer-col">
                     <h4>تواصل معنا</h4>
                     <ul class="contact-list">
@@ -173,7 +185,5 @@
         </div>
     </footer>
 
-    <!-- ملف الجافاسكربت -->
-    <script src="script.js"></script>
 </body>
 </html>
