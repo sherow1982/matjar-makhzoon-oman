@@ -1,0 +1,62 @@
+name: Setup Analytics
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inject-codes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Create JS and Inject HTML
+        run: |
+          # 1. إنشاء ملف analytics.js بالأكواد التي أرسلتها
+          # -----------------------------------------------
+          cat <<EOF > analytics.js
+          (function() {
+              // --- Google Analytics (GA4) ---
+              // G-WSJ062EHKM
+              const gaScript = document.createElement('script');
+              gaScript.async = true;
+              gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-WSJ062EHKM';
+              document.head.appendChild(gaScript);
+
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-WSJ062EHKM');
+
+              // --- Google Tag Manager (Script Part) ---
+              // GTM-NWQ5HX32
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-NWQ5HX32');
+          })();
+          EOF
+
+          # 2. حقن استدعاء السكربت في الـ HEAD لكل الصفحات
+          # -----------------------------------------------
+          # يبحث عن </head> ويستبدلها بسطر السكربت + </head>
+          find . -name "*.html" -print0 | xargs -0 sed -i 's|</head>|<script src="/matager-makhzoon-alemarat/analytics.js" defer></script></head>|g'
+
+          # 3. حقن كود noscript في الـ BODY (مطلوب لـ GTM)
+          # -----------------------------------------------
+          # يبحث عن <body> ويضيف كود iframe بعده مباشرة
+          NOSCRIPT_CODE='<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWQ5HX32" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->'
+          
+          # نستخدم perl هنا للتعامل مع النصوص المعقدة بشكل أفضل من sed
+          find . -name "*.html" -print0 | xargs -0 perl -pi -e "s|<body>|<body>$NOSCRIPT_CODE|g"
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "Analytics Setup Bot"
+          git config --global user.email "bot@github.com"
+          git add .
+          git commit -m "Auto-setup Google Analytics & GTM codes [skip ci]"
+          git push
