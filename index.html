@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>متجر مخزون الإمارات | تسوق بذكاء</title>
-    <meta name="description" content="أفضل متجر إلكتروني في الإمارات. دفع عند الاستلام، شحن سريع.">
-    <!-- خط كايرو -->
+    <meta name="description" content="أفضل متجر إلكتروني في الإمارات. دفع عند الاستلام.">
+    <!-- خطوط وأيقونات -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <!-- أيقونات FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- ملف الاستايل -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- الشريط العلوي -->
+    <!-- الشريط العلوي مع رابط السياسات -->
     <div class="top-bar">
         <div class="container flex-between">
             <div class="contact-info">
@@ -28,7 +26,7 @@
         </div>
     </div>
 
-    <!-- الهيدر الرئيسي -->
+    <!-- الهيدر -->
     <header class="main-header">
         <div class="container flex-between">
             <a href="index.html" class="logo">
@@ -50,10 +48,8 @@
         </div>
     </header>
 
-    <!-- منطقة المحتوى المتغيرة (SPA) -->
-    <main id="app-content" class="container">
-        <!-- يتم تعبئة المحتوى هنا بواسطة script.js -->
-    </main>
+    <!-- المحتوى المتغير -->
+    <main id="app-content" class="container"></main>
 
     <!-- السلة الجانبية -->
     <div class="cart-sidebar" id="cart-sidebar">
@@ -74,7 +70,7 @@
     </div>
     <div class="overlay" id="overlay" onclick="toggleCart()"></div>
 
-    <!-- نافذة سياسة الشحن والاسترجاع (Modal) -->
+    <!-- نافذة السياسات (Modal) -->
     <div id="policyModal" class="modal-window">
         <div class="modal-content">
             <span class="close-modal" onclick="closePolicyModal()">&times;</span>
@@ -84,18 +80,18 @@
             <div class="modal-body">
                 <div class="policy-item">
                     <h4><i class="fas fa-truck"></i> الشحن والتوصيل</h4>
-                    <p>يتم التوصيل لجميع مناطق الإمارات خلال 1 إلى 3 أيام عمل. رسوم الشحن تحسب عند إتمام الطلب.</p>
+                    <p>يتم التوصيل لجميع مناطق الإمارات خلال 1 إلى 3 أيام عمل.</p>
                 </div>
                 <div class="policy-item">
                     <h4><i class="fas fa-undo"></i> سياسة الاسترجاع</h4>
-                    <p>يحق للعميل استرجاع المنتج خلال 14 يوم من تاريخ الاستلام بشرط أن يكون بحالته الأصلية.</p>
+                    <p>يحق للعميل استرجاع المنتج خلال 14 يوم من تاريخ الاستلام.</p>
                 </div>
                 <div class="policy-item alert-item">
                     <h4><i class="fas fa-exclamation-circle"></i> تنويه هام</h4>
-                    <p>لا يتم استرجاع منتجات التجميل والعطور المفتوحة لأسباب صحية.</p>
+                    <p>لا يتم استرجاع منتجات التجميل والعطور المفتوحة.</p>
                 </div>
+                <a href="pages/legal.html" class="btn-full-policy">قراءة التفاصيل كاملة</a>
             </div>
-            <a href="pages/legal.html" class="btn-full-policy">قراءة السياسة كاملة</a>
         </div>
     </div>
 
@@ -105,7 +101,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>مخزون الإمارات</h4>
-                    <p>وجهتك الأولى للتسوق الإلكتروني في الإمارات. منتجات أصلية 100%.</p>
+                    <p>وجهتك الأولى للتسوق الإلكتروني في الإمارات.</p>
                 </div>
                 <div class="footer-col">
                     <h4>روابط هامة</h4>
