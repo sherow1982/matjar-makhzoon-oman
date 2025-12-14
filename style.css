@@ -105,3 +105,29 @@ img { max-width: 100%; }
 .summary-item img { width: 60px; height: 60px; border-radius: 5px; object-fit: cover; border: 1px solid #eee; }
 .divider { height: 1px; background: #eee; margin: 20px 0; }
 .total-row { font-size: 20px; font-weight: bold; 
+
+/* زر تحميل المزيد */
+.load-more-container {
+    text-align: center;
+    margin: 40px 0;
+    clear: both;
+}
+
+.btn-load-more {
+    background: transparent;
+    color: var(--uae-black);
+    border: 2px solid var(--uae-black);
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: var(--font-main);
+}
+
+.btn-load-more:hover {
+    background: var(--uae-black);
+    color: #fff;
+    transform: translateY(-3px);
+}
