@@ -1,7 +1,6 @@
 // =========================================
 // 1. إعدادات المتجر
 // =========================================
-
 const WHATSAPP_NUMBER = "201110760081";
 let allProducts = [];
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -11,11 +10,9 @@ const BATCH_SIZE = 24;
 // =========================================
 // 2. التحميل الأولي
 // =========================================
-
 document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
 
-    // تحديد المسار الصحيح للملفات بناءً على مكان الصفحة الحالية
     const isInsidePages = window.location.pathname.includes('/pages/');
     const jsonPath = isInsidePages ? '../products.json' : 'products.json';
 
@@ -27,9 +24,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // =========================================
+// دالة تحسين الصور السحرية (Image CDN)
+// =========================================
+function optimizeImage(url, width = 400) {
+    if (!url) return 'images/icon-192.png'; // صورة احتياطية
+    // إذا كانت الصورة محلية (تبدأ بـ images/) اتركها كما هي
+    if (url.startsWith('images/') || url.startsWith('./') || url.startsWith('../')) {
+        return url;
+    }
+    // إذا كانت رابط خارجي، استخدم خدمة الضغط السريع
+    // w: العرض المطلوب، q: الجودة (75 ممتازة)، output: الصيغة webp
+    return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${width}&q=75&output=webp`;
+}
+
+// =========================================
 // 3. جلب البيانات والتوجيه
 // =========================================
-
 async function fetchProducts(path) {
     try {
         const response = await fetch(path);
@@ -53,9 +63,7 @@ async function fetchProducts(path) {
 }
 
 // دوال مساعدة
-
 function getProductPrice(product) {
-    // التأكد من أن سعر الخصم رقم صحيح وأقل من السعر الأصلي
     return (product['sale price'] && product['sale price'] < product.price) ? product['sale price'] : product.price;
 }
 
@@ -83,7 +91,8 @@ function getProductDescriptionHTML(product) {
 // دالة توليد بطاقة المنتج (للاستخدام المتكرر)
 function generateProductCardHTML(product) {
     const slug = encodeURIComponent(product.title.replace(/\s+/g, '-'));
-    const imageSrc = product['image link'];
+    // استخدام المحسن مع عرض 400 بكسل (مناسب للشبكة)
+    const imageSrc = optimizeImage(product['image link'], 400);
 
     let discountBadge = '';
     if (product['sale price'] && product['sale price'] < product.price) {
@@ -94,7 +103,9 @@ function generateProductCardHTML(product) {
         <div class="product-card fade-in">
             ${discountBadge}
             <div class="product-img-wrapper">
-                <a href="?product=${slug}"><img src="${imageSrc}" alt="${product.title}" loading="lazy"></a>
+                <a href="?product=${slug}">
+                    <img src="${imageSrc}" alt="${product.title}" loading="lazy" width="400" height="400">
+                </a>
             </div>
             <div class="product-info">
                 <a href="?product=${slug}" class="product-title">${product.title}</a>
@@ -108,7 +119,6 @@ function generateProductCardHTML(product) {
 // =========================================
 // 4. SEO & Schema
 // =========================================
-
 function updateSEOAndSchema(product) {
     const currentPrice = getProductPrice(product);
     const plainDesc = product.description ? product.description.replace(/<[^>]*>?/gm, '') : `تسوق ${product.title} أونلاين في الإمارات.`;
@@ -117,22 +127,9 @@ function updateSEOAndSchema(product) {
     
     document.title = `${product.title} | مخزون الإمارات`;
 
-    // Meta Description
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) { metaDesc = document.createElement('meta'); metaDesc.name = "description"; document.head.appendChild(metaDesc); }
     metaDesc.content = plainDesc;
-
-    // Open Graph
-    const setMetaTag = (property, content) => {
-        let tag = document.querySelector(`meta[property="${property}"]`);
-        if (!tag) { tag = document.createElement('meta'); tag.setAttribute('property', property); document.head.appendChild(tag); }
-        tag.content = content;
-    };
-
-    setMetaTag('og:title', product.title);
-    setMetaTag('og:description', plainDesc);
-    setMetaTag('og:image', imageUrl);
-    setMetaTag('og:url', productUrl);
 
     // Schema JSON-LD
     const oldScript = document.getElementById('dynamic-schema');
@@ -166,7 +163,6 @@ function updateSEOAndSchema(product) {
 // =========================================
 // 5. الصفحة الرئيسية
 // =========================================
-
 function renderHomePage() {
     document.title = "متجر مخزون الإمارات | تسوق بذكاء";
     const app = document.getElementById('app-content');
@@ -205,7 +201,6 @@ function loadNextBatch() {
 // =========================================
 // 6. صفحة المنتج الفردي
 // =========================================
-
 function renderSingleProduct(slug) {
     const productName = decodeURIComponent(slug).replace(/-/g, ' ');
     const product = allProducts.find(p => p.title === productName) || allProducts.find(p => p.title.includes(productName));
@@ -219,19 +214,20 @@ function renderSingleProduct(slug) {
 
     updateSEOAndSchema(product);
     const currentPrice = getProductPrice(product);
-    const imageSrc = product['image link'];
-    const additionalImage = product['additional image link'];
+    // استخدام المحسن مع عرض أكبر (800) لصفحة المنتج
+    const imageSrc = optimizeImage(product['image link'], 800);
+    const additionalImage = product['additional image link'] ? optimizeImage(product['additional image link'], 800) : null;
     const descriptionHTML = getProductDescriptionHTML(product);
 
-    let galleryHTML = `<img id="main-img" src="${imageSrc}" alt="${product.title}">`;
-    if (additionalImage) {
+    let galleryHTML = `<img id="main-img" src="${imageSrc}" alt="${product.title}" style="width:100%; border-radius:8px;">`;
+    
+    if (product['additional image link']) {
         galleryHTML += `<div style="display:flex; gap:10px; margin-top:10px;">
             <img src="${imageSrc}" style="width:70px; height:70px; object-fit:cover; border:1px solid #ddd; cursor:pointer; border-radius:4px" onclick="document.getElementById('main-img').src='${imageSrc}'">
             <img src="${additionalImage}" style="width:70px; height:70px; object-fit:cover; border:1px solid #ddd; cursor:pointer; border-radius:4px" onclick="document.getElementById('main-img').src='${additionalImage}'">
         </div>`;
     }
 
-    // هنا يتم بناء صفحة المنتج
     app.innerHTML = `
         <div class="breadcrumb">
             <a href="index.html">الرئيسية</a> / <span>${product.title}</span>
@@ -263,15 +259,12 @@ function renderSingleProduct(slug) {
                 </button>
             </div>
         </div>
-        
-        <!-- قسم منتجات ذات صلة -->
         <div class="related-products-section" style="margin-top:60px; border-top:1px solid #eee; padding-top:40px;">
             <h3 style="margin-bottom:20px; font-size:22px; color:var(--uae-black)">قد يعجبك أيضاً</h3>
             <div class="products-grid" id="related-products-container"></div>
         </div>
     `;
 
-    // استدعاء دالة عرض المنتجات ذات الصلة
     renderRelatedProducts(product);
 }
 
@@ -280,10 +273,7 @@ function renderRelatedProducts(currentProduct) {
     const container = document.getElementById('related-products-container');
     if (!container) return;
 
-    // فلترة المنتجات لاستبعاد المنتج الحالي
     const otherProducts = allProducts.filter(p => p.id !== currentProduct.id);
-    
-    // خلط عشوائي بسيط واختيار 4 منتجات
     const shuffled = otherProducts.sort(() => 0.5 - Math.random());
     const selected = shuffled.slice(0, 4);
 
@@ -294,7 +284,6 @@ function renderRelatedProducts(currentProduct) {
 // =========================================
 // 7. التحكم في النوافذ والسلة والبحث
 // =========================================
-
 function openPolicyModal() { const modal = document.getElementById('policyModal'); if (modal) modal.style.display = "block"; }
 function closePolicyModal() { const modal = document.getElementById('policyModal'); if (modal) modal.style.display = "none"; }
 window.onclick = function(event) { const modal = document.getElementById('policyModal'); if (event.target == modal) modal.style.display = "none"; }
@@ -306,7 +295,8 @@ function addToCart(productId) {
     if (existingItem) {
         existingItem.qty++;
     } else {
-        cart.push({ id: product.id, title: product.title, image: product['image link'], price: getProductPrice(product), qty: 1 });
+        // تخزين صورة صغيرة للسلة
+        cart.push({ id: product.id, title: product.title, image: optimizeImage(product['image link'], 100), price: getProductPrice(product), qty: 1 });
     }
     
     saveCart();
