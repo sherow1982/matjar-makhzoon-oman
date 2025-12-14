@@ -33,7 +33,7 @@
     <meta name="twitter:description" content="أفضل العروض في الإمارات مع خدمة الدفع عند الاستلام." />
     <meta name="twitter:image" content="https://sherow1982.github.io/matager-makhzoon-alemarat/images/og-default.jpg" />
 
-    <!-- تحسينات السرعة -->
+    <!-- تحسينات السرعة القصوى (Prefetch) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
@@ -67,29 +67,6 @@
       }
     }
     </script>
-
-    <style>
-        .uae-map-section { background: #fff; padding: 60px 0; border-top: 5px solid #f4f4f4; text-align: center; }
-        .uae-map-section h2 { margin-bottom: 30px; color: var(--uae-black); font-size: 24px; }
-        .uae-map-section h2 span { color: var(--uae-red); }
-        .emirates-list { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
-        .emirate-badge { background: #f9f9f9; padding: 8px 15px; border-radius: 20px; border: 1px solid #eee; font-size: 14px; color: #555; display: flex; align-items: center; gap: 5px; }
-        .emirate-badge i { color: var(--uae-green); }
-        /* تصميم الإطار الجديد للخريطة الخفيفة */
-        .map-frame { 
-            width: 100%; 
-            height: 350px; 
-            border-radius: 15px; 
-            overflow: hidden; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
-            border: 2px solid #eee;
-            background: #f0f0f0 url('images/map-placeholder.jpg') center/cover no-repeat; /* تأكد من وجود صورة بهذا الاسم */
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        .map-frame:hover { transform: scale(1.01); }
-    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -187,33 +164,6 @@
             </div>
         </div>
     </div>
-
-    <!-- قسم تغطية الإمارات (الجديد والمميز - بدون خريطة ثقيلة) -->
-    <section class="uae-map-section">
-        <div class="container">
-            <h2>نصلك أينما كنت في <span>الإمارات العربية المتحدة</span></h2>
-            
-            <div class="emirates-list">
-                <span class="emirate-badge"><i class="fas fa-check-circle"></i> أبوظبي</span>
-                <span class="emirate-badge"><i class="fas fa-check-circle"></i> دبي</span>
-                <span class="emirate-badge"><i class="fas fa-check-circle"></i> الشارقة</span>
-                <span class="emirate-badge"><i class="fas fa-check-circle"></i> عجمان</span>
-                <span class="emirate-badge"><i class="fas fa-check-circle"></i> أم القيوين</span>
-                <span class="emirate-badge"><i class="fas fa-check-circle"></i> رأس الخيمة</span>
-                <span class="emirate-badge"><i class="fas fa-check-circle"></i> الفجيرة</span>
-            </div>
-
-            <!-- إطار الخريطة الذكي (صورة عند الضغط عليها تفتح الخريطة) -->
-            <!-- استبدل الرابط أدناه برابط موقع متجرك الفعلي على خرائط جوجل -->
-            <div class="map-frame" onclick="window.open('https://maps.app.goo.gl/d2Y8bQZ9QZ9QZ9QZ9', '_blank')">
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.1); display: flex; justify-content: center; align-items: center;">
-                    <button style="background: var(--uae-red); color: white; border: none; padding: 12px 25px; border-radius: 30px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 10px; font-size: 16px;">
-                        <i class="fas fa-map-marker-alt"></i> اضغط هنا لفتح موقعنا على الخريطة
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- الفوتر -->
     <footer>
