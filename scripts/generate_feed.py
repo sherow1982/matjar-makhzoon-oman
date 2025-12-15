@@ -28,6 +28,48 @@ def load_products():
     with open(PRODUCTS_FILE, 'r', encoding='utf-8') as f:
         return json.load(f)
 
+def get_google_category(title, description):
+    text = (title + " " + description).lower()
+    
+    # 1. Apparel & Accessories > Jewelry > Watches (201)
+    if any(k in text for k in ["watch", "ساعة", "ساعه", "rolex", "رولكس", "omega", "اوميغا", "datejust", "daytona"]):
+        return "201"
+        
+    # 2. Toys & Games (1239)
+    if any(k in text for k in ["game", "لعبة", "لعبه", "أطفال", "اطفال", "toy", "child", "kids"]):
+        return "1239"
+
+    # 3. Health & Beauty > Personal Care > Cosmetics > Perfume & Cologne (486)
+    if any(k in text for k in ["perfume", "fragrance", "عطر", "parfum"]):
+        return "486"
+
+    # 4. Apparel & Accessories > Handbags, Wallets & Cases > Handbags (3032)
+    if any(k in text for k in ["bag", "حقيبة", "شنطة", "handbag", "purse", "wallet", "محفظة"]):
+        return "3032"
+
+    # 5. Home & Garden > Household Appliances > Climate Control Appliances > Space Heaters (6980)
+    if any(k in text for k in ["heater", "دفاي", "مدفأ", "سخان", "heating"]):
+        return "6980"
+        
+    # 6. Home & Garden > Kitchen & Dining > Kitchen Appliances (Various)
+    if any(k in text for k in ["blender", "خلاط", "mixer", "juicer", "عصار", "kitchen", "مطبخ", "cooking", "طبخ", "grill", "شواي", "kettle", "غلاي", "coffee", "قهوة", "pan", "مقلاة", "pot", "قدر", "knife", "سكين", "food"]):
+        return "646" # General Kitchen & Dining
+
+    # 7. Health & Beauty > Personal Care > Massage & Relaxation (3763)
+    if any(k in text for k in ["massage", "مساج", "تدليك", "massager"]):
+        return "3763"
+        
+    # 8. Vehicles > Vehicle Parts & Accessories (5613)
+    if any(k in text for k in ["car", "سيارة", "vehicle", "auto", "tire", "مضخة", "pump"]):
+        return "5613"
+
+    # 9. Apparel & Accessories > Clothing (1604)
+    if any(k in text for k in ["shirt", "pants", "dress", "clothing", "ملابس", "شورت", "short"]):
+        return "1604"
+
+    # Default: Home & Garden (536) - Safe fallback for general household items
+    return "536"
+
 def is_safe_product(product):
     title = product.get('title', '').lower()
     description = product.get('description', '').lower()
@@ -86,10 +128,14 @@ def generate_xml(products):
         condition = product.get('condition', 'new')
         availability = product.get('availability', 'in_stock')
         
+        # Categorization
+        google_category = get_google_category(product.get('title', ''), product.get('description', ''))
+        
         xml += '<item>\n'
         xml += f'<g:id>{pid}</g:id>\n'
         xml += f'<g:title>{title}</g:title>\n'
         xml += f'<g:description>{title} - Great quality product from {STORE_NAME}</g:description>\n'
+        xml += f'<g:google_product_category>{google_category}</g:google_product_category>\n' # Added Category
         xml += f'<g:link>{link}</g:link>\n'
         xml += f'<g:image_link>{image_link}</g:image_link>\n'
         if add_image_link:
