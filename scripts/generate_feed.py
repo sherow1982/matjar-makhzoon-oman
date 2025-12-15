@@ -13,7 +13,6 @@ STORE_DESCRIPTION = 'Best deals in UAE for watches and accessories.'
 
 # List of Luxury Brands to Exclude (Case Insensitive)
 # These are the brands that trigger "Counterfeit Goods" violations if prices are too low.
-# List of Luxury Brands to Exclude (Case Insensitive)
 FORBIDDEN_KEYWORDS = [
     "rolex", "bvlgari", "bulgari", "gucci", "louis vuitton", "lv", "chanel", 
     "dior", "cartier", "omega", "breitling", "patek", "audemars", "hublot", 
@@ -70,7 +69,18 @@ def generate_xml(products):
         # Simple slug generation
         slug = product.get('title').replace(' ', '-').replace('/', '-')
         link = f"{BASE_URL}/?product={escape(slug)}"
-        image_link = escape(product.get('image link'))
+        
+        # Image Strategy: Use additional image as main if available (often cleaner)
+        primary_img = product.get('additional image link')
+        secondary_img = product.get('image link')
+        
+        if primary_img:
+            image_link = escape(primary_img)
+            add_image_link = escape(secondary_img)
+        else:
+            image_link = escape(secondary_img)
+            add_image_link = None
+            
         price = f"{product.get('price')} AED"
         sale_price = f"{product.get('sale price')} AED" if product.get('sale price') else ""
         condition = product.get('condition', 'new')
@@ -82,6 +92,8 @@ def generate_xml(products):
         xml += f'<g:description>{title} - Great quality product from {STORE_NAME}</g:description>\n'
         xml += f'<g:link>{link}</g:link>\n'
         xml += f'<g:image_link>{image_link}</g:image_link>\n'
+        if add_image_link:
+            xml += f'<g:additional_image_link>{add_image_link}</g:additional_image_link>\n'
         xml += f'<g:condition>{condition}</g:condition>\n'
         xml += f'<g:availability>{availability}</g:availability>\n'
         xml += f'<g:price>{price}</g:price>\n'
