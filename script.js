@@ -209,6 +209,7 @@ function renderSingleProduct(slug) {
             .replace(/[أإآ]/g, 'ا')
             .replace(/ة/g, 'ه')
             .replace(/ى/g, 'ي')
+            .replace(/\s+/g, ' ') // توحيد المسافات
             .trim();
     };
 
