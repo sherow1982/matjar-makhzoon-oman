@@ -160,25 +160,123 @@ function updateSEOAndSchema(product) {
 }
 
 // =========================================
-// 5. الصفحة الرئيسية
+// 5. الصفحة الرئيسية (محدث مع الفئات)
 // =========================================
+
+// --- تعريف الفئات ---
+const CATEGORIES = [
+    { id: 'all', name: 'الكل', icon: 'fas fa-th-large' },
+    { id: '201', name: 'ساعات', icon: 'fas fa-clock', keywords: ["watch", "ساعة", "ساعه", "rolex", "رولكس", "omega", "اوميغا"] },
+    { id: '486', name: 'عطور', icon: 'fas fa-spray-can', keywords: ["perfume", "fragrance", "عطر", "parfum"] },
+    { id: '3032', name: 'حقائب', icon: 'fas fa-shopping-bag', keywords: ["bag", "حقيبة", "شنطة", "handbag", "purse"] },
+    { id: '5613', name: 'سيارات', icon: 'fas fa-car', keywords: ["car", "سيارة", "vehicle", "auto", "tire"] },
+    { id: '6980', name: 'أجهزة منزلية', icon: 'fas fa-home', keywords: ["heater", "دفاي", "مدفأ", "سخان", "blender", "خلاط", "kitchen", "kettle"] },
+    { id: '1239', name: 'ألعاب', icon: 'fas fa-gamepad', keywords: ["game", "لعبة", "لعبه", "أطفال", "toy"] },
+    { id: '3763', name: 'عناية ومساج', icon: 'fas fa-spa', keywords: ["massage", "مساج", "تدليك"] },
+    { id: '1604', name: 'ملابس', icon: 'fas fa-tshirt', keywords: ["shirt", "clothing", "ملابس", "شورت"] }
+];
+
+let activeCategory = 'all';
+
+function assignCategory(product) {
+    const text = (product.title + " " + (product.description || "")).toLowerCase();
+    for (let i = 1; i < CATEGORIES.length; i++) {
+        const cat = CATEGORIES[i];
+        if (cat.keywords && cat.keywords.some(k => text.includes(k))) {
+            return cat.id;
+        }
+    }
+    return 'other';
+}
+
+function renderCategories() {
+    const container = document.createElement('div');
+    container.className = 'container';
+    container.innerHTML = `
+        <div class="category-container">
+            <div class="category-scroll">
+                ${CATEGORIES.map(cat => `
+                    <div class="category-pill ${activeCategory === cat.id ? 'active' : ''}" 
+                         onclick="filterByCategory('${cat.id}')">
+                        <i class="${cat.icon}"></i> ${cat.name}
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+    return container;
+}
+
+function filterByCategory(catId) {
+    activeCategory = catId;
+    renderHomePage(); // Redraws everything with new filter
+}
+
 function renderHomePage() {
     document.title = "متجر مخزون الإمارات | تسوق بذكاء";
     const app = document.getElementById('app-content');
     if (!app) return;
 
+    // Filter Logic
+    let displayProducts = allProducts;
+    if (activeCategory !== 'all') {
+        displayProducts = allProducts.filter(p => assignCategory(p) === activeCategory);
+    }
+    
+    // Reset Index for new list
     currentIndex = 0;
+    
+    // Build UI
     app.innerHTML = `
-        <div class="hero-banner" style="background: linear-gradient(135deg, var(--uae-green), #000); color: white; padding: 40px 20px; border-radius: 8px; margin-top: 20px; text-align: center; margin-bottom:40px;">
+        <div class="hero-banner" style="background: linear-gradient(135deg, var(--uae-green), #000); color: white; padding: 40px 20px; border-radius: 8px; margin-top: 20px; text-align: center; margin-bottom:20px;">
             <h1 style="margin-bottom:10px">عروض مخزون الإمارات</h1>
             <p>أفضل المنتجات - شحن سريع - دفع عند الاستلام</p>
         </div>
-        <div class="products-grid" id="products-grid-container"></div>
-        <div class="load-more-container" style="text-align: center; margin: 40px 0;">
-            <button id="load-more-btn" class="btn-load-more" onclick="loadNextBatch()">عرض المزيد من المنتجات</button>
-        </div>
     `;
-    loadNextBatch();
+    
+    // Add Categories
+    app.appendChild(renderCategories());
+    
+    // Add Grid Container
+    const gridDiv = document.createElement('div');
+    gridDiv.className = 'products-grid';
+    gridDiv.id = 'products-grid-container';
+    app.appendChild(gridDiv);
+    
+    // Add "Load More" or "No Products" msg
+    const loadMoreDiv = document.createElement('div');
+    loadMoreDiv.className = 'load-more-container';
+    loadMoreDiv.style.textAlign = 'center';
+    loadMoreDiv.style.margin = '40px 0';
+    loadMoreDiv.innerHTML = displayProducts.length > 0 
+        ? `<button id="load-more-btn" class="btn-load-more" onclick="loadNextBatchFiltered()">عرض المزيد من المنتجات</button>`
+        : `<p style="color:#777; font-size:18px;">لا توجد منتجات في هذا القسم حالياً</p>`;
+    app.appendChild(loadMoreDiv);
+
+    // Initial Batch Load (Passing filtered list globally or handling via closure? 
+    // Easier: Store filtered list in a global var or just utilize a helper)
+    // To keep it simple without major refactor:
+    window.currentFilteredProducts = displayProducts; // Store for batch loading
+    loadNextBatchFiltered();
+}
+
+function loadNextBatchFiltered() {
+    const container = document.getElementById('products-grid-container');
+    const btn = document.getElementById('load-more-btn');
+    if (!container) return;
+
+    const batch = window.currentFilteredProducts.slice(currentIndex, currentIndex + ITEMS_PER_PAGE);
+    if (batch.length === 0 && currentIndex === 0) return; // Empty handled in render
+
+    batch.forEach(product => {
+        container.innerHTML += createProductCard(product);
+    });
+
+    currentIndex += ITEMS_PER_PAGE;
+
+    if (currentIndex >= window.currentFilteredProducts.length && btn) {
+        btn.style.display = 'none';
+    }
 }
 
 function loadNextBatch() {

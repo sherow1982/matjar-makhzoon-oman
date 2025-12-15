@@ -263,3 +263,87 @@ footer { background: #1a1a1a; color: #fff; padding: 60px 0 20px; margin-top: 60p
 .testimonial-text { font-style: italic; color: #555; margin-bottom: 20px; font-size: 14px; line-height: 1.6; }
 .client-name { font-weight: bold; color: var(--uae-black); font-size: 16px; }
 .client-city { display: block; font-size: 12px; color: #999; margin-top: 5px; }
+
+/* =========================================
+   7. Premium Category Filter Bar
+   ========================================= */
+.category-container {
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    background: #fff;
+    position: sticky;
+    top: 60px; /* Below navbar */
+    z-index: 98; /* Below mobile nav overlay */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    border-radius: 0 0 15px 15px;
+}
+
+.category-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    padding: 5px 5px 15px 5px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+}
+
+.category-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.category-pill {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-weight: 600;
+    color: #495057;
+    font-size: 15px;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.category-pill i {
+    font-size: 18px;
+    color: #adb5bd;
+    transition: all 0.3s;
+}
+
+/* Hover Effect */
+.category-pill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+    background: #fff;
+    border-color: var(--uae-gold);
+}
+
+.category-pill:hover i {
+    color: var(--uae-gold);
+}
+
+/* Active State 'Wow' Factor */
+.category-pill.active {
+    background: linear-gradient(135deg, var(--uae-green), #006030);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 8px 20px rgba(0, 115, 47, 0.25);
+    transform: scale(1.05);
+}
+
+.category-pill.active i {
+    color: #fff; /* White icon on active */
+}
+
+/* Ripple Animation Setup */
+.category-pill {
+    position: relative;
+    overflow: hidden;
+}
+
