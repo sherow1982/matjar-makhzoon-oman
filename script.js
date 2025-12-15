@@ -5,7 +5,7 @@ const WHATSAPP_NUMBER = "201110760081";
 let allProducts = [];
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let currentIndex = 0;
-const BATCH_SIZE = 24;
+const ITEMS_PER_PAGE = 24;
 
 // =========================================
 // 2. التحميل الأولي
