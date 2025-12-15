@@ -2,6 +2,7 @@ import json
 import re
 from datetime import datetime
 import os
+from xml.sax.saxutils import escape
 
 # Configuration
 PRODUCTS_FILE = 'products.json'
@@ -53,11 +54,11 @@ def generate_xml(products):
         
         # Prepare data
         pid = product.get('id')
-        title = product.get('title')
+        title = escape(product.get('title'))
         # Simple slug generation
-        slug = title.replace(' ', '-').replace('/', '-')
-        link = f"{BASE_URL}/?product={slug}"
-        image_link = product.get('image link')
+        slug = product.get('title').replace(' ', '-').replace('/', '-')
+        link = f"{BASE_URL}/?product={escape(slug)}"
+        image_link = escape(product.get('image link'))
         price = f"{product.get('price')} AED"
         sale_price = f"{product.get('sale price')} AED" if product.get('sale price') else ""
         condition = product.get('condition', 'new')
