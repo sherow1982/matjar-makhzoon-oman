@@ -69,11 +69,11 @@ function renderPriceHTML(product) {
     const currentPrice = getProductPrice(product);
     if (product['sale price'] && product['sale price'] < product.price) {
         return `<div class="price-box">
-                    <span class="text-through">${product.price} AED</span> 
-                    <span class="price-sale">${currentPrice} AED</span>
+                    <span class="text-through">${product.price} ر.ع.</span> 
+                    <span class="price-sale">${currentPrice} ر.ع.</span>
                 </div>`;
     } else {
-        return `<span class="price-normal">${currentPrice} AED</span>`;
+        return `<span class="price-normal">${currentPrice} ر.ع.</span>`;
     }
 }
 
@@ -81,7 +81,7 @@ function getProductDescriptionHTML(product) {
     if (product.description && product.description.trim().length > 0) return product.description;
     return `
         <p>نقدم لك <strong>${product.title}</strong>، الخيار الأمثل لمن يبحث عن التميز والجودة العالية.</p>
-        <p>تم اختيار هذا المنتج بعناية في <strong>مخزون الإمارات</strong> ليوفر لك تجربة استخدام عملية ومريحة.</p>
+        <p>تم اختيار هذا المنتج بعناية في <strong>مخزون عمان</strong> ليوفر لك تجربة استخدام عملية ومريحة.</p>
         <p>احصل عليه الآن بسعر منافس واستفد من خدمة الشحن السريع والدفع عند الاستلام.</p>
     `;
 }
@@ -121,11 +121,11 @@ function generateProductCardHTML(product) {
 // =========================================
 function updateSEOAndSchema(product) {
     const currentPrice = getProductPrice(product);
-    const plainDesc = product.description ? product.description.replace(/<[^>]*>?/gm, '') : `تسوق ${product.title} أونلاين في الإمارات.`;
+    const plainDesc = product.description ? product.description.replace(/<[^>]*>?/gm, '') : `تسوق ${product.title} أونلاين في سلطنة عمان.`;
     const imageUrl = product['image link'];
     const productUrl = window.location.href;
     
-    document.title = `${product.title} | مخزون الإمارات`;
+    document.title = `${product.title} | مخزون عمان`;
 
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) { metaDesc = document.createElement('meta'); metaDesc.name = "description"; document.head.appendChild(metaDesc); }
@@ -141,11 +141,11 @@ function updateSEOAndSchema(product) {
         "image": [imageUrl],
         "description": plainDesc,
         "sku": product.sku || product.id,
-        "brand": { "@type": "Brand", "name": "مخزون الإمارات" },
+        "brand": { "@type": "Brand", "name": "مخزون عمان" },
         "offers": {
             "@type": "Offer",
             "url": productUrl,
-            "priceCurrency": "AED",
+            "priceCurrency": "OMR",
             "price": currentPrice,
             "availability": product.availability === 'in_stock' ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
             "itemCondition": "https://schema.org/NewCondition"
@@ -213,7 +213,7 @@ function filterByCategory(catId) {
 }
 
 function renderHomePage() {
-    document.title = "متجر مخزون الإمارات | تسوق بذكاء";
+    document.title = "متجر مخزون عمان | تسوق بذكاء";
     const app = document.getElementById('app-content');
     if (!app) return;
 
@@ -229,7 +229,7 @@ function renderHomePage() {
     // Build UI
     app.innerHTML = `
         <div class="hero-banner" style="background: linear-gradient(135deg, var(--uae-green), #000); color: white; padding: 40px 20px; border-radius: 8px; margin-top: 20px; text-align: center; margin-bottom:20px;">
-            <h1 style="margin-bottom:10px">عروض مخزون الإمارات</h1>
+            <h1 style="margin-bottom:10px">عروض مخزون عمان</h1>
             <p>أفضل المنتجات - شحن سريع - دفع عند الاستلام</p>
         </div>
     `;
@@ -456,7 +456,7 @@ function updateCartUI() {
                     </div>
                 </div>`;
         });
-        cartTotal.innerText = totalAmount.toFixed(2) + ' درهم';
+        cartTotal.innerText = totalAmount.toFixed(2) + ' ر.ع.';
     }
 }
 
@@ -499,12 +499,12 @@ function loadCheckoutItems() {
     });
     const sub = document.getElementById('sub-total');
     const final = document.getElementById('final-total');
-    if (sub) sub.innerText = total + ' درهم';
-    if (final) final.innerText = total + ' درهم';
+    if (sub) sub.innerText = total + ' ر.ع.';
+    if (final) final.innerText = total + ' ر.ع.';
 }
 
 function directOrder(title, price) {
-    let msg = `*استفسار عن منتج*%0a🛍️ ${title}%0a💰 ${price} درهم%0aهل متوفر؟`;
+    let msg = `*استفسار عن منتج*%0a🛍️ ${title}%0a💰 ${price} ر.ع.%0aهل متوفر؟`;
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
 }
 
@@ -561,7 +561,7 @@ function showSuggestions(input) {
                 <img src="${p['image link']}" onerror="this.src='images/icon-192.png'">
                 <div class="suggestion-info">
                     <h5>${p.title}</h5>
-                    <span>${getProductPrice(p)} AED</span>
+                    <span>${getProductPrice(p)} ر.ع.</span>
                 </div>
             </div>`;
         }).join('');
