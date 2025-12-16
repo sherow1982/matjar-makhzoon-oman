@@ -16,7 +16,7 @@ jobs:
         run: |
           # 1. إنشاء ملف analytics.js بالأكواد التي أرسلتها
           # -----------------------------------------------
-          cat <<EOF > analytics.js
+          cat <<'EOF' > analytics.js
           (function() {
               // --- Google tag (gtag.js) ---
               // G-NRB6MJMBYS
@@ -43,11 +43,11 @@ jobs:
           # 2. حقن استدعاء السكربت في الـ HEAD لكل الصفحات
           # -----------------------------------------------
           # يبحث عن </head> ويستبدلها بسطر السكربت + </head>
-          find . -name "*.html" -print0 | xargs -0 sed -i 's|</head>|<script src="/matjar-makhzoon-oman/analytics.js" defer></script></head>|g'
+          find . -name "*.html" -print0 | xargs -0 sed -i 's|</body>|<script src="/matjar-makhzoon-oman/analytics.js" defer></script></body>|g'
 
           # 3. حقن كود noscript في الـ BODY (مطلوب لـ GTM)
           # -----------------------------------------------
-          # يبحث عن <body> ويضيف كود iframe بعده مباشرة
+          # يبحث عن <body> ويضيف كود iframe بعده مباشرة. نستخدم perl للتعامل مع النصوص المعقدة.
           NOSCRIPT_CODE='<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T67556JM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->'
           
           # نستخدم perl هنا للتعامل مع النصوص المعقدة بشكل أفضل من sed
