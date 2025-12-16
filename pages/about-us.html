@@ -47,9 +47,9 @@
             </a>
             <div class="search-box">
                 <div class="search-wrapper">
-                    <input type="text" id="search-input" placeholder="ابحث عن منتج..." onkeypress="if(event.key === 'Enter') window.location.href='../index.html?search=' + this.value" autocomplete="off">
+                    <input type="text" id="search-input" placeholder="ابحث عن منتج..." onkeypress="if(event.key === 'Enter') window.location.href='../index.html?search=' + this.value.trim()" autocomplete="off">
                 </div>
-                <button onclick="window.location.href='../index.html?search=' + document.getElementById('search-input').value"><i class="fas fa-search"></i></button>
+                <button onclick="window.location.href='../index.html?search=' + document.getElementById('search-input').value.trim()"><i class="fas fa-search"></i></button>
             </div>
             <div class="header-icons">
                 <div class="cart-icon" onclick="toggleCart()">
@@ -69,8 +69,8 @@
         </div>
         <div class="mobile-menu-content">
             <div class="mobile-search-box">
-                <input type="text" id="mobile-search-input" placeholder="ابحث عن منتج..." onkeypress="if(event.key === 'Enter') window.location.href='../index.html?search=' + this.value">
-                <button onclick="window.location.href='../index.html?search=' + document.getElementById('mobile-search-input').value"><i class="fas fa-search"></i></button>
+                <input type="text" id="mobile-search-input" placeholder="ابحث عن منتج..." onkeypress="if(event.key === 'Enter') window.location.href='../index.html?search=' + this.value.trim()">
+                <button onclick="window.location.href='../index.html?search=' + document.getElementById('mobile-search-input').value.trim()"><i class="fas fa-search"></i></button>
             </div>
             <nav class="mobile-nav-links">
                 <a href="../index.html" class="mobile-nav-link"><i class="fas fa-home"></i> الرئيسية</a>

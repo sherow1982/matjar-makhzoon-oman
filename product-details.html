@@ -57,9 +57,9 @@
             
             <div class="search-box">
                 <div class="search-wrapper">
-                    <input type="text" id="search-input" placeholder="ابحث عن منتج..." onkeypress="handleEnter(event)" autocomplete="off">
+                    <input type="text" id="search-input" placeholder="ابحث عن منتج..." onkeypress="if(event.key === 'Enter') window.location.href='index.html?search=' + this.value" autocomplete="off">
                 </div>
-                <button onclick="window.location.href='index.html?search=' + document.getElementById('search-input').value"><i class="fas fa-search"></i></button>
+                <button onclick="window.location.href='index.html?search=' + document.getElementById('search-input').value.trim()"><i class="fas fa-search"></i></button>
             </div>
 
             <div class="header-icons">
@@ -81,7 +81,7 @@
         <div class="mobile-menu-content">
             <div class="mobile-search-box">
                 <input type="text" id="mobile-search-input" placeholder="ابحث عن منتج..." onkeypress="if(event.key === 'Enter') window.location.href='index.html?search=' + this.value">
-                <button onclick="window.location.href='index.html?search=' + document.getElementById('mobile-search-input').value"><i class="fas fa-search"></i></button>
+                <button onclick="window.location.href='index.html?search=' + document.getElementById('mobile-search-input').value.trim()"><i class="fas fa-search"></i></button>
             </div>
             <nav class="mobile-nav-links">
                 <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i> الرئيسية</a>
@@ -112,12 +112,27 @@
                 <div id="countdown-timer-container"></div>
                 <div id="product-description" style="white-space: pre-wrap;"></div>
                 <div class="product-actions">
-                    <button id="add-to-cart-details" class="add-to-cart-btn">
-                        <i class="fas fa-cart-plus"></i> أضف للسلة
-                    </button>
+                    <div class="add-to-cart-group">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+                            <input type="number" id="quantity-input" value="1" min="1" readonly>
+                            <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
+                        </div>
+                        <button id="add-to-cart-details" class="add-to-cart-btn">
+                            <i class="fas fa-cart-plus"></i> أضف للسلة
+                        </button>
+                    </div>
                     <button id="whatsapp-button" class="btn-whatsapp-large">
                         <i class="fab fa-whatsapp"></i> اطلب عبر واتساب
                     </button>
+                </div>
+                <div class="product-policies">
+                    <a href="pages/shipping.html" class="policy-link">
+                        <i class="fas fa-shipping-fast"></i> سياسة الشحن والتوصيل
+                    </a>
+                    <a href="pages/returns.html" class="policy-link">
+                        <i class="fas fa-shield-alt"></i> ضمان الاسترجاع الذهبي
+                    </a>
                 </div>
             </div>
         </div>
@@ -166,15 +181,6 @@
     <div class="overlay" id="overlay" onclick="toggleCart()"></div>
     <div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
 
-    <!-- الفوتر -->
-    <footer>
-        <div class="container">
-            <div class="copyright">
-                <p>جميع الحقوق محفوظة © 2025 متجر مخزون عمان</p>
-            </div>
-        </div>
-    </footer>
-
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -203,7 +209,7 @@
 
                     document.getElementById('product-title').innerText = product.title;
                     document.getElementById('product-breadcrumb-name').innerText = product.title;
-                    document.getElementById('product-description').innerText = product.description.replace(/\\t/g, '    ').replace(/\\n/g, '\n');
+                    document.getElementById('product-description').innerHTML = formatDescription(product.description);
 
                     const priceContainer = document.getElementById('product-price-container');
                     const salePrice = parseFloat(product.sale_price);
@@ -234,7 +240,8 @@
 
                     // ربط زر الإضافة للسلة
                     const addToCartBtn = document.getElementById('add-to-cart-details');
-                    addToCartBtn.onclick = (event) => addToCart(product.id, event);
+                    const quantityInput = document.getElementById('quantity-input');
+                    addToCartBtn.onclick = (event) => addToCart(product.id, parseInt(quantityInput.value), event);
 
                     // ربط زر الواتساب
                     const whatsappButton = document.getElementById('whatsapp-button');
@@ -294,6 +301,23 @@
             }
         }
     });
+
+    function formatDescription(description) {
+        if (!description) return '';
+        // استبدال علامات التبويب والأسطر الجديدة بعلامات HTML
+        let formatted = description
+            .replace(/\\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;')
+            .replace(/\\n/g, '<br>');
+
+        // تحويل القوائم النقطية (التي تبدأ بـ - أو • أو *) إلى قائمة HTML
+        formatted = formatted.replace(/(-|•|\*)\s*(.*?)(<br>|$)/g, '<li>$2</li>');
+        
+        // إذا تم العثور على عناصر قائمة، قم بلفها في <ul>
+        if (formatted.includes('<li>')) {
+            formatted = '<ul>' + formatted.replace(/<br>/g, '') + '</ul>';
+        }
+        return formatted;
+    }
 
     function renderGallery(product) {
         const mainImage = document.getElementById('main-product-image');
@@ -390,7 +414,51 @@
     // أو يمكن نسخها هنا لضمان عملها بشكل مستقل.
     // للسهولة، سنعتمد على أن loader.js يجعلها متاحة.
 
+    // دالة لتغيير الكمية
+    window.changeQuantity = function(amount) {
+        const quantityInput = document.getElementById('quantity-input');
+        let currentValue = parseInt(quantityInput.value);
+        currentValue += amount;
+        if (currentValue < 1) {
+            currentValue = 1;
+        }
+        quantityInput.value = currentValue;
+    }
     </script>
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>مخزون عمان</h4>
+                    <p>وجهتك الأولى للتسوق الإلكتروني في سلطنة عمان. نوفر لك منتجات أصلية بجودة عالية وأسعار تنافسية مع خدمة دفع عند الاستلام.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>معلومات قانونية</h4>
+                    <ul class="footer-links">
+                        <li><a href="pages/shipping.html">سياسة الشحن المجاني</a></li>
+                        <li><a href="pages/returns.html">سياسة الاسترجاع والاستبدال</a></li>
+                        <li><a href="pages/terms.html">الشروط والأحكام</a></li>
+                        <li><a href="pages/privacy.html">سياسة الخصوصية</a></li>
+                        <li><a href="pages/about-us.html">من نحن</a></li>
+                        <li><a href="pages/our-story.html">نبذة عنا</a></li>
+                        <li><a href="pages/contact.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>تواصل معنا</h4>
+                    <ul class="contact-list">
+                        <li><a href="https://wa.me/201110760081" target="_blank"><i class="fab fa-whatsapp whatsapp-icon"></i> 201110760081+</a></li>
+                        <li><a href="mailto:info@arabsad.com"><i class="fas fa-envelope"></i> info@arabsad.com</a></li>
+                        <li class="location-item"><i class="fas fa-map-marker-alt"></i> مسقط، سلطنة عمان</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة © 2025 متجر مخزون عمان</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
