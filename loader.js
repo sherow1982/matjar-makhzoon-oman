@@ -4,12 +4,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileSearchInput = document.getElementById('mobile-search-input');
 
     let allProducts = [];
+    let activeCategory = 'all';
+
+    // --- 0. تعريف الفئات ---
+    const CATEGORIES = [
+        { id: 'all', name: 'الكل', icon: 'fas fa-th-large' },
+        { id: 'hair_care', name: 'العناية بالشعر', icon: 'fas fa-air-freshener', keywords: ["شعر", "استشوار", "مكواة", "فرشاة", "remington", "babyliss", "kemei", "vgr", "geepas", "rozina", "mac styler"] },
+        { id: 'kitchen', name: 'المطبخ', icon: 'fas fa-utensils', keywords: ["مطبخ", "قطاعة", "خلاط", "مفرمة", "مقشرة", "موقد", "غلاية", "توابل", "شواية"] },
+        { id: 'watches', name: 'ساعات', icon: 'fas fa-clock', keywords: ["watch", "ساعة", "ساعه", "rolex", "رولكس", "seiko"] },
+        { id: 'care', name: 'عناية وجمال', icon: 'fas fa-spa', keywords: ["بشرة", "عناية", "كريم", "سيروم", "كحل", "روج", "بودرة", "ايلاينر", "كونسيلر", "عطر", "مجموعة"] },
+        { id: 'electronics', name: 'أجهزة وأدوات', icon: 'fas fa-bolt', keywords: ["كهربائية", "جهاز", "مكنسة", "منفاخ", "شاحن", "كاميرا", "تلميع", "مسدس", "روبوت"] }
+    ];
 
     // --- 1. جلب المنتجات وعرضها ---
     async function fetchProducts() {
         try {
+            // تحديد المسار الصحيح لملف المنتجات بناءً على الصفحة الحالية
+            const pathPrefix = window.location.pathname.includes('/pages/') ? '../' : '';
             // جلب المنتجات من ملف JSON
-            const response = await fetch('products.json');
+            const response = await fetch(`${pathPrefix}products.json`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -17,34 +30,75 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // تخزين المنتجات في window لتكون متاحة في كل مكان (مثل السلة)
             window.allProducts = allProducts;
+            assignCategoryToProducts();
 
             // عرض المنتجات فقط إذا كنا في الصفحة الرئيسية
             if (appContent) {
-                displayProducts(allProducts);
+                renderHomePage(allProducts);
             }
         } catch (error) {
             console.error("Could not fetch products:", error);
-            appContent.innerHTML = `<p class="error-message">عفواً، حدث خطأ أثناء تحميل المنتجات. يرجى المحاولة مرة أخرى لاحقاً.</p>`;
+            if (appContent) {
+                appContent.innerHTML = `<p class="error-message">عفواً، حدث خطأ أثناء تحميل المنتجات. يرجى المحاولة مرة أخرى لاحقاً.</p>`;
+            }
         }
     }
 
-    // --- دالة لعرض المنتجات ---
-    function displayProducts(products, container = appContent) {
-        if (!products.length) {
-            appContent.innerHTML = `<p class="info-message">لا توجد منتجات تطابق بحثك.</p>`;
-            return;
-        }
+    // --- دوال الفئات ---
+    function assignCategoryToProducts() {
+        allProducts.forEach(product => {
+            const text = (product.title + " " + product.description).toLowerCase();
+            for (let i = 1; i < CATEGORIES.length; i++) {
+                const cat = CATEGORIES[i];
+                if (cat.keywords.some(k => text.includes(k.toLowerCase()))) {
+                    product.category = cat.id;
+                    return;
+                }
+            }
+            product.category = 'other'; // فئة افتراضية
+        });
+    }
 
-        const productsHTML = `
-            <div class="products-grid-header">
-                <h1 class="products-main-title">تسوق أحدث المنتجات</h1>
-                <p>اكتشف تشكيلتنا الواسعة من المنتجات المختارة بعناية</p>
-            </div>
-            <div class="products-grid">
-                ${products.map(product => createProductCard(product)).join('')}
+    function renderCategories() {
+        return `
+            <div class="category-container">
+                <div class="category-scroll">
+                    ${CATEGORIES.map(cat => `
+                        <div class="category-pill ${activeCategory === cat.id ? 'active' : ''}" 
+                             onclick="filterByCategory('${cat.id}')">
+                            <i class="${cat.icon}"></i> ${cat.name}
+                        </div>
+                    `).join('')}
+                </div>
             </div>
         `;
-        container.innerHTML = productsHTML;
+    }
+
+    window.filterByCategory = (catId) => {
+        activeCategory = catId;
+        renderHomePage(allProducts);
+    };
+
+    // --- دالة عرض الصفحة الرئيسية ---
+    function renderHomePage(products) {
+        const filteredProducts = activeCategory === 'all'
+            ? products
+            : products.filter(p => p.category === activeCategory);
+
+        appContent.innerHTML = renderCategories() + displayProducts(filteredProducts, `تسوق أحدث المنتجات في قسم "${CATEGORIES.find(c => c.id === activeCategory).name}"`);
+    }
+
+    // --- دالة عرض المنتجات ---
+    function displayProducts(products, title = "تسوق أحدث المنتجات") {
+        const headerHTML = `
+            <div class="products-grid-header">
+                <h1 class="products-main-title">${title}</h1>
+                ${products.length > 0 ? `<p>اكتشف تشكيلتنا الواسعة من المنتجات المختارة بعناية</p>` : `<p class="info-message">لا توجد منتجات تطابق بحثك.</p>`}
+            </div>`;
+
+        const productsHTML = `<div class="products-grid">${products.map(product => createProductCard(product)).join('')}</div>`;
+        
+        return headerHTML + productsHTML;
     }
 
     // --- 2. إنشاء كرت المنتج (Product Card) ---
@@ -56,10 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (salePrice < originalPrice) {
             discountPercentage = Math.round(((originalPrice - salePrice) / originalPrice) * 100);
         }
+        const pathPrefix = window.location.pathname.includes('/pages/') ? '../' : '';
+        const imageUrl = product['image link'].startsWith('http') ? product['image link'] : `${pathPrefix}${product['image link']}`;
 
         return `
             <div class="product-card" data-id="${product.id}">
-                <a href="product-details.html?id=${product.id}" class="product-link">
+                <a href="${pathPrefix}product-details.html?id=${product.id}" class="product-link">
                     <div class="product-image-container">
                         <img 
                             src="${product['image link']}" 
@@ -88,14 +144,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 3. دوال البحث ---
     function handleSearch(query) {
         if (!query) {
-            displayProducts(allProducts);
+            renderHomePage(allProducts);
             return;
         }
         const lowerCaseQuery = query.toLowerCase();
         const filteredProducts = allProducts.filter(product =>
             product.title.toLowerCase().includes(lowerCaseQuery) ||
             product.description.toLowerCase().includes(lowerCaseQuery) ||
-            product.brand.toLowerCase().includes(lowerCaseQuery)
+            (product.brand && product.brand.toLowerCase().includes(lowerCaseQuery))
         );
         displayProducts(filteredProducts);
     }
@@ -183,16 +239,18 @@ async function updateCartUI() {
             for (const cartItem of cart) {
                 const product = window.allProducts.find(p => p.id === cartItem.id);
                 if (product) {
-                    const itemTotal = product.sale_price * cartItem.quantity;
+                    const pathPrefix = window.location.pathname.includes('/pages/') ? '../' : '';
+                    const imageUrl = product['image link'].startsWith('http') ? product['image link'] : `${pathPrefix}${product['image link']}`;
+                    const itemTotal = parseFloat(product.sale_price) * cartItem.quantity;
                     total += itemTotal;
                     itemsHTML += `
                         <div class="cart-item">
-                            <img src="${product['image link']}" alt="${product.title}" class="cart-item-img">
+                            <img src="${imageUrl}" alt="${product.title}" class="cart-item-img">
                             <div class="cart-item-details">
                                 <h4 class="cart-item-title">${product.title}</h4>
                                 <div class="cart-item-price">
                                     <span>${cartItem.quantity} x </span>
-                                    <span class="omani-red">${product.sale_price.toFixed(2)} ر.ع.</span>
+                                    <span class="omani-red">${parseFloat(product.sale_price).toFixed(2)} ر.ع.</span>
                                 </div>
                             </div>
                             <div class="cart-item-actions">
