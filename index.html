@@ -94,6 +94,11 @@
     <!-- الهيدر الرئيسي -->
     <header class="main-header">
         <div class="container flex-between header-content-wrap">
+            <!-- زر هامبرجر (يظهر على الموبايل فقط) -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="فتح القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+
             <a href="index.html" class="logo">
                 <span class="omani-red">مخزون</span> <span class="omani-green">عمان</span>
             </a>
@@ -116,9 +121,52 @@
         </div>
     </header>
 
+    <!-- القائمة الجانبية للموبايل -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <h3><i class="fas fa-list"></i> القائمة</h3>
+            <span class="close-mobile-menu" onclick="toggleMobileMenu()">&times;</span>
+        </div>
+        <div class="mobile-menu-content">
+            <div class="mobile-search-box">
+                <input type="text" id="mobile-search-input" placeholder="ابحث عن منتج..." onkeypress="handleMobileSearch(event)">
+                <button onclick="searchFromMobile()"><i class="fas fa-search"></i></button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link">
+                    <i class="fas fa-home"></i> الرئيسية
+                </a>
+                <a href="pages/shipping.html" class="mobile-nav-link">
+                    <i class="fas fa-shipping-fast"></i> سياسة الشحن
+                </a>
+                <a href="pages/returns.html" class="mobile-nav-link">
+                    <i class="fas fa-undo"></i> الاسترجاع
+                </a>
+                <a href="pages/terms.html" class="mobile-nav-link">
+                    <i class="fas fa-file-contract"></i> الشروط والأحكام
+                </a>
+                <a href="pages/privacy.html" class="mobile-nav-link">
+                    <i class="fas fa-shield-alt"></i> سياسة الخصوصية
+                </a>
+                <a href="pages/contact.html" class="mobile-nav-link">
+                    <i class="fas fa-envelope"></i> تواصل معنا
+                </a>
+            </nav>
+            <div class="mobile-contact-info">
+                <h4>تواصل معنا</h4>
+                <a href="https://wa.me/201110760081" target="_blank" class="mobile-contact-link">
+                    <i class="fab fa-whatsapp"></i> 201110760081+
+                </a>
+                <a href="mailto:info@arabsad.com" class="mobile-contact-link">
+                    <i class="fas fa-envelope"></i> info@arabsad.com
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- بانر احترافي متجاوب -->
     <section class="hero-banner">
-        <img src="images/og-default.jpg" alt="بانر متجر مخزون عمان">
+        <img src="images/og-default.jpg" alt="بانر متجر مخزون عمان" loading="lazy">
     </section>
 
     <!-- المحتوى المتغير -->
@@ -144,6 +192,7 @@
     </div>
 
     <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
 
     <!-- نافذة السياسات -->
     <div id="policyModal" class="modal-window">
