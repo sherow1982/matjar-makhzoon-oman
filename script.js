@@ -503,7 +503,7 @@ function updateCartUI() {
                     <div style="flex:1">
                         <h5 style="font-size:13px; margin-bottom:5px">${item.title}</h5>
                         <div style="display:flex; justify-content:space-between">
-                            <span style="color:var(--uae-green); font-weight:bold">${item.price} x ${item.qty}</span>
+                            <span style="color:var(--omani-green); font-weight:bold">${item.price} x ${item.qty}</span>
                             <span style="color:#c00; cursor:pointer" onclick="removeFromCart(${item.id})"><i class="fas fa-trash"></i></span>
                         </div>
                     </div>
@@ -641,7 +641,7 @@ function setupMobileSearch() {
         const btn = document.createElement('div');
         btn.id = 'mobile-search-btn';
         btn.innerHTML = '<i class="fas fa-search"></i>';
-        btn.style.cssText = "position:fixed; bottom:20px; left:20px; background:var(--uae-green); color:white; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(0,0,0,0.3); z-index:999; cursor:pointer;";
+        btn.style.cssText = "position:fixed; bottom:20px; left:20px; background:var(--omani-green); color:white; width:50px; height:50px; border-radius:50%; display: flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(0,0,0,0.3); z-index:999; cursor:pointer;";
         
         // إخفاؤه على الشاشات الكبيرة
         const style = document.createElement('style');
@@ -658,7 +658,7 @@ function setupMobileSearch() {
             <div style="display:flex; justify-content:flex-end;"><span style="font-size:30px; cursor:pointer;" onclick="document.getElementById('mobile-search-modal').style.display='none'">&times;</span></div>
             <h3 style="text-align:center; margin-top:20%; color:#333">بحث عن منتج</h3>
             <input type="text" id="mobile-search-input" placeholder="اكتب اسم المنتج..." style="padding:15px; border:2px solid #ddd; border-radius:8px; font-size:16px; margin-top:20px;">
-            <button onclick="searchProducts(); document.getElementById('mobile-search-modal').style.display='none'" style="margin-top:15px; padding:12px; background:var(--uae-black); color:white; border:none; border-radius:8px; font-size:16px;">بحث</button>
+            <button onclick="searchProducts(); document.getElementById('mobile-search-modal').style.display='none'" style="margin-top:15px; padding:12px; background:var(--omani-black); color:white; border:none; border-radius:8px; font-size:16px;">بحث</button>
         `;
         document.body.appendChild(modal);
 
