@@ -51,8 +51,8 @@
             <div class="single-details">
                 <h1 id="product-title"></h1>
                 <div id="product-meta" class="product-meta-tags"></div>
-                <div id="product-price"></div>
-                <div id="product-description"></div>
+                <div id="product-price-container"></div>
+                <div id="product-description" style="white-space: pre-wrap;"></div>
                 <button id="whatsapp-button" class="btn-whatsapp-large">
                     <i class="fab fa-whatsapp"></i> اطلب الآن عبر واتساب
                 </button>
@@ -75,12 +75,22 @@
                 const product = products.find(p => p.id === productId);
                 if (product) {
                     // ملء بيانات الصفحة
+                    const cleanDescription = product.description.replace(/\\n|\\t/g, ' ').replace(/\s+/g, ' ').trim();
+                    const metaDescription = cleanDescription.substring(0, 155) + (cleanDescription.length > 155 ? '...' : '');
+
                     document.title = product.title + " | مخزون عمان";
-                    document.querySelector('meta[name="description"]').setAttribute("content", product.description.substring(0, 160));
+                    document.querySelector('meta[name="description"]').setAttribute("content", metaDescription);
                     document.getElementById('product-image').src = product['image link'];
                     document.getElementById('product-image').alt = product.title;
                     document.getElementById('product-title').innerText = product.title;
-                    document.getElementById('product-description').innerText = product.description;
+                    document.getElementById('product-description').innerText = product.description.replace(/\\t/g, '    ').replace(/\\n/g, '\n');
+
+                    const priceContainer = document.getElementById('product-price-container');
+                    if (product.price > product.sale_price) {
+                        priceContainer.innerHTML = `<span class="price-sale">${product.sale_price.toFixed(2)} ر.ع.</span> <span class="text-through">${product.price.toFixed(2)} ر.ع.</span>`;
+                    } else {
+                        priceContainer.innerHTML = `<span class="price-normal">${product.sale_price.toFixed(2)} ر.ع.</span>`;
+                    }
                     // ... املأ باقي العناصر
 
                     // *** هذا هو الجزء الأهم: إنشاء وإضافة سكيما المنتج ***
@@ -101,6 +111,10 @@
                             "url": window.location.href,
                             "priceCurrency": "OMR",
                             "price": product.sale_price,
+                            ...(product.price > product.sale_price && {
+                                "priceValidUntil": new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0], // Sale valid for 1 year
+                                "mainPrice": product.price 
+                            }),
                             "itemCondition": "https://schema.org/NewCondition",
                             "availability": "https://schema.org/InStock"
                         }

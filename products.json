@@ -9,7 +9,8 @@
         "availability": "in_stock",
         "sku": 3874,
         "price": 27.08,
-        "sale_price": 20.22
+        "sale_price": 20.22,
+        "brand": "مخزون عمان"
     },
     {
         "id": 2,
@@ -138,7 +139,8 @@
         "availability": "in_stock",
         "sku": 4240,
         "price": 20.88,
-        "sale_price": 16.09
+        "sale_price": 16.09,
+        "brand": "مخزون عمان"
     },
     {
         "id": 12,
@@ -150,7 +152,8 @@
         "availability": "in_stock",
         "sku": 4254,
         "price": 23.3,
-        "sale_price": 17.7
+        "sale_price": 17.7,
+        "brand": "مخزون عمان"
     },
     {
         "id": 13,
@@ -266,7 +269,8 @@
         "availability": "in_stock",
         "sku": 3870,
         "price": 15.95,
-        "sale_price": 12.8
+        "sale_price": 12.8,
+        "brand": "مخزون عمان"
     },
     {
         "id": 22,
@@ -278,7 +282,8 @@
         "availability": "in_stock",
         "sku": 3871,
         "price": 14.9,
-        "sale_price": 12.1
+        "sale_price": 12.1,
+        "brand": "مخزون عمان"
     },
     {
         "id": 23,
@@ -316,7 +321,8 @@
         "availability": "in_stock",
         "sku": 3848,
         "price": 19.1,
-        "sale_price": 14.9
+        "sale_price": 14.9,
+        "brand": "مخزون عمان"
     },
     {
         "id": 26,
@@ -328,7 +334,8 @@
         "availability": "in_stock",
         "sku": 3850,
         "price": 19.73,
-        "sale_price": 15.32
+        "sale_price": 15.32,
+        "brand": "مخزون عمان"
     },
     {
         "id": 27,
@@ -379,7 +386,8 @@
         "availability": "in_stock",
         "sku": 3854,
         "price": 18.68,
-        "sale_price": 14.62
+        "sale_price": 14.62,
+        "brand": "Rose Berry"
     },
     {
         "id": 31,
@@ -430,7 +438,8 @@
         "availability": "in_stock",
         "sku": 3858,
         "price": 21.2,
-        "sale_price": 16.3
+        "sale_price": 16.3,
+        "brand": "مخزون عمان"
     },
     {
         "id": 35,
@@ -468,7 +477,8 @@
         "availability": "in_stock",
         "sku": 3628,
         "price": 18.68,
-        "sale_price": 14.62
+        "sale_price": 14.62,
+        "brand": "مخزون عمان"
     },
     {
         "id": 38,
@@ -480,7 +490,8 @@
         "availability": "in_stock",
         "sku": 3638,
         "price": 16.16,
-        "sale_price": 12.94
+        "sale_price": 12.94,
+        "brand": "مخزون عمان"
     },
     {
         "id": 39,
@@ -492,7 +503,8 @@
         "availability": "in_stock",
         "sku": 3639,
         "price": 17.0,
-        "sale_price": 13.5
+        "sale_price": 13.5,
+        "brand": "مخزون عمان"
     },
     {
         "id": 40,
@@ -504,7 +516,8 @@
         "availability": "in_stock",
         "sku": 3738,
         "price": 14.9,
-        "sale_price": 12.1
+        "sale_price": 12.1,
+        "brand": "مخزون عمان"
     },
     {
         "id": 41,
@@ -568,7 +581,8 @@
         "availability": "in_stock",
         "sku": 3835,
         "price": 26.45,
-        "sale_price": 19.8
+        "sale_price": 19.8,
+        "brand": "مخزون عمان"
     },
     {
         "id": 46,
@@ -619,7 +633,8 @@
         "availability": "in_stock",
         "sku": 3540,
         "price": 13.85,
-        "sale_price": 11.4
+        "sale_price": 11.4,
+        "brand": "مخزون عمان"
     },
     {
         "id": 50,
@@ -631,7 +646,8 @@
         "availability": "in_stock",
         "sku": 3603,
         "price": 12.27,
-        "sale_price": 10.35
+        "sale_price": 10.35,
+        "brand": "Vigplus"
     },
     {
         "id": 51,
@@ -643,7 +659,8 @@
         "availability": "in_stock",
         "sku": 3604,
         "price": 10.17,
-        "sale_price": 8.95
+        "sale_price": 8.95,
+        "brand": "مخزون عمان"
     },
     {
         "id": 52,
@@ -655,7 +672,8 @@
         "availability": "in_stock",
         "sku": 3609,
         "price": 28.55,
-        "sale_price": 21.2
+        "sale_price": 21.2,
+        "brand": "مخزون عمان"
     },
     {
         "id": 53,
@@ -667,7 +685,8 @@
         "availability": "in_stock",
         "sku": 3611,
         "price": 18.05,
-        "sale_price": 14.2
+        "sale_price": 14.2,
+        "brand": "مخزون عمان"
     },
     {
         "id": 54,
@@ -679,7 +698,8 @@
         "availability": "in_stock",
         "sku": 3612,
         "price": 19.73,
-        "sale_price": 15.32
+        "sale_price": 15.32,
+        "brand": "مخزون عمان"
     },
     {
         "id": 55,
@@ -691,7 +711,8 @@
         "availability": "in_stock",
         "sku": 3613,
         "price": 19.1,
-        "sale_price": 14.9
+        "sale_price": 14.9,
+        "brand": "مخزون عمان"
     },
     {
         "id": 56,
@@ -703,7 +724,8 @@
         "availability": "in_stock",
         "sku": 3614,
         "price": 22.25,
-        "sale_price": 17.0
+        "sale_price": 17.0,
+        "brand": "مخزون عمان"
     },
     {
         "id": 57,
@@ -715,7 +737,8 @@
         "availability": "in_stock",
         "sku": 3615,
         "price": 22.25,
-        "sale_price": 17.0
+        "sale_price": 17.0,
+        "brand": "مخزون عمان"
     },
     {
         "id": 58,
@@ -727,7 +750,8 @@
         "availability": "in_stock",
         "sku": 3616,
         "price": 21.2,
-        "sale_price": 16.3
+        "sale_price": 16.3,
+        "brand": "مخزون عمان"
     },
     {
         "id": 59,
@@ -739,7 +763,8 @@
         "availability": "in_stock",
         "sku": 3617,
         "price": 32.33,
-        "sale_price": 23.72
+        "sale_price": 23.72,
+        "brand": "مخزون عمان"
     },
     {
         "id": 60,
@@ -751,7 +776,8 @@
         "availability": "in_stock",
         "sku": 3627,
         "price": 15.95,
-        "sale_price": 12.8
+        "sale_price": 12.8,
+        "brand": "مخزون عمان"
     },
     {
         "id": 61,
@@ -802,7 +828,8 @@
         "availability": "in_stock",
         "sku": 3013,
         "price": 29.6,
-        "sale_price": 21.9
+        "sale_price": 21.9,
+        "brand": "مخزون عمان"
     },
     {
         "id": 65,
@@ -827,7 +854,8 @@
         "availability": "in_stock",
         "sku": 3048,
         "price": 21.2,
-        "sale_price": 16.3
+        "sale_price": 16.3,
+        "brand": "مخزون عمان"
     },
     {
         "id": 67,
@@ -839,7 +867,8 @@
         "availability": "in_stock",
         "sku": 3079,
         "price": 19.1,
-        "sale_price": 14.9
+        "sale_price": 14.9,
+        "brand": "مخزون عمان"
     },
     {
         "id": 68,
@@ -851,7 +880,8 @@
         "availability": "in_stock",
         "sku": 3085,
         "price": 21.2,
-        "sale_price": 16.3
+        "sale_price": 16.3,
+        "brand": "مخزون عمان"
     },
     {
         "id": 69,
@@ -863,7 +893,8 @@
         "availability": "in_stock",
         "sku": 3134,
         "price": 20.57,
-        "sale_price": 15.88
+        "sale_price": 15.88,
+        "brand": "مخزون عمان"
     },
     {
         "id": 70,
@@ -888,7 +919,8 @@
         "availability": "in_stock",
         "sku": 3484,
         "price": 27.5,
-        "sale_price": 20.5
+        "sale_price": 20.5,
+        "brand": "مخزون عمان"
     },
     {
         "id": 72,
@@ -900,7 +932,8 @@
         "availability": "in_stock",
         "sku": 3538,
         "price": 18.05,
-        "sale_price": 14.2
+        "sale_price": 14.2,
+        "brand": "Vigplus"
     },
     {
         "id": 73,
@@ -1068,7 +1101,8 @@
         "availability": "in_stock",
         "sku": 2853,
         "price": 18.37,
-        "sale_price": 14.41
+        "sale_price": 14.41,
+        "brand": "مخزون عمان"
     },
     {
         "id": 86,
@@ -1223,7 +1257,8 @@
         "availability": "in_stock",
         "sku": 2838,
         "price": 25.4,
-        "sale_price": 19.1
+        "sale_price": 19.1,
+        "brand": "مخزون عمان"
     },
     {
         "id": 98,
@@ -1235,7 +1270,8 @@
         "availability": "in_stock",
         "sku": 2839,
         "price": 17.38,
-        "sale_price": 13.75
+        "sale_price": 13.75,
+        "brand": "مخزون عمان"
     },
     {
         "id": 99,
@@ -1247,7 +1283,8 @@
         "availability": "in_stock",
         "sku": 2840,
         "price": 19.52,
-        "sale_price": 15.18
+        "sale_price": 15.18,
+        "brand": "مخزون عمان"
     },
     {
         "id": 100,
@@ -1259,7 +1296,8 @@
         "availability": "in_stock",
         "sku": 2841,
         "price": 22.67,
-        "sale_price": 17.28
+        "sale_price": 17.28,
+        "brand": "مخزون عمان"
     },
     {
         "id": 101,
@@ -1271,7 +1309,8 @@
         "availability": "in_stock",
         "sku": 2843,
         "price": 20.15,
-        "sale_price": 15.6
+        "sale_price": 15.6,
+        "brand": "مخزون عمان"
     },
     {
         "id": 102,
@@ -1283,7 +1322,8 @@
         "availability": "in_stock",
         "sku": 2844,
         "price": 16.79,
-        "sale_price": 13.36
+        "sale_price": 13.36,
+        "brand": "مخزون عمان"
     },
     {
         "id": 103,
@@ -1295,7 +1335,8 @@
         "availability": "in_stock",
         "sku": 2845,
         "price": 31.51,
-        "sale_price": 23.17
+        "sale_price": 23.17,
+        "brand": "مخزون عمان"
     },
     {
         "id": 104,
@@ -1307,7 +1348,8 @@
         "availability": "in_stock",
         "sku": 2846,
         "price": 29.2,
-        "sale_price": 21.63
+        "sale_price": 21.63,
+        "brand": "مخزون عمان"
     },
     {
         "id": 105,
@@ -1319,7 +1361,8 @@
         "availability": "in_stock",
         "sku": 2849,
         "price": 19.1,
-        "sale_price": 14.9
+        "sale_price": 14.9,
+        "brand": "مخزون عمان"
     },
     {
         "id": 106,
@@ -1331,7 +1374,8 @@
         "availability": "in_stock",
         "sku": 2850,
         "price": 24.66,
-        "sale_price": 18.61
+        "sale_price": 18.61,
+        "brand": "مخزون عمان"
     },
     {
         "id": 107,
@@ -1343,7 +1387,8 @@
         "availability": "in_stock",
         "sku": 2851,
         "price": 18.37,
-        "sale_price": 14.41
+        "sale_price": 14.41,
+        "brand": "مخزون عمان"
     },
     {
         "id": 108,
@@ -1355,7 +1400,8 @@
         "availability": "in_stock",
         "sku": 2852,
         "price": 31.7,
-        "sale_price": 23.3
+        "sale_price": 23.3,
+        "brand": "مخزون عمان"
     },
     {
         "id": 109,
@@ -1367,7 +1413,8 @@
         "availability": "in_stock",
         "sku": 2824,
         "price": 25.4,
-        "sale_price": 19.1
+        "sale_price": 19.1,
+        "brand": "مخزون عمان"
     },
     {
         "id": 110,
@@ -1379,7 +1426,8 @@
         "availability": "in_stock",
         "sku": 2825,
         "price": 18.05,
-        "sale_price": 14.2
+        "sale_price": 14.2,
+        "brand": "Kemei"
     },
     {
         "id": 111,
@@ -1391,7 +1439,8 @@
         "availability": "in_stock",
         "sku": 2826,
         "price": 19.1,
-        "sale_price": 14.9
+        "sale_price": 14.9,
+        "brand": "Karcher"
     },
     {
         "id": 112,
@@ -1403,7 +1452,8 @@
         "availability": "in_stock",
         "sku": 2827,
         "price": 13.85,
-        "sale_price": 11.4
+        "sale_price": 11.4,
+        "brand": "مخزون عمان"
     },
     {
         "id": 113,
@@ -1415,7 +1465,8 @@
         "availability": "in_stock",
         "sku": 2828,
         "price": 19.1,
-        "sale_price": 14.9
+        "sale_price": 14.9,
+        "brand": "مخزون عمان"
     },
     {
         "id": 114,
@@ -1427,7 +1478,8 @@
         "availability": "in_stock",
         "sku": 2829,
         "price": 22.04,
-        "sale_price": 16.86
+        "sale_price": 16.86,
+        "brand": "مخزون عمان"
     },
     {
         "id": 115,
@@ -1439,7 +1491,8 @@
         "availability": "in_stock",
         "sku": 2830,
         "price": 23.3,
-        "sale_price": 17.7
+        "sale_price": 17.7,
+        "brand": "مخزون عمان"
     },
     {
         "id": 116,
@@ -1451,7 +1504,8 @@
         "availability": "in_stock",
         "sku": 2831,
         "price": 13.85,
-        "sale_price": 11.4
+        "sale_price": 11.4,
+        "brand": "مخزون عمان"
     },
     {
         "id": 117,
@@ -1463,7 +1517,8 @@
         "availability": "in_stock",
         "sku": 2833,
         "price": 17.52,
-        "sale_price": 13.85
+        "sale_price": 13.85,
+        "brand": "مخزون عمان"
     },
     {
         "id": 118,
@@ -1475,7 +1530,8 @@
         "availability": "in_stock",
         "sku": 2835,
         "price": 24.35,
-        "sale_price": 18.4
+        "sale_price": 18.4,
+        "brand": "مخزون عمان"
     },
     {
         "id": 119,
@@ -1487,7 +1543,8 @@
         "availability": "in_stock",
         "sku": 2836,
         "price": 18.05,
-        "sale_price": 14.2
+        "sale_price": 14.2,
+        "brand": "مخزون عمان"
     },
     {
         "id": 120,
@@ -1499,7 +1556,8 @@
         "availability": "in_stock",
         "sku": 2837,
         "price": 30.65,
-        "sale_price": 22.6
+        "sale_price": 22.6,
+        "brand": "مخزون عمان"
     },
     {
         "id": 122,
@@ -1511,7 +1569,8 @@
         "availability": "in_stock",
         "sku": 2778,
         "price": 28.55,
-        "sale_price": 21.2
+        "sale_price": 21.2,
+        "brand": "مخزون عمان"
     },
     {
         "id": 123,
@@ -1523,7 +1582,8 @@
         "availability": "in_stock",
         "sku": 2779,
         "price": 22.25,
-        "sale_price": 17.0
+        "sale_price": 17.0,
+        "brand": "مخزون عمان"
     },
     {
         "id": 124,
@@ -1535,7 +1595,8 @@
         "availability": "in_stock",
         "sku": 2780,
         "price": 32.75,
-        "sale_price": 24.0
+        "sale_price": 24.0,
+        "brand": "مخزون عمان"
     },
     {
         "id": 125,
@@ -1547,7 +1608,8 @@
         "availability": "in_stock",
         "sku": 2781,
         "price": 35.9,
-        "sale_price": 26.1
+        "sale_price": 26.1,
+        "brand": "مخزون عمان"
     },
     {
         "id": 126,
@@ -1559,7 +1621,8 @@
         "availability": "in_stock",
         "sku": 2782,
         "price": 24.75,
-        "sale_price": 18.67
+        "sale_price": 18.67,
+        "brand": "مخزون عمان"
     },
     {
         "id": 127,
@@ -1584,7 +1647,8 @@
         "availability": "in_stock",
         "sku": 2821,
         "price": 17.0,
-        "sale_price": 13.5
+        "sale_price": 13.5,
+        "brand": "مخزون عمان"
     },
     {
         "id": 129,
@@ -1596,7 +1660,8 @@
         "availability": "in_stock",
         "sku": 2822,
         "price": 13.85,
-        "sale_price": 11.4
+        "sale_price": 11.4,
+        "brand": "مخزون عمان"
     },
     {
         "id": 130,
@@ -1608,6 +1673,7 @@
         "availability": "in_stock",
         "sku": 2823,
         "price": 18.05,
-        "sale_price": 14.2
+        "sale_price": 14.2,
+        "brand": "مخزون عمان"
     }
 ]
