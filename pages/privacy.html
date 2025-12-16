@@ -3,39 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/favicon.ico">
     <title>سياسة الخصوصية - مخزون عمان</title>
+    <meta name="description" content="سياسة الخصوصية لمتجر مخزون عمان. نحن نهتم بحماية بياناتك الشخصية.">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     <link rel="stylesheet" href="../style.css">
-    <style>
-        .legal-page { background: #fff; padding: 40px; border-radius: 8px; margin: 40px auto; border: 1px solid #eee; }
-        .legal-page h1 { color: var(--omani-black); margin-bottom: 30px; border-bottom: 3px solid var(--omani-green); display: inline-block; padding-bottom: 10px; }
-        .legal-page p { margin-bottom: 15px; color: #555; }
-    </style>
+    <script src="../main.js" defer></script>
+    <script src="../loader.js" defer></script>
 </head>
 <body>
-    <header class="main-header" style="text-align: center;">
-        <div class="container">
-            <a href="../index.html" class="logo"><span class="omani-red">مخزون</span> <span class="omani-green">عمان</span></a>
+    <!-- الشريط العلوي -->
+    <div class="top-bar">
+        <div class="container flex-between">
+            <div class="contact-info">
+                <a href="https://wa.me/201110760081" target="_blank" class="top-link">
+                    <i class="fab fa-whatsapp"></i> 201110760081+
+                </a>
+                <span class="sep">|</span>
+                <a href="mailto:info@arabsad.com" class="top-link">
+                    <i class="fas fa-envelope"></i> info@arabsad.com
+                </a>
+            </div>
+            <div class="shipping-note">
+                <a href="shipping.html" class="top-link">الشحن المجاني</a>
+                <span class="sep">|</span>
+                <a href="returns.html" class="top-link">الاسترجاع</a>
+                <span class="sep">|</span>
+                <a href="terms.html" class="top-link">الشروط</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- الهيدر الرئيسي -->
+    <header class="main-header">
+        <div class="container flex-between header-content-wrap">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="فتح القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="../index.html" class="logo">
+                <span class="omani-red">مخزون</span> <span class="omani-green">عمان</span>
+            </a>
+            <div class="search-box">
+                <div class="search-wrapper">
+                    <input type="text" id="search-input" placeholder="ابحث عن منتج..." onkeypress="if(event.key === 'Enter') window.location.href='../index.html?search=' + this.value" autocomplete="off">
+                </div>
+                <button onclick="window.location.href='../index.html?search=' + document.getElementById('search-input').value"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-icons">
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span id="cart-count">0</span>
+                    <span class="cart-text">السلة</span>
+                </div>
+            </div>
         </div>
     </header>
 
-    <div class="container legal-page">
-        <h1>سياسة الخصوصية</h1>
-        <p>نحن في مخزون عمان نولي اهتماماً كبيراً لخصوصية بيانات عملائنا.</p>
-        
-        <h3>جمع المعلومات</h3>
-        <p>نقوم بجمع المعلومات الضرورية فقط لإتمام عملية الشحن والتوصيل، مثل الاسم، العنوان، ورقم الهاتف.</p>
-
-        <h3>استخدام المعلومات</h3>
-        <p>تستخدم المعلومات فقط لتوصيل طلباتكم والتواصل معكم بخصوصها. لا نقوم ببيع أو مشاركة بياناتكم مع أي طرف ثالث لأغراض تسويقية.</p>
-
-        <h3>أمان البيانات</h3>
-        <p>نتخذ كافة الإجراءات الأمنية المناسبة لحماية بياناتكم من الوصول غير المصرح به.</p>
+    <!-- القائمة الجانبية للموبايل -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <h3><i class="fas fa-list"></i> القائمة</h3>
+            <span class="close-mobile-menu" onclick="toggleMobileMenu()">&times;</span>
+        </div>
+        <div class="mobile-menu-content">
+            <div class="mobile-search-box">
+                <input type="text" id="mobile-search-input" placeholder="ابحث عن منتج..." onkeypress="if(event.key === 'Enter') window.location.href='../index.html?search=' + this.value">
+                <button onclick="window.location.href='../index.html?search=' + document.getElementById('mobile-search-input').value"><i class="fas fa-search"></i></button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="../index.html" class="mobile-nav-link"><i class="fas fa-home"></i> الرئيسية</a>
+                <a href="shipping.html" class="mobile-nav-link"><i class="fas fa-shipping-fast"></i> سياسة الشحن</a>
+                <a href="returns.html" class="mobile-nav-link"><i class="fas fa-undo"></i> الاسترجاع</a>
+                <a href="terms.html" class="mobile-nav-link"><i class="fas fa-file-contract"></i> الشروط والأحكام</a>
+                <a href="privacy.html" class="mobile-nav-link"><i class="fas fa-shield-alt"></i> سياسة الخصوصية</a>
+                <a href="contact.html" class="mobile-nav-link"><i class="fas fa-envelope"></i> تواصل معنا</a>
+            </nav>
+        </div>
     </div>
 
+    <!-- القائمة الجانبية للسلة -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> سلة المشتريات</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-items" id="cart-items"><p class="empty-cart-message">سلّتك فارغة حالياً.</p></div>
+        <div class="cart-footer">
+            <div class="total-row-cart">
+                <span>المجموع:</span>
+                <span id="cart-total" class="omani-green">0.00 ر.ع.</span>
+            </div>
+            <p class="tax-note">الشحن والضريبة يحسبان عند إتمام الطلب</p>
+            <button class="checkout-btn" onclick="checkoutPage()">
+                <i class="fas fa-check-circle"></i> إتمام الطلب
+            </button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+
+    <main class="container legal-page-container">
+        <div class="legal-page">
+            <h1>سياسة الخصوصية</h1>
+            <p>نحن في مخزون عمان نولي اهتماماً كبيراً لخصوصية بيانات عملائنا.</p>
+            
+            <h3><i class="fas fa-database"></i> جمع المعلومات</h3>
+            <p>نقوم بجمع المعلومات الضرورية فقط لإتمام عملية الشحن والتوصيل، مثل الاسم، العنوان، ورقم الهاتف. لا نجمع أي بيانات حساسة أو مالية.</p>
+
+            <h3><i class="fas fa-tasks"></i> استخدام المعلومات</h3>
+            <p>تستخدم المعلومات التي نجمعها للأغراض التالية فقط:</p>
+            <ul>
+                <li>توصيل طلباتكم إلى العنوان المحدد.</li>
+                <li>التواصل معكم عبر واتساب أو الهاتف لتأكيد الطلب وتنسيق التوصيل.</li>
+                <li>تحسين خدماتنا وتجربة المستخدم على الموقع.</li>
+            </ul>
+            <p>لا نقوم ببيع أو مشاركة بياناتكم مع أي طرف ثالث لأغراض تسويقية.</p>
+
+            <h3><i class="fas fa-shield-alt"></i> أمان البيانات</h3>
+            <p>نتخذ كافة الإجراءات الأمنية المناسبة لحماية بياناتكم من الوصول غير المصرح به. يتم التعامل مع جميع البيانات بسرية تامة.</p>
+        </div>
+    </main>
+
     <footer>
-        <div class="container" style="text-align: center; color: #fff;">
-            <p>© 2025 مخزون عمان</p>
+        <div class="container">
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة © 2025 متجر مخزون عمان</p>
+            </div>
         </div>
     </footer>
 </body>
