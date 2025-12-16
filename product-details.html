@@ -100,7 +100,7 @@
         <div class="single-product-container">
             <div class="product-gallery">
                 <div class="main-image-container">
-                    <img id="main-product-image" src="images/placeholder.png" alt="جاري تحميل صورة المنتج">
+                    <img id="main-product-image" src="images/og-default.jpg" alt="جاري تحميل صورة المنتج">
                 </div>
                 <div id="product-thumbnails" class="thumbnail-container"></div>
             </div>
@@ -281,7 +281,7 @@
         mainImage.alt = product.title;
 
         thumbnailsContainer.innerHTML = images.map((imgSrc, index) => `
-            <img src="${imgSrc}" 
+            <img src="${imgSrc.startsWith('http') ? imgSrc : '../' + imgSrc}" 
                  alt="صورة مصغرة ${index + 1}" 
                  class="thumbnail-image ${index === 0 ? 'active' : ''}"
                  onclick="changeMainImage('${imgSrc}', this)">
@@ -289,7 +289,8 @@
     }
 
     window.changeMainImage = function(src, thumbElement) {
-        document.getElementById('main-product-image').src = src;
+        const mainImage = document.getElementById('main-product-image');
+        mainImage.src = src.startsWith('http') ? src : '../' + src;
         document.querySelectorAll('.thumbnail-image').forEach(el => el.classList.remove('active'));
         thumbElement.classList.add('active');
     }

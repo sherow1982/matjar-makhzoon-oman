@@ -233,9 +233,11 @@ async function updateCartUI() {
     }
 
     // تحديث عدد المنتجات في أيقونة السلة
-    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartCount.textContent = totalQuantity;
-    cartCount.style.display = totalQuantity > 0 ? 'flex' : 'none';
+    if (cartCount) {
+        const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCount.textContent = totalQuantity;
+        cartCount.style.display = totalQuantity > 0 ? 'flex' : 'none';
+    }
 
     // تحديث محتوى السلة الجانبية (إذا كانت موجودة في الصفحة)
     if (cartItemsContainer && cartTotalElement) {
