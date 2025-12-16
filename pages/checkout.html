@@ -60,7 +60,7 @@
                             <label>رقم الهاتف (واتساب)</label>
                             <div class="input-wrapper">
                                 <i class="fas fa-mobile-alt"></i>
-                                <input type="tel" id="c_phone" required placeholder="05xxxxxxxx">
+                                <input type="tel" id="c_phone" required placeholder="9xxxxxxx">
                             </div>
                             <small style="color:#777; font-size:12px; margin-top:5px; display:block">سنرسل لك تفاصيل الطلب عبر واتساب لتأكيده.</small>
                         </div>
@@ -68,18 +68,22 @@
                         <!-- المدينة والعنوان -->
                         <div class="row-group">
                             <div class="input-group">
-                                <label>الإمارة</label>
+                                <label>المحافظة</label>
                                 <div class="input-wrapper">
                                     <i class="fas fa-map"></i>
                                     <select id="c_city" required>
-                                        <option value="" disabled selected>اختر الإمارة</option>
-                                        <option value="أبوظبي">أبوظبي</option>
-                                        <option value="دبي">دبي</option>
-                                        <option value="الشارقة">الشارقة</option>
-                                        <option value="عجمان">عجمان</option>
-                                        <option value="أم القيوين">أم القيوين</option>
-                                        <option value="رأس الخيمة">رأس الخيمة</option>
-                                        <option value="الفجيرة">الفجيرة</option>
+                                        <option value="" disabled selected>اختر المحافظة</option>
+                                        <option value="مسقط">مسقط</option>
+                                        <option value="ظفار">ظفار</option>
+                                        <option value="مسندم">مسندم</option>
+                                        <option value="البريمي">البريمي</option>
+                                        <option value="الداخلية">الداخلية</option>
+                                        <option value="شمال الباطنة">شمال الباطنة</option>
+                                        <option value="جنوب الباطنة">جنوب الباطنة</option>
+                                        <option value="الظاهرة">الظاهرة</option>
+                                        <option value="شمال الشرقية">شمال الشرقية</option>
+                                        <option value="جنوب الشرقية">جنوب الشرقية</option>
+                                        <option value="الوسطى">الوسطى</option>
                                     </select>
                                 </div>
                             </div>
@@ -159,9 +163,9 @@
             const address = document.getElementById('c_address').value.trim();
 
             // Validation
-            const phoneRegex = /^05\d{8}$/;
+            const phoneRegex = /^[79]\d{7}$/;
             if (!phoneRegex.test(phone)) {
-                alert("يرجى إدخال رقم هاتف صحيح يبدأ بـ 05 ويتكون من 10 أرقام.");
+                alert("يرجى إدخال رقم هاتف صحيح (8 أرقام تبدأ بـ 7 أو 9).");
                 return;
             }
 
@@ -175,7 +179,7 @@
                 msg += `▪️ ${item.title} (x${item.qty}) - ${item.price * item.qty}%0a`;
                 total += item.price * item.qty;
             });
-            msg += `---------------------------%0a💰 *الإجمالي: ${total} درهم*`;
+            msg += `---------------------------%0a💰 *الإجمالي: ${total} ريال عماني*`;
 
             localStorage.removeItem('cart');
             window.open(`https://wa.me/201110760081?text=${msg}`, '_blank');
