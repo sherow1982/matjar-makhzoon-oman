@@ -1,0 +1,35 @@
+name: Update Product Feeds
+
+on:
+  push:
+    branches:
+      - main # أو الفرع الرئيسي لديك
+    paths:
+      - 'products.json' # التشغيل فقط عند تغيير هذا الملف
+  workflow_dispatch: # للسماح بالتشغيل اليدوي
+
+permissions:
+  contents: write
+
+jobs:
+  generate-feeds:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Generate Sitemap and Google Feed
+        run: node scripts/generate-feeds.js
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'github-actions-bot@github.com'
+          git add sitemap.xml google_feed.xml
+          git diff-index --quiet HEAD || git commit -m "Automated: Update sitemap.xml and google_feed.xml"
+          git push

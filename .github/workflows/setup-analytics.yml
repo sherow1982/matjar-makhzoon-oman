@@ -18,25 +18,25 @@ jobs:
           # -----------------------------------------------
           cat <<EOF > analytics.js
           (function() {
-              // --- Google Analytics (GA4) ---
-              // G-WSJ062EHKM
+              // --- Google tag (gtag.js) ---
+              // G-NRB6MJMBYS
               const gaScript = document.createElement('script');
               gaScript.async = true;
-              gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-WSJ062EHKM';
+              gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-NRB6MJMBYS';
               document.head.appendChild(gaScript);
 
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-WSJ062EHKM');
+              gtag('config', 'G-NRB6MJMBYS');
 
               // --- Google Tag Manager (Script Part) ---
-              // GTM-NWQ5HX32
+              // GTM-T67556JM
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-NWQ5HX32');
+              })(window,document,'script','dataLayer','GTM-T67556JM');
           })();
           EOF
 
@@ -48,7 +48,7 @@ jobs:
           # 3. حقن كود noscript في الـ BODY (مطلوب لـ GTM)
           # -----------------------------------------------
           # يبحث عن <body> ويضيف كود iframe بعده مباشرة
-          NOSCRIPT_CODE='<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWQ5HX32" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->'
+          NOSCRIPT_CODE='<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T67556JM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->'
           
           # نستخدم perl هنا للتعامل مع النصوص المعقدة بشكل أفضل من sed
           find . -name "*.html" -print0 | xargs -0 perl -pi -e "s|<body>|<body>$NOSCRIPT_CODE|g"

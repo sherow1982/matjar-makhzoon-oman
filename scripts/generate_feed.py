@@ -7,9 +7,9 @@ from xml.sax.saxutils import escape
 # Configuration
 PRODUCTS_FILE = 'products.json'
 OUTPUT_FILE = 'google_feed.xml'
-BASE_URL = 'https://sherow1982.github.io/matager-makhzoon-alemarat'
-STORE_NAME = 'Makhzoon Alemarat'
-STORE_DESCRIPTION = 'Best deals in UAE for watches and accessories.'
+BASE_URL = 'https://sherow1982.github.io/matjar-makhzoon-oman'
+STORE_NAME = 'Matjar Makhzoon Oman'
+STORE_DESCRIPTION = 'Best deals in Oman for quality products and accessories.'
 
 # List of Luxury Brands to Exclude (Case Insensitive)
 # These are the brands that trigger "Counterfeit Goods" violations if prices are too low.
@@ -123,8 +123,8 @@ def generate_xml(products):
             image_link = escape(secondary_img)
             add_image_link = None
             
-        price = f"{product.get('price')} AED"
-        sale_price = f"{product.get('sale price')} AED" if product.get('sale price') else ""
+        price = f"{product.get('price')} OMR"
+        sale_price = f"{product.get('sale price')} OMR" if product.get('sale price') else ""
         condition = product.get('condition', 'new')
         availability = product.get('availability', 'in_stock')
         
