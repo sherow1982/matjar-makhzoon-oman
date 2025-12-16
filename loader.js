@@ -111,19 +111,29 @@ document.addEventListener('DOMContentLoaded', () => {
             discountPercentage = Math.round(((originalPrice - salePrice) / originalPrice) * 100);
         }
         const pathPrefix = window.location.pathname.includes('/pages/') ? '../' : '';
-        const imageUrl = product['image link'].startsWith('http') ? product['image link'] : `${pathPrefix}${product['image link']}`;
+        const primaryImage = product['image link'];
+        const secondaryImage = product['additional image link'];
 
         return `
             <div class="product-card" data-id="${product.id}">
                 <a href="${pathPrefix}product-details.html?id=${product.id}" class="product-link">
                     <div class="product-image-container">
                         <img 
-                            src="${product['image link']}" 
+                            src="${primaryImage}" 
                             alt="${product.title}" 
-                            class="product-image"
+                            class="product-image product-image-primary"
                             loading="lazy" 
                             width="300" 
                             height="300">
+                        ${secondaryImage ? `
+                        <img 
+                            src="${secondaryImage}" 
+                            alt="${product.title} (صورة إضافية)" 
+                            class="product-image product-image-secondary"
+                            loading="lazy" 
+                            width="300" 
+                            height="300">
+                        ` : ''}
                         ${discountPercentage > 0 ? `<span class="discount-badge">${discountPercentage}%</span>` : ''}
                     </div>
                     <div class="product-info">
