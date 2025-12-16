@@ -62,18 +62,18 @@ async function fetchProducts(path) {
 
 // دوال مساعدة
 function getProductPrice(product) {
-    return (product['sale price'] && product['sale price'] < product.price) ? product['sale price'] : product.price;
+    return (product.sale_price && product.sale_price < product.price) ? product.sale_price : product.price;
 }
 
 function renderPriceHTML(product) {
     const currentPrice = getProductPrice(product);
-    if (product['sale price'] && product['sale price'] < product.price) {
+    if (product.sale_price && product.sale_price < product.price) {
         return `<div class="price-box">
-                    <span class="text-through">${product.price} ر.ع.</span> 
                     <span class="price-sale">${currentPrice} ر.ع.</span>
+                    <span class="text-through">${product.price} ر.ع.</span>
                 </div>`;
     } else {
-        return `<span class="price-normal">${currentPrice} ر.ع.</span>`;
+        return `<div class="price-box"><span class="price-normal">${currentPrice} ر.ع.</span></div>`;
     }
 }
 
@@ -94,8 +94,8 @@ function generateProductCardHTML(product) {
     const imageSrc = product['image link'];
 
     let discountBadge = '';
-    if (product['sale price'] && product['sale price'] < product.price) {
-        const saved = Math.round(((product.price - product['sale price']) / product.price) * 100);
+    if (product.sale_price && product.sale_price < product.price) {
+        const saved = Math.round(((product.price - product.sale_price) / product.price) * 100);
         discountBadge = `<span class="discount-badge">خصم ${saved}%</span>`;
     }
     
@@ -228,7 +228,7 @@ function renderHomePage() {
     
     // Build UI
     app.innerHTML = `
-        <div class="hero-banner" style="background: linear-gradient(135deg, var(--uae-green), #000); color: white; padding: 40px 20px; border-radius: 8px; margin-top: 20px; text-align: center; margin-bottom:20px;">
+        <div class="hero-banner" style="background: linear-gradient(135deg, var(--omani-green), #000); color: white; padding: 40px 20px; border-radius: 8px; margin-top: 20px; text-align: center; margin-bottom:20px;">
             <h1 style="margin-bottom:10px">عروض مخزون عمان</h1>
             <p>أفضل المنتجات - شحن سريع - دفع عند الاستلام</p>
         </div>
@@ -334,13 +334,25 @@ function renderSingleProduct(slug) {
 
     // Calculate Savings
     let discountHTML = '';
-    if (product['sale price'] && product['sale price'] < product.price) {
-        const savedAmount = (product.price - product['sale price']).toFixed(0);
-        const savedPercent = Math.round(((product.price - product['sale price']) / product.price) * 100);
+    let countdownHTML = '';
+    
+    if (product.sale_price && product.sale_price < product.price) {
+        const savedAmount = (product.price - product.sale_price).toFixed(0);
+        const savedPercent = Math.round(((product.price - product.sale_price) / product.price) * 100);
         discountHTML = `
             <div class="discount-counter-box">
-                <i class="fas fa-fire-alt"></i> عرض خاص! وفرت ${savedAmount} درهم (${savedPercent}%)
-                <span style="font-size:12px; font-weight:normal; margin-right:auto; color:#777">ينتهي قريباً</span>
+                <i class="fas fa-fire-alt"></i> عرض خاص! وفرت ${savedAmount} ر.ع. (${savedPercent}%)
+            </div>
+        `;
+        
+        // Countdown Timer Logic
+        countdownHTML = `
+            <div class="countdown-timer">
+                <i class="fas fa-hourglass-half"></i> 
+                <span class="countdown-text">ينتهي العرض خلال:</span>
+                <span class="countdown-digits" id="timer-hours">23</span>:
+                <span class="countdown-digits" id="timer-min">59</span>:
+                <span class="countdown-digits" id="timer-sec">59</span>
             </div>
         `;
     }
@@ -377,7 +389,8 @@ function renderSingleProduct(slug) {
                    ${skuHTML}
                 </div>
                 ${discountHTML}
-                <div style="margin-bottom:20px">${renderPriceHTML(product)}</div>
+                <div style="margin-bottom:10px">${renderPriceHTML(product)}</div>
+                ${countdownHTML}
                 <div class="product-description" style="margin-bottom:25px; color:#555; line-height:1.8; font-size:15px;">${descriptionHTML}</div>
                 <div class="buy-actions">
                     <button class="btn-whatsapp-large" onclick="directOrder('${product.title}', ${currentPrice})"><i class="fab fa-whatsapp"></i> اطلب الآن عبر واتساب</button>
@@ -387,11 +400,51 @@ function renderSingleProduct(slug) {
             </div>
         </div>
         <div class="related-products-section" style="margin-top:60px; border-top:1px solid #eee; padding-top:40px;">
-            <h3 style="margin-bottom:20px; font-size:22px; color:var(--uae-black)">قد يعجبك أيضاً</h3>
+            <h3 style="margin-bottom:20px; font-size:22px; color:var(--omani-black)">قد يعجبك أيضاً</h3>
             <div class="products-grid" id="related-products-container"></div>
         </div>
     `;
     renderRelatedProducts(product);
+    
+    // Start countdown if it exists
+    if (document.getElementById('timer-hours')) {
+        startCountdown();
+    }
+}
+
+function startCountdown() {
+    let hours = 23;
+    let minutes = 59;
+    let seconds = 59;
+
+    const hElem = document.getElementById('timer-hours');
+    const mElem = document.getElementById('timer-min');
+    const sElem = document.getElementById('timer-sec');
+
+    const interval = setInterval(() => {
+        if (!hElem) { clearInterval(interval); return; } // Stop if element removed
+
+        if (seconds > 0) {
+            seconds--;
+        } else {
+            seconds = 59;
+            if (minutes > 0) {
+                minutes--;
+            } else {
+                minutes = 59;
+                if (hours > 0) {
+                    hours--;
+                } else {
+                    // Timer finished, reset or stop? Let's reset for infinite urgency
+                    hours = 23; 
+                }
+            }
+        }
+
+        hElem.innerText = hours.toString().padStart(2, '0');
+        mElem.innerText = minutes.toString().padStart(2, '0');
+        sElem.innerText = seconds.toString().padStart(2, '0');
+    }, 1000);
 }
 
 function renderRelatedProducts(currentProduct) {

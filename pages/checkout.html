@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إتمام الطلب الآمن - مخزون الإمارات</title>
+    <title>إتمام الطلب الآمن - مخزون عمان</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
@@ -14,7 +14,7 @@
     <header class="checkout-header">
         <div class="container">
             <a href="../index.html" class="logo">
-                <span class="uae-red">مخزون</span> <span class="uae-green">الإمارات</span>
+                <span class="omani-red">مخزون</span> <span class="omani-green">عمان</span>
             </a>
             <div class="secure-badge"><i class="fas fa-lock"></i> دفع آمن 100%</div>
         </div>
@@ -87,7 +87,7 @@
                                 <label>المنطقة / العنوان</label>
                                 <div class="input-wrapper">
                                     <i class="fas fa-home"></i>
-                                    <input type="text" id="c_address" required placeholder="الشارع، رقم المبنى...">
+                                    <input type="text" id="c_address" required placeholder="سلطنة عمانبنى...">
                                 </div>
                             </div>
                         </div>
@@ -130,16 +130,16 @@
                     <div class="summary-totals">
                         <div class="total-row">
                             <span>المجموع الفرعي</span>
-                            <span id="sub-total">0.00 درهم</span>
+                            <span id="sub-total">0.00 ريال</span>
                         </div>
                         <div class="total-row">
                             <span>الشحن</span>
-                            <span style="color:var(--uae-green)">مجاني لفترة محدودة</span>
+                            <span style="color:var(--omani-black)">مجاني لفترة محدودة</span>
                         </div>
                         <div class="divider"></div>
                         <div class="total-row final">
                             <span>الإجمالي الكلي</span>
-                            <span id="final-total">0.00 درهم</span>
+                            <span id="final-total">0.00 ريال</span>
                         </div>
                     </div>
                 </div>
@@ -167,7 +167,7 @@
 
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
             
-            let msg = `*طلب جديد (مخزون الإمارات)*%0a`;
+            let msg = `*طلب جديد (مخزون عمان)*%0a`;
             msg += `👤 الاسم: ${name}%0a📱 الهاتف: ${phone}%0a📍 العنوان: ${city} - ${address}%0a`;
             msg += `---------------------------%0a*المنتجات:*%0a`;
             let total = 0;
