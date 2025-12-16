@@ -107,11 +107,18 @@
                 <div id="product-meta" class="product-meta-tags"></div>
                 <div id="product-price-container"></div>
                 <div id="product-description" style="white-space: pre-wrap;"></div>
-                <button id="add-to-cart-details" class="add-to-cart-btn" style="width:100%; margin: 20px 0; padding: 15px; font-size: 18px;">
-                    <i class="fas fa-cart-plus"></i> أضف للسلة
-                </button>
+                <div class="product-actions">
+                    <button id="add-to-cart-details" class="add-to-cart-btn">
+                        <i class="fas fa-cart-plus"></i> أضف للسلة
+                    </button>
+                    <button id="whatsapp-button" class="btn-whatsapp-large">
+                        <i class="fab fa-whatsapp"></i> اطلب عبر واتساب
+                    </button>
+                </div>
             </div>
         </div>
+        <!-- قسم المنتجات ذات الصلة -->
+        <div id="related-products-section"></div>
     </main>
 
     <!-- القائمة الجانبية للسلة -->
@@ -183,6 +190,16 @@
                     const addToCartBtn = document.getElementById('add-to-cart-details');
                     addToCartBtn.onclick = (event) => addToCart(product.id, event);
 
+                    // ربط زر الواتساب
+                    const whatsappButton = document.getElementById('whatsapp-button');
+                    if (whatsappButton) {
+                        const whatsappMessage = `أهلاً مخزون عمان،\nأرغب في طلب المنتج التالي:\n\n*${product.title}*\n\nالرابط: ${window.location.href}`;
+                        const whatsappURL = `https://wa.me/201110760081?text=${encodeURIComponent(whatsappMessage)}`;
+                        whatsappButton.onclick = () => window.open(whatsappURL, '_blank');
+                    }
+
+                    // عرض المنتجات ذات الصلة
+                    displayRelatedProducts(products, product.id);
 
                     // *** هذا هو الجزء الأهم: إنشاء وإضافة سكيما المنتج ***
                     const schema = {
@@ -220,6 +237,34 @@
                 }
             });
     });
+
+    // دالة لعرض المنتجات ذات الصلة
+    function displayRelatedProducts(allProducts, currentProductId) {
+        const relatedSection = document.getElementById('related-products-section');
+        if (!relatedSection) return;
+
+        // ترشيح المنتجات لاستبعاد المنتج الحالي
+        let relatedProducts = allProducts.filter(p => p.id !== currentProductId);
+
+        // خلط المنتجات وعرض 4 منها فقط
+        relatedProducts = relatedProducts.sort(() => 0.5 - Math.random()).slice(0, 4);
+
+        if (relatedProducts.length > 0) {
+            const relatedHTML = `
+                <h2 class="section-title">قد يعجبك أيضاً</h2>
+                <div class="products-grid">
+                    ${relatedProducts.map(product => createProductCard(product)).join('')}
+                </div>
+            `;
+            relatedSection.innerHTML = relatedHTML;
+        }
+    }
+
+    // يجب أن تكون دالة createProductCard متاحة هنا أيضاً
+    // بما أن loader.js يتم تحميله، ستكون الدالة متاحة في النطاق العام (window)
+    // أو يمكن نسخها هنا لضمان عملها بشكل مستقل.
+    // للسهولة، سنعتمد على أن loader.js يجعلها متاحة.
+
     </script>
 
 </body>

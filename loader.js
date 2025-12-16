@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- دالة لإنشاء كرت المنتج ---
-    function createProductCard(product) {
+    window.createProductCard = function(product) { // جعل الدالة عامة
         const salePrice = parseFloat(product.sale_price);
         const originalPrice = parseFloat(product.price);
         let discountPercentage = 0;
