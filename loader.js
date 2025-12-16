@@ -5,15 +5,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let allProducts = [];
 
-    // --- دالة لجلب المنتجات ---
+    // --- 1. جلب المنتجات وعرضها ---
     async function fetchProducts() {
         try {
+            // جلب المنتجات من ملف JSON
             const response = await fetch('products.json');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             allProducts = await response.json();
-            displayProducts(allProducts);
+            
+            // تخزين المنتجات في window لتكون متاحة في كل مكان (مثل السلة)
+            window.allProducts = allProducts;
+
+            // عرض المنتجات فقط إذا كنا في الصفحة الرئيسية
+            if (appContent) {
+                displayProducts(allProducts);
+            }
         } catch (error) {
             console.error("Could not fetch products:", error);
             appContent.innerHTML = `<p class="error-message">عفواً، حدث خطأ أثناء تحميل المنتجات. يرجى المحاولة مرة أخرى لاحقاً.</p>`;
@@ -21,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- دالة لعرض المنتجات ---
-    function displayProducts(products) {
+    function displayProducts(products, container = appContent) {
         if (!products.length) {
             appContent.innerHTML = `<p class="info-message">لا توجد منتجات تطابق بحثك.</p>`;
             return;
@@ -36,10 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${products.map(product => createProductCard(product)).join('')}
             </div>
         `;
-        appContent.innerHTML = productsHTML;
+        container.innerHTML = productsHTML;
     }
 
-    // --- دالة لإنشاء كرت المنتج ---
+    // --- 2. إنشاء كرت المنتج (Product Card) ---
     window.createProductCard = function(product) { // جعل الدالة عامة
         const salePrice = parseFloat(product.sale_price);
         const originalPrice = parseFloat(product.price);
@@ -77,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
-    // --- دوال البحث ---
+    // --- 3. دوال البحث ---
     function handleSearch(query) {
         if (!query) {
             displayProducts(allProducts);
@@ -92,14 +100,18 @@ document.addEventListener('DOMContentLoaded', () => {
         displayProducts(filteredProducts);
     }
 
-    // ربط البحث بالمدخلات
-    searchInput.addEventListener('input', () => handleSearch(searchInput.value));
-    mobileSearchInput.addEventListener('input', () => handleSearch(mobileSearchInput.value));
+    // ربط البحث بالمدخلات (مع التحقق من وجود العناصر)
+    if (searchInput) {
+        searchInput.addEventListener('input', () => handleSearch(searchInput.value));
+    }
+    if (mobileSearchInput) {
+        mobileSearchInput.addEventListener('input', () => handleSearch(mobileSearchInput.value));
+    }
 
-    // --- تهيئة الصفحة ---
+    // --- 4. تهيئة الصفحة ---
     fetchProducts();
 
-    // --- جعل الدوال متاحة عالمياً ---
+    // --- 5. جعل دوال البحث متاحة عالمياً ---
     window.searchProducts = () => handleSearch(searchInput.value);
     window.searchFromMobile = () => handleSearch(mobileSearchInput.value);
     window.handleEnter = (event) => {
@@ -115,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 });
 
-// --- دوال السلة (Cart Functions) ---
+// --- 6. دوال السلة (Cart Functions) ---
 
 function getCart() {
     return JSON.parse(localStorage.getItem('cart')) || [];
@@ -142,42 +154,66 @@ function addToCart(productId, event) {
     toggleCart(true); // فتح السلة عند الإضافة
 }
 
-function updateCartUI() {
+async function updateCartUI() {
     const cart = getCart();
     const cartCount = document.getElementById('cart-count');
     const cartItemsContainer = document.getElementById('cart-items');
     const cartTotalElement = document.getElementById('cart-total');
     
+    if (!window.allProducts) {
+        // إذا لم يتم تحميل المنتجات بعد، انتظر قليلاً ثم حاول مرة أخرى
+        setTimeout(updateCartUI, 100);
+        return;
+    }
+
     // تحديث عدد المنتجات في أيقونة السلة
     const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalQuantity;
     cartCount.style.display = totalQuantity > 0 ? 'flex' : 'none';
 
     // تحديث محتوى السلة الجانبية (إذا كانت موجودة في الصفحة)
-    if (cartItemsContainer) {
-        // هنا يجب جلب بيانات المنتجات الكاملة لعرضها في السلة
-        // هذه الخطوة تتطلب الوصول إلى `allProducts` أو جلبها مرة أخرى
-        // للتبسيط، سنعرض فقط رسالة إذا كانت فارغة
+    if (cartItemsContainer && cartTotalElement) {
         if (cart.length === 0) {
             cartItemsContainer.innerHTML = '<p class="empty-cart-message">سلّتك فارغة حالياً.</p>';
             cartTotalElement.textContent = '0.00 ر.ع.';
         } else {
-            // منطق عرض المنتجات في السلة (يتطلب تفاصيل المنتج)
-            // هذا الجزء يحتاج إلى تطوير إضافي في صفحة السلة وصفحة الدفع
+            let total = 0;
+            let itemsHTML = '';
+
+            for (const cartItem of cart) {
+                const product = window.allProducts.find(p => p.id === cartItem.id);
+                if (product) {
+                    const itemTotal = product.sale_price * cartItem.quantity;
+                    total += itemTotal;
+                    itemsHTML += `
+                        <div class="cart-item">
+                            <img src="${product['image link']}" alt="${product.title}" class="cart-item-img">
+                            <div class="cart-item-details">
+                                <h4 class="cart-item-title">${product.title}</h4>
+                                <div class="cart-item-price">
+                                    <span>${cartItem.quantity} x </span>
+                                    <span class="omani-red">${product.sale_price.toFixed(2)} ر.ع.</span>
+                                </div>
+                            </div>
+                            <div class="cart-item-actions">
+                                <!-- لاحقاً: يمكن إضافة أزرار لزيادة/نقصان الكمية -->
+                                <button class="cart-item-remove" onclick="removeFromCart(${product.id})">&times;</button>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+
+            cartItemsContainer.innerHTML = itemsHTML;
+            cartTotalElement.textContent = `${total.toFixed(2)} ر.ع.`;
         }
     }
 }
 
-function toggleCart(forceOpen = false) {
-    const cartSidebar = document.getElementById('cart-sidebar');
-    const overlay = document.getElementById('overlay');
-    if (forceOpen) {
-        cartSidebar.classList.add('open');
-        overlay.classList.add('active');
-    } else {
-        cartSidebar.classList.toggle('open');
-        overlay.classList.toggle('active');
-    }
+function removeFromCart(productId) {
+    let cart = getCart();
+    cart = cart.filter(item => item.id !== productId);
+    saveCart(cart);
 }
 
 function showNotification(message) {

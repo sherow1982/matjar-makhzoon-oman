@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- دالة فتح وإغلاق السلة ---
     window.toggleCart = function(forceOpen = false) {
         if (forceOpen) {
-            cartSidebar.classList.add('active');
+            cartSidebar.classList.add('open');
             overlay.classList.add('active');
         } else {
-            cartSidebar.classList.toggle('active');
+            cartSidebar.classList.toggle('open');
             overlay.classList.toggle('active');
         }
     };
