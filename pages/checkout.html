@@ -7,6 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
+    <script src="../analytics.js" defer></script>
+    <script src="../main.js" defer></script>
+    <script src="../loader.js" defer></script>
 </head>
 <body class="checkout-page-body">
 
@@ -134,7 +137,7 @@
                     <div class="summary-totals">
                         <div class="total-row">
                             <span>المجموع الفرعي</span>
-                            <span id="sub-total">0.00 ريال</span>
+                            <span id="sub-total">0.00 ر.ع.</span>
                         </div>
                         <div class="total-row">
                             <span>الشحن</span>
@@ -143,7 +146,7 @@
                         <div class="divider"></div>
                         <div class="total-row final">
                             <span>الإجمالي الكلي</span>
-                            <span id="final-total">0.00 ريال</span>
+                            <span id="final-total">0.00 ر.ع.</span>
                         </div>
                     </div>
                 </div>
@@ -152,38 +155,98 @@
         </div>
     </div>
 
-    <script src="../script.js"></script>
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة © 2025 متجر مخزون عمان</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // انتظر حتى يتم تحميل المنتجات في loader.js
+            const checkProductsLoaded = setInterval(() => {
+                if (window.allProducts && window.allProducts.length > 0) {
+                    clearInterval(checkProductsLoaded);
+                    loadCheckoutPage();
+                }
+            }, 100);
+        });
+
+        function loadCheckoutPage() {
+            const cart = getCart();
+            if (cart.length === 0) {
+                // إذا كانت السلة فارغة، أعد المستخدم للصفحة الرئيسية
+                window.location.href = '../index.html';
+                return;
+            }
+
+            const itemsContainer = document.getElementById('checkout-items');
+            const subTotalEl = document.getElementById('sub-total');
+            const finalTotalEl = document.getElementById('final-total');
+            let itemsHTML = '';
+            let total = 0;
+
+            for (const cartItem of cart) {
+                const product = window.allProducts.find(p => p.id === cartItem.id);
+                if (product) {
+                    const itemTotal = product.sale_price * cartItem.quantity;
+                    total += itemTotal;
+                    itemsHTML += `
+                        <div class="summary-item">
+                            <img src="../${product['image link']}" alt="${product.title}">
+                            <div class="summary-item-details">
+                                <h4>${product.title}</h4>
+                                <span>${cartItem.quantity} x ${product.sale_price.toFixed(2)} ر.ع.</span>
+                            </div>
+                            <span class="summary-item-price">${itemTotal.toFixed(2)} ر.ع.</span>
+                        </div>
+                    `;
+                }
+            }
+
+            itemsContainer.innerHTML = itemsHTML;
+            subTotalEl.textContent = `${total.toFixed(2)} ر.ع.`;
+            finalTotalEl.textContent = `${total.toFixed(2)} ر.ع.`;
+        }
+
         // دالة خاصة بالصفحة (Process Order)
-        function processOrder(e) {
+        async function processOrder(e) {
             e.preventDefault();
             const name = document.getElementById('c_name').value.trim();
             const phone = document.getElementById('c_phone').value.trim();
             const city = document.getElementById('c_city').value;
             const address = document.getElementById('c_address').value.trim();
 
-            // Validation
+            // التحقق من صحة رقم الهاتف
             const phoneRegex = /^[79]\d{7}$/;
             if (!phoneRegex.test(phone)) {
                 alert("يرجى إدخال رقم هاتف صحيح (8 أرقام تبدأ بـ 7 أو 9).");
                 return;
             }
 
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cart = getCart();
+            if (cart.length === 0) return;
             
             let msg = `*طلب جديد (مخزون عمان)*%0a`;
             msg += `👤 الاسم: ${name}%0a📱 الهاتف: ${phone}%0a📍 العنوان: ${city} - ${address}%0a`;
             msg += `---------------------------%0a*المنتجات:*%0a`;
             let total = 0;
-            cart.forEach(item => {
-                msg += `▪️ ${item.title} (x${item.qty}) - ${item.price * item.qty}%0a`;
-                total += item.price * item.qty;
-            });
-            msg += `---------------------------%0a💰 *الإجمالي: ${total} ريال عماني*`;
+            for (const item of cart) {
+                const product = window.allProducts.find(p => p.id === item.id);
+                if (product) {
+                    const itemTotal = product.sale_price * item.quantity;
+                    total += itemTotal;
+                    msg += `▪️ ${product.title} (x${item.quantity}) - ${itemTotal.toFixed(2)} ر.ع.%0a`;
+                }
+            }
+            msg += `---------------------------%0a💰 *الإجمالي: ${total.toFixed(2)} ريال عماني*`;
 
             localStorage.removeItem('cart');
             window.open(`https://wa.me/201110760081?text=${msg}`, '_blank');
-            window.location.href = 'thankyou.html';
+            window.location.href = '../pages/thankyou.html';
         }
     </script>
 </body>
