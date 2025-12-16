@@ -27,6 +27,29 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // =========================================
+// قائمة الهامبرجر (Mobile Menu)
+// =========================================
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('mobile-menu-overlay');
+    if (!menu || !overlay) return;
+    
+    menu.classList.toggle('active');
+    overlay.classList.toggle('active');
+}
+
+function searchFromMobile() {
+    searchProducts();
+    toggleMobileMenu(); // إغلاق القائمة بعد البحث
+}
+
+function handleMobileSearch(e) {
+    if (e.key === 'Enter') {
+        searchFromMobile();
+    }
+}
+
+// =========================================
 // تحسين الصور (داخلي)
 // =========================================
 function optimizeImage(url, width = 400) {
