@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -6,12 +7,13 @@
     <!-- سيتم تحديث العنوان والوصف عبر الجافاسكريبت -->
     <title>تفاصيل المنتج</title> 
     <meta name="description" content="">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- تحميل أيقونات Font Awesome بشكل غير حاجب للعرض -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
-
+    <script src="analytics.js" defer></script>
+    <script src="main.js" defer></script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -19,34 +21,131 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <!-- الشريط العلوي -->
+    <div class="top-bar">
+        <div class="container flex-between">
+            <div class="contact-info">
+                <a href="https://wa.me/201110760081" target="_blank" class="top-link">
+                    <i class="fab fa-whatsapp"></i> 201110760081+
+                </a>
+                <span class="sep">|</span>
+                <a href="mailto:info@arabsad.com" class="top-link">
+                    <i class="fas fa-envelope"></i> info@arabsad.com
+                </a>
+            </div>
+            <div class="shipping-note">
+                <a href="pages/shipping.html" class="top-link">الشحن المجاني</a>
+                <span class="sep">|</span>
+                <a href="pages/returns.html" class="top-link">الاسترجاع</a>
+                <span class="sep">|</span>
+                <a href="pages/terms.html" class="top-link">الشروط</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- الهيدر الرئيسي -->
     <header class="main-header">
-        <!-- محتوى الهيدر الخاص بك هنا -->
+        <div class="container flex-between header-content-wrap">
+            <!-- زر هامبرجر (يظهر على الموبايل فقط) -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="فتح القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <a href="index.html" class="logo">
+                <span class="omani-red">مخزون</span> <span class="omani-green">عمان</span>
+            </a>
+            
+            <div class="search-box">
+                <div class="search-wrapper">
+                    <input type="text" id="search-input" placeholder="ابحث عن منتج..." onkeypress="handleEnter(event)" autocomplete="off">
+                </div>
+                <button onclick="window.location.href='index.html?search=' + document.getElementById('search-input').value"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="header-icons">
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span id="cart-count">0</span>
+                    <span class="cart-text">السلة</span>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <main class="container">
+    <!-- القائمة الجانبية للموبايل -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <h3><i class="fas fa-list"></i> القائمة</h3>
+            <span class="close-mobile-menu" onclick="toggleMobileMenu()">&times;</span>
+        </div>
+        <div class="mobile-menu-content">
+            <div class="mobile-search-box">
+                <input type="text" id="mobile-search-input" placeholder="ابحث عن منتج..." onkeypress="if(event.key === 'Enter') window.location.href='index.html?search=' + this.value">
+                <button onclick="window.location.href='index.html?search=' + document.getElementById('mobile-search-input').value"><i class="fas fa-search"></i></button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i> الرئيسية</a>
+                <a href="pages/shipping.html" class="mobile-nav-link"><i class="fas fa-shipping-fast"></i> سياسة الشحن</a>
+                <a href="pages/returns.html" class="mobile-nav-link"><i class="fas fa-undo"></i> الاسترجاع</a>
+                <a href="pages/terms.html" class="mobile-nav-link"><i class="fas fa-file-contract"></i> الشروط والأحكام</a>
+                <a href="pages/privacy.html" class="mobile-nav-link"><i class="fas fa-shield-alt"></i> سياسة الخصوصية</a>
+                <a href="pages/contact.html" class="mobile-nav-link"><i class="fas fa-envelope"></i> تواصل معنا</a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="container main-content-area">
         <nav class="breadcrumb" id="breadcrumb-nav">
             <a href="index.html">الرئيسية</a> &gt; <span id="product-breadcrumb-name">المنتج</span>
         </nav>
         <div class="single-product-container">
             <div class="single-img">
-                <img id="product-image" src="" alt="">
+                <img id="product-image" src="images/placeholder.png" alt="جاري تحميل صورة المنتج">
             </div>
             <div class="single-details">
-                <h1 id="product-title"></h1>
+                <h1 id="product-title">جاري تحميل تفاصيل المنتج...</h1>
                 <div id="product-meta" class="product-meta-tags"></div>
                 <div id="product-price-container"></div>
                 <div id="product-description" style="white-space: pre-wrap;"></div>
-                <button id="whatsapp-button" class="btn-whatsapp-large">
-                    <i class="fab fa-whatsapp"></i> اطلب الآن عبر واتساب
+                <button id="add-to-cart-details" class="add-to-cart-btn" style="width:100%; margin: 20px 0; padding: 15px; font-size: 18px;">
+                    <i class="fas fa-cart-plus"></i> أضف للسلة
                 </button>
             </div>
         </div>
     </main>
 
-    <footer class="footer">
-        <!-- محتوى الفوتر الخاص بك هنا -->
+    <!-- القائمة الجانبية للسلة -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> سلة المشتريات</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-items" id="cart-items"><p class="empty-cart-message">سلّتك فارغة حالياً.</p></div>
+        <div class="cart-footer">
+            <div class="total-row-cart">
+                <span>المجموع:</span>
+                <span id="cart-total" class="omani-green">0.00 ر.ع.</span>
+            </div>
+            <p class="tax-note">الشحن والضريبة يحسبان عند إتمام الطلب</p>
+            <button class="checkout-btn" onclick="checkoutPage()">
+                <i class="fas fa-check-circle"></i> إتمام الطلب
+            </button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة © 2025 متجر مخزون عمان</p>
+            </div>
+        </div>
     </footer>
 
+    <script src="loader.js" defer></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -61,20 +160,29 @@
                     const cleanDescription = product.description.replace(/\\n|\\t/g, ' ').replace(/\s+/g, ' ').trim();
                     const metaDescription = cleanDescription.substring(0, 155) + (cleanDescription.length > 155 ? '...' : '');
 
-                    document.title = product.title + " | مخزون عمان";
+                    document.title = product.title + " | متجر مخزون عمان";
                     document.querySelector('meta[name="description"]').setAttribute("content", metaDescription);
+                    
                     document.getElementById('product-image').src = product['image link'];
                     document.getElementById('product-image').alt = product.title;
                     document.getElementById('product-title').innerText = product.title;
+                    document.getElementById('product-breadcrumb-name').innerText = product.title;
                     document.getElementById('product-description').innerText = product.description.replace(/\\t/g, '    ').replace(/\\n/g, '\n');
 
                     const priceContainer = document.getElementById('product-price-container');
+                    const salePrice = parseFloat(product.sale_price);
+                    const originalPrice = parseFloat(product.price);
                     if (product.price > product.sale_price) {
                         priceContainer.innerHTML = `<span class="price-sale">${product.sale_price.toFixed(2)} ر.ع.</span> <span class="text-through">${product.price.toFixed(2)} ر.ع.</span>`;
                     } else {
                         priceContainer.innerHTML = `<span class="price-normal">${product.sale_price.toFixed(2)} ر.ع.</span>`;
                     }
                     // ... املأ باقي العناصر
+
+                    // ربط زر الإضافة للسلة
+                    const addToCartBtn = document.getElementById('add-to-cart-details');
+                    addToCartBtn.onclick = (event) => addToCart(product.id, event);
+
 
                     // *** هذا هو الجزء الأهم: إنشاء وإضافة سكيما المنتج ***
                     const schema = {
@@ -95,7 +203,7 @@
                             "priceCurrency": "OMR",
                             "price": product.sale_price,
                             ...(product.price > product.sale_price && {
-                                "priceValidUntil": new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0], // Sale valid for 1 year
+                                "priceValidUntil": new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0],
                                 "mainPrice": product.price 
                             }),
                             "itemCondition": "https://schema.org/NewCondition",
@@ -108,7 +216,7 @@
                     schemaScript.textContent = JSON.stringify(schema);
                     document.head.appendChild(schemaScript);
                 } else {
-                    document.getElementById('product-title').innerText = "المنتج غير موجود";
+                    document.querySelector('.single-product-container').innerHTML = `<p class="error-message">عفواً، المنتج الذي تبحث عنه غير موجود.</p>`;
                 }
             });
     });
