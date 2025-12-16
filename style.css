@@ -408,3 +408,22 @@ footer { background: #1a1a1a; color: #fff; padding: 60px 0 20px; margin-top: 60p
     font-size: 12px;
 }
 
+/* =========================================
+   13. بانر احترافي
+   ========================================= */
+.hero-banner {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Modern aspect ratio */
+    background-color: #f0f0f0; /* Fallback color */
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area, might crop */
+    object-position: center; /* Center the image */
+    filter: brightness(0.95); /* Subtle darkening */
+}
