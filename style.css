@@ -43,6 +43,179 @@ img { max-width: 100%; height: auto; }
 .cart-icon span#cart-count { position: absolute; top: -8px; right: -8px; background: var(--omani-red); color: #fff; font-size: 11px; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 .cart-text { font-size: 14px; font-weight: bold; }
 
+/* زر الهامبرجر */
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: var(--omani-black);
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* =========================================
+   Mobile Menu (القائمة الجانبية للموبايل)
+   ========================================= */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100%;
+    background: #fff;
+    z-index: 1100;
+    transform: translateX(100%);
+    transition: 0.4s ease;
+    box-shadow: -3px 0 20px rgba(0,0,0,0.15);
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+.mobile-menu-header {
+    background: linear-gradient(135deg, var(--omani-green), #006030);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--omani-gold);
+}
+
+.mobile-menu-header h3 {
+    margin: 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.close-mobile-menu {
+    font-size: 32px;
+    cursor: pointer;
+    color: #fff;
+    line-height: 1;
+}
+
+.mobile-menu-content {
+    padding: 20px 0;
+}
+
+/* Mobile Search */
+.mobile-search-box {
+    display: flex;
+    margin: 0 20px 25px;
+    border: 2px solid #eee;
+    border-radius: 50px;
+    overflow: hidden;
+    background: #f9f9f9;
+}
+
+.mobile-search-box input {
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    font-family: var(--font-main);
+    background: transparent;
+    font-size: 14px;
+}
+
+.mobile-search-box button {
+    background: var(--omani-black);
+    color: #fff;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Mobile Nav Links */
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 10px;
+}
+
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 15px;
+    color: #333;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.mobile-nav-link:hover {
+    background: #f0fff4;
+    color: var(--omani-green);
+}
+
+.mobile-nav-link i {
+    font-size: 18px;
+    width: 25px;
+    color: var(--omani-green);
+}
+
+/* Mobile Contact Info */
+.mobile-contact-info {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-top: 2px solid #eee;
+}
+
+.mobile-contact-info h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: var(--omani-black);
+}
+
+.mobile-contact-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    color: #555;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-contact-link:last-child {
+    border-bottom: none;
+}
+
+.mobile-contact-link i {
+    font-size: 18px;
+    color: var(--omani-green);
+}
+
+.mobile-contact-link:hover {
+    color: var(--omani-green);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 1050;
+}
+
+.mobile-menu-overlay.active {
+    display: block;
+}
+
 /* =========================================
    3. شبكة المنتجات (Home Page)
    ========================================= */
@@ -150,8 +323,7 @@ footer { background: #1a1a1a; color: #fff; padding: 60px 0 20px; margin-top: 60p
 .hero-banner {
     width: 100%;
     height: auto;
-    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-    overflow: hidden;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -236,6 +408,9 @@ footer { background: #1a1a1a; color: #fff; padding: 60px 0 20px; margin-top: 60p
 
 /* Smaller Tablets */
 @media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
     .top-bar .container,
     .main-header .container {
         flex-direction: column;
@@ -281,13 +456,13 @@ footer { background: #1a1a1a; color: #fff; padding: 60px 0 20px; margin-top: 60p
     .row-group {
         grid-template-columns: 1fr;
     }
-    .search-box {
-        display: none;
-    }
 }
 
 /* Mobile Phones */
 @media (max-width: 480px) {
+    .mobile-menu-btn {
+        display: block;
+    }
     .top-bar {
         font-size: 11px;
     }
@@ -298,15 +473,20 @@ footer { background: #1a1a1a; color: #fff; padding: 60px 0 20px; margin-top: 60p
         font-size: 18px;
     }
     .products-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
     .product-title {
-        font-size: 14px;
+        font-size: 13px;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        line-height: 1.4;
+        max-height: 2.8em;
     }
     .btn-add {
         padding: 10px;
-        font-size: 14px;
+        font-size: 13px;
     }
     .section-title {
         font-size: 20px;
@@ -317,14 +497,14 @@ footer { background: #1a1a1a; color: #fff; padding: 60px 0 20px; margin-top: 60p
     .cart-sidebar {
         width: 100%;
     }
-    .search-box {
-        display: none;
-    }
     .main-header .header-icons {
         gap: 15px;
     }
     .cart-text {
         display: none;
+    }
+    .mobile-menu {
+        width: 90%;
     }
 }
 
@@ -475,8 +655,8 @@ footer { background: #1a1a1a; color: #fff; padding: 60px 0 20px; margin-top: 60p
     margin-bottom: 25px;
     background: #fff;
     position: sticky;
-    top: 60px; /* Below navbar */
-    z-index: 98; /* Below mobile nav overlay */
+    top: 60px;
+    z-index: 98;
     box-shadow: 0 5px 20px rgba(0,0,0,0.04);
     border-radius: 0 0 15px 15px;
 }
@@ -519,7 +699,6 @@ footer { background: #1a1a1a; color: #fff; padding: 60px 0 20px; margin-top: 60p
     transition: all 0.3s;
 }
 
-/* Hover Effect */
 .category-pill:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.05);
@@ -531,7 +710,6 @@ footer { background: #1a1a1a; color: #fff; padding: 60px 0 20px; margin-top: 60p
     color: var(--omani-gold);
 }
 
-/* Active State 'Wow' Factor */
 .category-pill.active {
     background: linear-gradient(135deg, var(--omani-green), #006030);
     color: white;
@@ -541,7 +719,7 @@ footer { background: #1a1a1a; color: #fff; padding: 60px 0 20px; margin-top: 60p
 }
 
 .category-pill.active i {
-    color: #fff; /* White icon on active */
+    color: #fff;
 }
 
 /* =========================================
