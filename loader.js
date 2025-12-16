@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let allProducts = [];
     let activeCategory = 'all';
+    let currentIndex = 0;
+    const ITEMS_PER_PAGE = 12; // عدد المنتجات في كل دفعة
 
     // --- 0. تعريف الفئات ---
     const CATEGORIES = [
@@ -27,14 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             allProducts = await response.json();
-            
+
             // تخزين المنتجات في window لتكون متاحة في كل مكان (مثل السلة)
             window.allProducts = allProducts;
             assignCategoryToProducts();
 
             // عرض المنتجات فقط إذا كنا في الصفحة الرئيسية
             if (appContent) {
-                renderHomePage(allProducts);
+                renderHomePage();
             }
         } catch (error) {
             console.error("Could not fetch products:", error);
@@ -76,17 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.filterByCategory = (catId) => {
         activeCategory = catId;
-        renderHomePage(allProducts);
+        currentIndex = 0; // إعادة المؤشر للبداية
+        renderHomePage();
     };
-
-    // --- دالة عرض الصفحة الرئيسية ---
-    function renderHomePage(products) {
-        const filteredProducts = activeCategory === 'all'
-            ? products
-            : products.filter(p => p.category === activeCategory);
-
-        appContent.innerHTML = renderCategories() + displayProducts(filteredProducts, `تسوق أحدث المنتجات في قسم "${CATEGORIES.find(c => c.id === activeCategory).name}"`);
-    }
 
     // --- دالة عرض المنتجات ---
     function displayProducts(products, title = "تسوق أحدث المنتجات") {
@@ -99,6 +93,38 @@ document.addEventListener('DOMContentLoaded', () => {
         const productsHTML = `<div class="products-grid">${products.map(product => createProductCard(product)).join('')}</div>`;
         
         return headerHTML + productsHTML;
+    }
+
+    // --- دالة عرض الصفحة الرئيسية (مُعاد بناؤها) ---
+    function renderHomePage() {
+        if (!appContent) return;
+        appContent.innerHTML = `
+            ${renderCategories()}
+            <div id="products-container"></div>
+            <div id="load-more-container" class="load-more-container"></div>
+        `;
+        loadMoreProducts();
+    }
+
+    // --- دالة تحميل المزيد من المنتجات (مُعاد بناؤها) ---
+    function loadMoreProducts() {
+        const filteredProducts = activeCategory === 'all'
+            ? allProducts
+            : allProducts.filter(p => p.category === activeCategory);
+
+        const batch = filteredProducts.slice(currentIndex, currentIndex + ITEMS_PER_PAGE);
+        const productsContainer = document.getElementById('products-container');
+        
+        if (currentIndex === 0) {
+            const title = `تسوق أحدث المنتجات في قسم "${CATEGORIES.find(c => c.id === activeCategory).name}"`;
+            productsContainer.innerHTML = displayProducts(batch, title);
+        } else {
+            const grid = productsContainer.querySelector('.products-grid');
+            if (grid) grid.innerHTML += batch.map(product => createProductCard(product)).join('');
+        }
+        
+        currentIndex += batch.length;
+        updateLoadMoreButton(filteredProducts.length);
     }
 
     // --- 2. إنشاء كرت المنتج (Product Card) ---
@@ -154,16 +180,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 3. دوال البحث ---
     function handleSearch(query) {
         if (!query) {
-            renderHomePage(allProducts);
+            currentIndex = 0;
+            renderHomePage();
             return;
         }
         const lowerCaseQuery = query.toLowerCase();
         const filteredProducts = allProducts.filter(product =>
             product.title.toLowerCase().includes(lowerCaseQuery) ||
-            product.description.toLowerCase().includes(lowerCaseQuery) ||
+            (product.description && product.description.toLowerCase().includes(lowerCaseQuery)) ||
             (product.brand && product.brand.toLowerCase().includes(lowerCaseQuery))
         );
-        displayProducts(filteredProducts);
+        
+        const productsContainer = document.getElementById('products-container');
+        if(productsContainer) productsContainer.innerHTML = displayProducts(filteredProducts, `نتائج البحث عن: "${query}"`);
+        
+        // إخفاء زر تحميل المزيد عند البحث
+        document.getElementById('load-more-container').innerHTML = '';
     }
 
     // ربط البحث بالمدخلات (مع التحقق من وجود العناصر)
@@ -191,6 +223,56 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleMobileMenu(); // إغلاق القائمة بعد البحث
         }
     };
+
+    // --- 7. زر تحميل المزيد ---
+    function updateLoadMoreButton(totalFiltered) {
+        const loadMoreContainer = document.getElementById('load-more-container');
+        if (currentIndex < totalFiltered) {
+            loadMoreContainer.innerHTML = `<button class="btn-load-more" onclick="loadMoreProducts()">تحميل المزيد</button>`;
+        } else {
+            loadMoreContainer.innerHTML = ''; // إخفاء الزر عند عرض كل المنتجات
+        }
+    }
+    window.loadMoreProducts = loadMoreProducts; // جعلها متاحة للزر
+
+    // --- 8. اقتراحات البحث ---
+    window.showSuggestions = function(input) {
+        const query = input.value.toLowerCase().trim();
+        const suggestionsBox = document.getElementById('search-suggestions');
+        if (!suggestionsBox) return;
+
+        if (query.length < 2) {
+            suggestionsBox.classList.remove('active');
+            return;
+        }
+
+        const matches = allProducts.filter(p => p.title.toLowerCase().includes(query)).slice(0, 5);
+        
+        if (matches.length > 0) {
+            suggestionsBox.innerHTML = matches.map(p => {
+                const pathPrefix = window.location.pathname.includes('/pages/') ? '../' : '';
+                return `
+                <a href="${pathPrefix}product-details.html?id=${p.id}" class="suggestion-item">
+                    <img src="${p['image link']}" onerror="this.src='images/og-default.jpg'">
+                    <div class="suggestion-info">
+                        <h5>${p.title}</h5>
+                        <span>${parseFloat(p.sale_price).toFixed(2)} ر.ع.</span>
+                    </div>
+                </a>`;
+            }).join('');
+            suggestionsBox.classList.add('active');
+        } else {
+            suggestionsBox.classList.remove('active');
+        }
+    }
+
+    // إغلاق الاقتراحات عند النقر خارجها
+    document.addEventListener('click', (e) => {
+        const suggestionsBox = document.getElementById('search-suggestions');
+        if (suggestionsBox && !e.target.closest('.search-box')) {
+            suggestionsBox.classList.remove('active');
+        }
+    });
 });
 
 // --- 6. دوال السلة (Cart Functions) ---
@@ -217,7 +299,7 @@ function addToCart(productId, event) {
 
     saveCart(cart);
     showNotification('تمت إضافة المنتج إلى السلة بنجاح!');
-    toggleCart(true); // فتح السلة عند الإضافة
+    // toggleCart(true); // تم التعطيل: لن نفتح السلة تلقائيًا
 }
 
 async function updateCartUI() {

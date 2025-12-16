@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن - متجر مخزون عمان</title>
+    <meta name="description" content="تعرف على قصة ورؤية متجر مخزون عمان، وجهتك الأولى للتسوق الذكي في سلطنة عمان. اكتشف قيمنا والتزامنا بالجودة.">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../main.js" defer></script>
+    <script src="../loader.js" defer></script>
+</head>
+<body>
+    <!-- الشريط العلوي -->
+    <div class="top-bar">
+        <div class="container flex-between">
+            <div class="contact-info">
+                <a href="https://wa.me/201110760081" target="_blank" class="top-link">
+                    <i class="fab fa-whatsapp"></i> 201110760081+
+                </a>
+                <span class="sep">|</span>
+                <a href="mailto:info@arabsad.com" class="top-link">
+                    <i class="fas fa-envelope"></i> info@arabsad.com
+                </a>
+            </div>
+            <div class="shipping-note">
+                <a href="shipping.html" class="top-link">الشحن المجاني</a>
+                <span class="sep">|</span>
+                <a href="returns.html" class="top-link">الاسترجاع</a>
+                <span class="sep">|</span>
+                <a href="terms.html" class="top-link">الشروط</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- الهيدر الرئيسي -->
+    <header class="main-header">
+        <div class="container flex-between header-content-wrap">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="فتح القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="../index.html" class="logo">
+                <span class="omani-red">مخزون</span> <span class="omani-green">عمان</span>
+            </a>
+            <div class="search-box">
+                <div class="search-wrapper">
+                    <input type="text" id="search-input" placeholder="ابحث عن منتج..." onkeypress="if(event.key === 'Enter') window.location.href='../index.html?search=' + this.value" autocomplete="off">
+                </div>
+                <button onclick="window.location.href='../index.html?search=' + document.getElementById('search-input').value"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-icons">
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span id="cart-count">0</span>
+                    <span class="cart-text">السلة</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- القائمة الجانبية للموبايل -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <h3><i class="fas fa-list"></i> القائمة</h3>
+            <span class="close-mobile-menu" onclick="toggleMobileMenu()">&times;</span>
+        </div>
+        <div class="mobile-menu-content">
+            <div class="mobile-search-box">
+                <input type="text" id="mobile-search-input" placeholder="ابحث عن منتج..." onkeypress="if(event.key === 'Enter') window.location.href='../index.html?search=' + this.value">
+                <button onclick="window.location.href='../index.html?search=' + document.getElementById('mobile-search-input').value"><i class="fas fa-search"></i></button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="../index.html" class="mobile-nav-link"><i class="fas fa-home"></i> الرئيسية</a>
+                <a href="about-us.html" class="mobile-nav-link"><i class="fas fa-users"></i> من نحن</a>
+                <a href="our-story.html" class="mobile-nav-link"><i class="fas fa-book-open"></i> نبذة عنا</a>
+                <a href="contact.html" class="mobile-nav-link"><i class="fas fa-envelope"></i> تواصل معنا</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- القائمة الجانبية للسلة -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> سلة المشتريات</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-items" id="cart-items"><p class="empty-cart-message">سلّتك فارغة حالياً.</p></div>
+        <div class="cart-footer">
+            <div class="total-row-cart">
+                <span>المجموع:</span>
+                <span id="cart-total" class="omani-green">0.00 ر.ع.</span>
+            </div>
+            <p class="tax-note">الشحن والضريبة يحسبان عند إتمام الطلب</p>
+            <button class="checkout-btn" onclick="checkoutPage()">
+                <i class="fas fa-check-circle"></i> إتمام الطلب
+            </button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+
+    <!-- المحتوى -->
+    <main class="container legal-page-container">
+        <div class="about-us-page">
+            <div class="about-hero">
+                <h1>مرحباً بكم في <span class="omani-red">مخزون</span> <span class="omani-green">عمان</span></h1>
+                <p>وجهتكم الأولى للتسوق الذكي والجودة التي تثقون بها في سلطنة عمان.</p>
+            </div>
+
+            <div class="about-section">
+                <div class="about-box">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>رسالتنا</h3>
+                    <p>توفير تجربة تسوق إلكترونية سهلة وموثوقة، وتقديم أفضل المنتجات العالمية بأسعار تنافسية مع خدمة عملاء استثنائية تصل إلى كل بيت في سلطنة عمان.</p>
+                </div>
+                <div class="about-box">
+                    <i class="fas fa-eye"></i>
+                    <h3>رؤيتنا</h3>
+                    <p>أن نكون المتجر الإلكتروني الرائد في سلطنة عمان، والخيار الأول للعملاء الباحثين عن الجودة، التنوع، والقيمة مقابل السعر.</p>
+                </div>
+            </div>
+
+            <div class="why-us-section">
+                <h2 class="section-title">لماذا تختار مخزون عمان؟</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <h4>جودة مضمونة</h4>
+                        <p>نختار منتجاتنا بعناية من أفضل الموردين لضمان حصولك على أعلى مستويات الجودة.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h4>أسعار تنافسية</h4>
+                        <p>نقدم لك أفضل العروض والأسعار في السوق العماني لتسوق ذكي وموفر.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h4>توصيل سريع</h4>
+                        <p>خدمة توصيل سريعة وموثوقة تصل إلى باب منزلك في جميع أنحاء السلطنة.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-headset"></i>
+                        <h4>خدمة عملاء</h4>
+                        <p>فريقنا جاهز لمساعدتك والإجابة على استفساراتك لضمان رضاك التام.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة © 2025 متجر مخزون عمان</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

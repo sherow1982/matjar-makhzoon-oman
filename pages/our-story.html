@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نبذة عنا - قصة متجر مخزون عمان</title>
+    <meta name="description" content="اكتشف قصة نجاح متجر مخزون عمان، كيف بدأنا، وما هي رؤيتنا للمستقبل في عالم التجارة الإلكترونية في سلطنة عمان.">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../main.js" defer></script>
+    <script src="../loader.js" defer></script>
+</head>
+<body>
+    <!-- الشريط العلوي -->
+    <div class="top-bar">
+        <div class="container flex-between">
+            <div class="contact-info">
+                <a href="https://wa.me/201110760081" target="_blank" class="top-link">
+                    <i class="fab fa-whatsapp"></i> 201110760081+
+                </a>
+                <span class="sep">|</span>
+                <a href="mailto:info@arabsad.com" class="top-link">
+                    <i class="fas fa-envelope"></i> info@arabsad.com
+                </a>
+            </div>
+            <div class="shipping-note">
+                <a href="shipping.html" class="top-link">الشحن المجاني</a>
+                <span class="sep">|</span>
+                <a href="returns.html" class="top-link">الاسترجاع</a>
+                <span class="sep">|</span>
+                <a href="terms.html" class="top-link">الشروط</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- الهيدر الرئيسي -->
+    <header class="main-header">
+        <div class="container flex-between header-content-wrap">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="فتح القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="../index.html" class="logo">
+                <span class="omani-red">مخزون</span> <span class="omani-green">عمان</span>
+            </a>
+            <div class="search-box">
+                <div class="search-wrapper">
+                    <input type="text" id="search-input" placeholder="ابحث عن منتج..." onkeypress="if(event.key === 'Enter') window.location.href='../index.html?search=' + this.value" autocomplete="off">
+                </div>
+                <button onclick="window.location.href='../index.html?search=' + document.getElementById('search-input').value"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-icons">
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span id="cart-count">0</span>
+                    <span class="cart-text">السلة</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- القائمة الجانبية للموبايل -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <h3><i class="fas fa-list"></i> القائمة</h3>
+            <span class="close-mobile-menu" onclick="toggleMobileMenu()">&times;</span>
+        </div>
+        <div class="mobile-menu-content">
+            <div class="mobile-search-box">
+                <input type="text" id="mobile-search-input" placeholder="ابحث عن منتج..." onkeypress="if(event.key === 'Enter') window.location.href='../index.html?search=' + this.value">
+                <button onclick="window.location.href='../index.html?search=' + document.getElementById('mobile-search-input').value"><i class="fas fa-search"></i></button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="../index.html" class="mobile-nav-link"><i class="fas fa-home"></i> الرئيسية</a>
+                <a href="about-us.html" class="mobile-nav-link"><i class="fas fa-users"></i> من نحن</a>
+                <a href="our-story.html" class="mobile-nav-link"><i class="fas fa-book-open"></i> نبذة عنا</a>
+                <a href="contact.html" class="mobile-nav-link"><i class="fas fa-envelope"></i> تواصل معنا</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- القائمة الجانبية للسلة -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> سلة المشتريات</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-items" id="cart-items"><p class="empty-cart-message">سلّتك فارغة حالياً.</p></div>
+        <div class="cart-footer">
+            <div class="total-row-cart">
+                <span>المجموع:</span>
+                <span id="cart-total" class="omani-green">0.00 ر.ع.</span>
+            </div>
+            <p class="tax-note">الشحن والضريبة يحسبان عند إتمام الطلب</p>
+            <button class="checkout-btn" onclick="checkoutPage()">
+                <i class="fas fa-check-circle"></i> إتمام الطلب
+            </button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+
+    <!-- المحتوى -->
+    <main class="container legal-page-container">
+        <div class="story-page">
+            <h1 class="section-title">قصتنا: من فكرة إلى واقع</h1>
+            <p class="story-intro">كل قصة نجاح تبدأ بفكرة. قصتنا في "مخزون عمان" بدأت من شغف بتقديم الأفضل للسوق العماني.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-lightbulb"></i></div>
+                    <div class="timeline-content">
+                        <h3>2022 - ولادة الفكرة</h3>
+                        <p>لاحظنا وجود فجوة في السوق المحلي للمنتجات عالية الجودة بأسعار معقولة. من هنا، ولدت فكرة "مخزون عمان" لتكون جسرًا بين المستهلك العماني وأفضل المنتجات العالمية.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="timeline-content">
+                        <h3>2023 - الانطلاقة</h3>
+                        <p>أطلقنا متجرنا الإلكتروني بتشكيلة محدودة من المنتجات المختارة بعناية، مع التركيز على بناء الثقة وتقديم خدمة عملاء لا مثيل لها.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-users"></i></div>
+                    <div class="timeline-content">
+                        <h3>2024 - النمو والتوسع</h3>
+                        <p>بفضل ثقتكم، توسعنا لنغطي جميع ولايات السلطنة، وأضفنا مئات المنتجات الجديدة لتلبية احتياجاتكم المتنوعة.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-star"></i></div>
+                    <div class="timeline-content">
+                        <h3>المستقبل - التزامنا مستمر</h3>
+                        <p>نحن ملتزمون بالاستمرار في رحلة البحث عن أفضل المنتجات، وتقديم تجربة تسوق تتجاوز توقعاتكم. شكرًا لكونكم جزءًا من قصتنا.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة © 2025 متجر مخزون عمان</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
