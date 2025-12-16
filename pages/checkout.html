@@ -166,13 +166,10 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // انتظر حتى يتم تحميل المنتجات في loader.js
-            const checkProductsLoaded = setInterval(() => {
-                if (window.allProducts && window.allProducts.length > 0) {
-                    clearInterval(checkProductsLoaded);
-                    loadCheckoutPage();
-                }
-            }, 100);
+            // استخدام الطريقة الجديدة والمنظمة لتحميل البيانات
+            loadApp().then(() => {
+                loadCheckoutPage();
+            }).catch(err => console.error("Failed to load checkout page:", err));
         });
 
         function loadCheckoutPage() {
@@ -196,7 +193,7 @@
                     total += itemTotal;
                     itemsHTML += `
                         <div class="summary-item">
-                            <img src="${product['image link']}" alt="${product.title}">
+                            <img src="${product['image link'].startsWith('http') ? product['image link'] : `../${product['image link']}`}" alt="${product.title}">
                             <div class="summary-item-details">
                                 <h4>${product.title}</h4>
                                 <span>${cartItem.quantity} x ${product.sale_price.toFixed(2)} ر.ع.</span>

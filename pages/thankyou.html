@@ -2,35 +2,78 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="../images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>شكراً لطلبك - مخزون عمان</title>
-    <!-- استخدام مسار مطلق لضمان تحميل الخطوط والاستايل من أي مكان -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- استخدام مسار مطلق لضمان تحميل الخطوط والاستايل من أي مكان -->
+    <meta name="robots" content="noindex, nofollow"> <!-- لمنع محركات البحث من أرشفتها -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
     <style>
-        body { background-color: #f9fafa; font-family: 'Cairo', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 80vh; }
-        .thank-you-box { text-align: center; padding: 50px 30px; max-width: 500px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .icon-success { font-size: 70px; color: #009739; margin-bottom: 25px; }
-        h1 { color: #333; margin-bottom: 15px; }
-        .btn-home {
-            background: #009739; color: white; text-decoration: none;
-            padding: 12px 30px; border-radius: 50px; font-weight: bold;
-            display: inline-block; margin-top: 20px; transition: 0.3s;
+        .thank-you-container {
+            text-align: center;
+            padding: 80px 20px;
+            background: #fff;
+            margin: 40px auto;
+            border-radius: 12px;
+            max-width: 700px;
+            border: 1px solid #eee;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
-        .btn-home:hover { background: #007a2c; box-shadow: 0 5px 15px rgba(0, 151, 57, 0.3); }
+        .success-icon {
+            font-size: 80px;
+            color: var(--omani-green);
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            border-radius: 50%;
+            background: #e8f5e9;
+            margin: 0 auto 30px;
+            animation: pop 0.5s ease-out;
+        }
+        @keyframes pop {
+            0% { transform: scale(0.5); opacity: 0; }
+            80% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .thank-you-container h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        .thank-you-container p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .btn-home {
+            background: var(--omani-black);
+            color: #fff;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .btn-home:hover {
+            background: var(--omani-green);
+        }
     </style>
 </head>
-<body>
-    <div class="thank-you-box">
-        <div class="icon-success"><i class="fas fa-check-circle"></i> ✔</div>
-        <h1>شكراً لك!</h1>
-        <p style="font-size: 16px; color: #666; line-height: 1.6; margin-bottom: 25px;">تم استلام طلبك بنجاح. يرجى التأكد من إرسال تفاصيل الطلب عبر الواتساب لإتمام عملية الشحن.</p>
-        <p style="font-weight: 600; color: #333;">سيقوم فريقنا بالتواصل معك قريباً.</p>
-        
-        <!-- هنا التعديل المطلوب: رابط العودة للصفحة الرئيسية في الجذر -->
-        <!-- استخدمت المسار الكامل لضمان العمل من أي مجلد فرعي -->
-        <a href="../index.html" class="btn-home">العودة للتسوق</a>
+<body class="checkout-page-body">
+    <header class="checkout-header">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <span class="omani-red">مخزون</span> <span class="omani-green">عمان</span>
+            </a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="thank-you-container">
+            <div class="success-icon"><i class="fas fa-check"></i></div>
+            <h1>شكراً لك، تم استلام طلبك بنجاح!</h1>
+            <p>سيتم التواصل معك قريباً عبر واتساب لتأكيد تفاصيل الطلب والشحن. نقدر ثقتك في مخزون عمان.</p>
+            <a href="../index.html" class="btn-home">العودة للصفحة الرئيسية</a>
+        </div>
     </div>
 </body>
 </html>

@@ -7,7 +7,7 @@
     <title>تفاصيل المنتج</title> 
     <meta name="description" content="">
     <link rel="icon" href="images/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- تحميل أيقونات Font Awesome بشكل غير حاجب للعرض -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
@@ -57,7 +57,7 @@
             
             <div class="search-box">
                 <div class="search-wrapper">
-                    <input type="text" id="search-input" placeholder="ابحث عن منتج..." onkeypress="if(event.key === 'Enter') window.location.href='index.html?search=' + this.value" autocomplete="off">
+                    <input type="text" id="search-input" placeholder="ابحث عن منتج..." onkeypress="if(event.key === 'Enter') window.location.href='index.html?search=' + this.value.trim()" autocomplete="off">
                 </div>
                 <button onclick="window.location.href='index.html?search=' + document.getElementById('search-input').value.trim()"><i class="fas fa-search"></i></button>
             </div>
@@ -80,7 +80,7 @@
         </div>
         <div class="mobile-menu-content">
             <div class="mobile-search-box">
-                <input type="text" id="mobile-search-input" placeholder="ابحث عن منتج..." onkeypress="if(event.key === 'Enter') window.location.href='index.html?search=' + this.value">
+                <input type="text" id="mobile-search-input" placeholder="ابحث عن منتج..." onkeypress="if(event.key === 'Enter') window.location.href='index.html?search=' + this.value.trim()">
                 <button onclick="window.location.href='index.html?search=' + document.getElementById('mobile-search-input').value.trim()"><i class="fas fa-search"></i></button>
             </div>
             <nav class="mobile-nav-links">
@@ -96,11 +96,12 @@
 
     <main class="container main-content-area">
         <nav class="breadcrumb" id="breadcrumb-nav">
-            <a href="index.html">الرئيسية</a> &gt; <span id="product-breadcrumb-name">المنتج</span>
+            <a href="index.html">الرئيسية</a> &gt; <a id="breadcrumb-category-link" href="#">الفئة</a> &gt; <span id="product-breadcrumb-name">المنتج</span>
         </nav>
         <div class="single-product-container">
             <div class="product-gallery">
                 <div class="main-image-container">
+                    <div id="product-rating-summary-badge" class="rating-summary-badge"></div>
                     <img id="main-product-image" src="images/og-default.jpg" alt="جاري تحميل صورة المنتج">
                 </div>
                 <div id="product-thumbnails" class="thumbnail-container"></div>
@@ -134,10 +135,11 @@
                         <i class="fas fa-shield-alt"></i> ضمان الاسترجاع الذهبي
                     </a>
                 </div>
+                <div id="product-keywords" class="product-keywords">
+                    <!-- الكلمات المفتاحية ستضاف هنا -->
+                </div>
             </div>
         </div>
-        <!-- قسم المنتجات ذات الصلة -->
-        <div id="related-products-section"></div>
 
         <!-- قسم الأسئلة الشائعة -->
         <div class="faq-section">
@@ -157,7 +159,13 @@
                 </details>
             </div>
         </div>
+        
+        <!-- قسم المنتجات ذات الصلة -->
+        <div id="related-products-section"></div>
     </main>
+
+    <!-- قسم التقييمات -->
+    <div id="product-reviews-section" class="container"></div>
 
     <!-- القائمة الجانبية للسلة -->
     <div class="cart-sidebar" id="cart-sidebar">
@@ -181,19 +189,16 @@
     <div class="overlay" id="overlay" onclick="toggleCart()"></div>
     <div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
 
+    <!-- كل الجافاسكريبت الخاص بالصفحة مجمع هنا -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const urlParams = new URLSearchParams(window.location.search);
-        const productId = parseInt(urlParams.get('id'));
-        
-        // انتظر حتى يتم تحميل المنتجات في loader.js
-        const checkProductsLoaded = setInterval(() => {
-            if (window.allProducts && window.allProducts.length > 0) {
-                clearInterval(checkProductsLoaded);
-                renderProductDetails(window.allProducts, productId);
-            }
-        }, 100);
+        const productId = parseInt(urlParams.get('id')); 
 
+        // استخدام الطريقة الجديدة والمنظمة لتحميل البيانات
+        loadApp().then(allProducts => {
+            renderProductDetails(allProducts, productId);
+        });
         function renderProductDetails(allProducts, productId) {
             const product = allProducts.find(p => p.id === productId);
             if (product) {
@@ -210,6 +215,13 @@
                     document.getElementById('product-title').innerText = product.title;
                     document.getElementById('product-breadcrumb-name').innerText = product.title;
                     document.getElementById('product-description').innerHTML = formatDescription(product.description);
+                    
+                    // تحديث رابط الفئة في مسار التنقل
+                    const category = CATEGORIES.find(c => c.id === product.category);
+                    if (category) {
+                        document.getElementById('breadcrumb-category-link').innerText = category.name;
+                        document.getElementById('breadcrumb-category-link').href = `index.html#${category.id}`;
+                    }
 
                     const priceContainer = document.getElementById('product-price-container');
                     const salePrice = parseFloat(product.sale_price);
@@ -231,11 +243,23 @@
                     const metaContainer = document.getElementById('product-meta');
                     metaContainer.innerHTML = `
                         ${product.sku ? `<div class="meta-item"><strong>كود المنتج:</strong> <span>#${product.sku}</span></div>` : ''}
-                        ${product.brand ? `<div class="meta-item"><strong>العلامة التجارية:</strong> <span>${product.brand}</span></div>` : ''}
+                        ${product.brand ? `<div class="meta-item"><strong>العلامة التجارية:</strong> <a href="index.html?search=${encodeURIComponent(product.brand)}" class="brand-link">${product.brand}</a></div>` : ''}
                         ${product.condition ? `<div class="meta-item"><strong>حالة المنتج:</strong> <span class="stock-status">${product.condition === 'new' ? 'جديد' : 'مستعمل'}</span></div>` : ''}
                         <div class="meta-item"><strong>التوفر:</strong> <span class="stock-status in-stock">متوفر</span></div>
                         <div class="meta-item"><strong>الشحن:</strong> <span>يتم التوصيل خلال 1-3 أيام</span></div>
                     `;
+
+                    // إنشاء وعرض الكلمات المفتاحية
+                    const keywordsContainer = document.getElementById('product-keywords');
+                    const keywords = generateKeywords(product, category);
+                    if (keywords.length > 0) {
+                        keywordsContainer.innerHTML = `
+                            <strong>كلمات مفتاحية:</strong>
+                            <div class="keywords-list">
+                                ${keywords.map(kw => `<a href="index.html?search=${encodeURIComponent(kw)}" class="keyword-tag">${kw}</a>`).join('')}
+                            </div>
+                        `;
+                    }
 
 
                     // ربط زر الإضافة للسلة
@@ -258,6 +282,9 @@
 
                     // عرض المنتجات ذات الصلة
                     displayRelatedProducts(allProducts, product.id);
+
+                    // عرض التقييمات
+                    renderReviews(product);
 
                     // *** هذا هو الجزء الأهم: إنشاء وإضافة سكيما المنتج ***
                     const schema = {
@@ -282,8 +309,50 @@
                                 "mainPrice": product.price 
                             }),
                             "itemCondition": "https://schema.org/NewCondition",
-                            "availability": "https://schema.org/InStock"
-                        }
+                            "availability": "https://schema.org/InStock",
+                            "shippingDetails": {
+                                "@type": "OfferShippingDetails",
+                                "shippingRate": {
+                                    "@type": "ShippingRateSettings",
+                                    "currency": "OMR",
+                                    "shippingDestination": {
+                                        "@type": "DefinedRegion",
+                                        "addressCountry": "OM"
+                                    },
+                                    "freeShippingThreshold": {
+                                        "@type": "MonetaryAmount",
+                                        "currency": "OMR",
+                                        "value": 10
+                                    }
+                                }
+                            },
+                            "hasMerchantReturnPolicy": {
+                                "@type": "MerchantReturnPolicy",
+                                "applicableCountry": "OM",
+                                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                                "merchantReturnDays": 14,
+                                "returnMethod": "https://schema.org/ReturnByMail"
+                            }
+                        },
+                        ...(product.reviews && product.reviews.length > 0 && {
+                            "aggregateRating": {
+                                "@type": "AggregateRating",
+                                "ratingValue": (product.reviews.reduce((acc, review) => acc + review.rating, 0) / product.reviews.length).toFixed(1),
+                                "reviewCount": product.reviews.length
+                            },
+                            "review": product.reviews.map(review => ({
+                                "@type": "Review",
+                                "author": {
+                                    "@type": "Person",
+                                    "name": review.author
+                                },
+                                "reviewRating": {
+                                    "@type": "Rating",
+                                    "ratingValue": review.rating
+                                },
+                                "reviewBody": review.body
+                            }))
+                        })
                     };
 
                     const schemaScript = document.createElement('script');
@@ -302,46 +371,79 @@
         }
     });
 
-    function formatDescription(description) {
-        if (!description) return '';
-        // استبدال علامات التبويب والأسطر الجديدة بعلامات HTML
-        let formatted = description
-            .replace(/\\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;')
-            .replace(/\\n/g, '<br>');
+    // --- الدوال المساعدة الخاصة بالصفحة ---
 
-        // تحويل القوائم النقطية (التي تبدأ بـ - أو • أو *) إلى قائمة HTML
-        formatted = formatted.replace(/(-|•|\*)\s*(.*?)(<br>|$)/g, '<li>$2</li>');
-        
-        // إذا تم العثور على عناصر قائمة، قم بلفها في <ul>
-        if (formatted.includes('<li>')) {
-            formatted = '<ul>' + formatted.replace(/<br>/g, '') + '</ul>';
+    function displayRelatedProducts(allProducts, currentProductId) {
+        const relatedSection = document.getElementById('related-products-section');
+        if (!relatedSection) return;
+        let relatedProducts = allProducts.filter(p => p.id !== currentProductId);
+        relatedProducts = relatedProducts.sort(() => 0.5 - Math.random()).slice(0, 4);
+        if (relatedProducts.length > 0) {
+            relatedSection.innerHTML = `
+                <h2 class="section-title">قد يعجبك أيضاً</h2>
+                <div class="products-grid">
+                    ${relatedProducts.map(product => createProductCard(product)).join('')}
+                </div>`;
         }
-        return formatted;
+    }
+
+    function renderReviews(product) {
+        const reviewsSection = document.getElementById('product-reviews-section');
+        const ratingBadge = document.getElementById('product-rating-summary-badge');
+        if (!reviewsSection || !product.reviews || product.reviews.length === 0) {
+            if(ratingBadge) ratingBadge.style.display = 'none';
+            return;
+        }
+        const reviewCount = product.reviews.length;
+        const avgRating = (product.reviews.reduce((acc, review) => acc + review.rating, 0) / reviewCount).toFixed(1);
+        if(ratingBadge) {
+            ratingBadge.innerHTML = `<i class="fas fa-star"></i> ${avgRating}`;
+            ratingBadge.style.display = 'flex';
+        }
+        let reviewsHTML = `
+            <div class="reviews-summary">
+                <h2 class="section-title">تقييمات العملاء</h2>
+                <div class="summary-box">
+                    <div class="summary-rating-value">${avgRating}</div>
+                    <div class="summary-stars">${'<i class="fas fa-star"></i>'.repeat(Math.round(avgRating))}</div>
+                    <div class="summary-count">بناءً على ${reviewCount} تقييم</div>
+                </div>
+            </div>
+            <div class="reviews-list">
+        `;
+        product.reviews.forEach(review => {
+            reviewsHTML += `
+                <div class="review-card">
+                    <div class="review-header"><strong>${review.author}</strong> - <span class="review-location">${review.location}</span></div>
+                    <div class="review-stars">${'<i class="fas fa-star"></i>'.repeat(Math.round(review.rating))}</div>
+                    <p class="review-body">"${review.body}"</p>
+                </div>`;
+        });
+        reviewsHTML += `</div>`;
+        reviewsSection.innerHTML = reviewsHTML;
     }
 
     function renderGallery(product) {
         const mainImage = document.getElementById('main-product-image');
         const thumbnailsContainer = document.getElementById('product-thumbnails');
-
+        const pathPrefix = ''; // المسار من الجذر
         const images = [product['image link']];
-        if (product['additional image link']) {
+        if (product['additional image link'] && product['additional image link'].trim() !== '') {
             images.push(product['additional image link']);
         }
-
-        mainImage.src = images[0];
+        const getCorrectPath = (src) => src.startsWith('http') ? src : `${pathPrefix}${src}`;
+        mainImage.src = getCorrectPath(images[0]);
         mainImage.alt = product.title;
-
         thumbnailsContainer.innerHTML = images.map((imgSrc, index) => `
-            <img src="${imgSrc.startsWith('http') ? imgSrc : '../' + imgSrc}" 
+            <img src="${getCorrectPath(imgSrc)}" 
                  alt="صورة مصغرة ${index + 1}" 
                  class="thumbnail-image ${index === 0 ? 'active' : ''}"
-                 onclick="changeMainImage('${imgSrc}', this)">
+                 onclick="changeMainImage('${getCorrectPath(imgSrc)}', this)">
         `).join('');
     }
 
     window.changeMainImage = function(src, thumbElement) {
-        const mainImage = document.getElementById('main-product-image');
-        mainImage.src = src.startsWith('http') ? src : '../' + src;
+        document.getElementById('main-product-image').src = src;
         document.querySelectorAll('.thumbnail-image').forEach(el => el.classList.remove('active'));
         thumbElement.classList.add('active');
     }
@@ -349,80 +451,59 @@
     function startCountdown() {
         const countdownContainer = document.getElementById('countdown-timer-container');
         if (!countdownContainer) return;
-
         countdownContainer.innerHTML = `
             <div class="countdown-timer">
                 <i class="fas fa-hourglass-half"></i> 
                 <span class="countdown-text">العرض ينتهي خلال:</span>
-                <div class="timer-box">
-                    <span id="timer-days">00</span><small>يوم</small>
-                </div>
-                <div class="timer-box">
-                    <span id="timer-hours">00</span><small>ساعة</small>
-                </div>
-                <div class="timer-box">
-                    <span id="timer-min">00</span><small>دقيقة</small>
-                </div>
-                <div class="timer-box">
-                    <span id="timer-sec">00</span><small>ثانية</small>
-                </div>
-            </div>
-        `;
-
-        const countdownDate = new Date().getTime() + (2 * 24 * 60 * 60 * 1000); // عرض لمدة يومين من الآن
-
+                <div class="timer-box"><span id="timer-days">00</span><small>يوم</small></div>
+                <div class="timer-box"><span id="timer-hours">00</span><small>ساعة</small></div>
+                <div class="timer-box"><span id="timer-min">00</span><small>دقيقة</small></div>
+                <div class="timer-box"><span id="timer-sec">00</span><small>ثانية</small></div>
+            </div>`;
+        const countdownDate = new Date().getTime() + (2 * 24 * 60 * 60 * 1000); // يومين
         const interval = setInterval(() => {
             const now = new Date().getTime();
             const distance = countdownDate - now;
-
+            if (distance < 0) {
+                clearInterval(interval);
+                countdownContainer.innerHTML = '<div class="countdown-timer ended">انتهى العرض!</div>';
+                return;
+            }
             document.getElementById('timer-days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
             document.getElementById('timer-hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
             document.getElementById('timer-min').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
             document.getElementById('timer-sec').innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
-
-            if (distance < 0) {
-                clearInterval(interval);
-                countdownContainer.innerHTML = '<div class="countdown-timer ended">انتهى العرض!</div>';
-            }
         }, 1000);
     }
 
-    // دالة لعرض المنتجات ذات الصلة
-    function displayRelatedProducts(allProducts, currentProductId) {
-        const relatedSection = document.getElementById('related-products-section');
-        if (!relatedSection) return;
-
-        // ترشيح المنتجات لاستبعاد المنتج الحالي
-        let relatedProducts = allProducts.filter(p => p.id !== currentProductId);
-
-        // خلط المنتجات وعرض 4 منها فقط
-        relatedProducts = relatedProducts.sort(() => 0.5 - Math.random()).slice(0, 4);
-
-        if (relatedProducts.length > 0) {
-            const relatedHTML = `
-                <h2 class="section-title">قد يعجبك أيضاً</h2>
-                <div class="products-grid">
-                    ${relatedProducts.map(product => createProductCard(product)).join('')}
-                </div>
-            `;
-            relatedSection.innerHTML = relatedHTML;
-        }
-    }
-
-    // يجب أن تكون دالة createProductCard متاحة هنا أيضاً
-    // بما أن loader.js يتم تحميله، ستكون الدالة متاحة في النطاق العام (window)
-    // أو يمكن نسخها هنا لضمان عملها بشكل مستقل.
-    // للسهولة، سنعتمد على أن loader.js يجعلها متاحة.
-
-    // دالة لتغيير الكمية
     window.changeQuantity = function(amount) {
         const quantityInput = document.getElementById('quantity-input');
-        let currentValue = parseInt(quantityInput.value);
-        currentValue += amount;
-        if (currentValue < 1) {
-            currentValue = 1;
-        }
+        let currentValue = parseInt(quantityInput.value) + amount;
+        if (currentValue < 1) currentValue = 1;
         quantityInput.value = currentValue;
+    }
+
+    function formatDescription(description) {
+        if (!description) return '';
+        let formatted = description.replace(/\\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;').replace(/\\n/g, '<br>');
+        formatted = formatted.replace(/(-|•|\*)\s*(.*?)(<br>|$)/g, '<li>$2</li>');
+        if (formatted.includes('<li>')) {
+            formatted = '<ul>' + formatted.replace(/<br>/g, '') + '</ul>';
+        }
+        return formatted;
+    }
+
+    function generateKeywords(product, category) {
+        let keywords = new Set();
+        if (product.title) {
+            product.title.split(' ').forEach(word => {
+                if(word.length > 2 && isNaN(word)) keywords.add(word);
+            });
+        }
+        if (product.brand) keywords.add(product.brand);
+        if (category) keywords.add(category.name);
+        keywords.add(`${product.title} في عمان`);
+        return Array.from(keywords).slice(0, 7);
     }
     </script>
     <!-- الفوتر -->

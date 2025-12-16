@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
   <channel>
-    <title>مخزون عمان - تغذية بيانات المنتجات</title>
-    <link>https://sherow1982.github.io/matjar-makhzoon-oman</link>
-    <description>قائمة منتجات متجر مخزون عمان.</description>
+    <title>مخزون عمان - منتجات عالية الجودة في سلطنة عمان</title>
+    <link>https://sherow1982.github.io/matjar-makhzoon-oman/index.html</link>
+    <description>اكتشف أفضل المنتجات في مخزون عمان. تسوق بذكاء مع الدفع عند الاستلام والشحن السريع.</description>
     <item>
       <g:id>1</g:id>
       <title>مصفف هواء ساخن احترافي 6*1</title>
-      <description>مصفف هواء ساخن احترافي 6*1</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=1</link>
+      <description>احصلي على تسريحات شعر احترافية في منزلك مع مصفف الهواء الساخن 6 في 1. يجمع هذا الجهاز بين قوة المجفف ودقة المصفف ليمنحك شعراً ناعماً ولامعاً أو تموجات طبيعية بسهولة. يأتي مع 6 ملحقات مختلفة لتلبية جميع احتياجات التصفيف.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=1&amp;slug=مصفف-هواء-ساخن-احترافي-6-1</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762435032856192.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762435032226438.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -21,8 +21,8 @@
     <item>
       <g:id>2</g:id>
       <title>مكواة فرد الشعر</title>
-      <description>مكواة فرد الشعر من Remington</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=2</link>
+      <description>احصلي على شعر أملس وناعم كالحرير مع مكواة فرد الشعر من Remington. تتميز بألواح سيراميك متطورة تنزلق بسلاسة على الشعر وتوزع الحرارة بالتساوي، مما يقلل من التلف ويمنحك نتائج احترافية تدوم طويلاً.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=2&amp;slug=مكواة-فرد-الشعر</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762435255572880.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762435255706540.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -35,8 +35,8 @@
     <item>
       <g:id>3</g:id>
       <title>مكواة فرد الشعر</title>
-      <description>مكواة فرد الشعر من باناسونيك</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=3</link>
+      <description>استمتعي بشعر أملس ولامع مع مكواة فرد الشعر من باناسونيك. مصممة بتقنية يابانية متقدمة لحماية الشعر من الحرارة الزائدة، تضمن لك هذه المكواة تصفيفاً سريعاً ونتائج تدوم طوال اليوم.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=3&amp;slug=مكواة-فرد-الشعر</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762435423955052.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762435424833862.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -49,8 +49,8 @@
     <item>
       <g:id>4</g:id>
       <title>مكواة فرد الشعر  ستان هير 3</title>
-      <description>مكواة فرد الشعر BRAUN ستان هير 3</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=4</link>
+      <description>احصلي على شعر ناعم ومحمي مع مكواة فرد الشعر BRAUN Satin Hair 3. تتميز بألواح سيراميك Eloxal المتينة التي تضمن انزلاقًا سلسًا وحماية فائقة للشعر من التلف الناتج عن الحرارة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=4&amp;slug=مكواة-فرد-الشعر-ستان-هير-3</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762435667125086.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762435667119718.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -63,8 +63,8 @@
     <item>
       <g:id>5</g:id>
       <title>مكواة فرد الشعر</title>
-      <description>مكواة فرد الشعر بيبي ليس</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=5</link>
+      <description>تألقي بشعر أملس وجذاب مع مكواة فرد الشعر من Babyliss. مصممة بألواح مطلية بالسيراميك لتوزيع حرارة متساوٍ وحماية شعرك، تمنحك هذه المكواة نتائج سريعة ومثالية كالمحترفين.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=5&amp;slug=مكواة-فرد-الشعر</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/176243587251204.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762435872939198.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -77,8 +77,8 @@
     <item>
       <g:id>6</g:id>
       <title>مكواة فرد الشعر الاحترافية</title>
-      <description>مكواة فرد الشعر الاحترافية من VGR</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=6</link>
+      <description>احصلي على تصفيف احترافي في منزلك مع مكواة فرد الشعر من VGR. تتميز بألواح سيراميك عريضة وتقنية تسخين سريعة، مما يجعلها مثالية للشعر الكثيف والطويل. تمنحك نتائج ناعمة ولامعة من تمريرة واحدة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=6&amp;slug=مكواة-فرد-الشعر-الاحترافية</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762436133928469.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762436133373826.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -91,8 +91,8 @@
     <item>
       <g:id>7</g:id>
       <title>مكواة تجعيد الشعر</title>
-      <description>مكواة تجعيد الشعر من VGR</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=7</link>
+      <description>ابتكري تموجات شعر رائعة وجذابة مع مكواة تجعيد الشعر من VGR. تتميز بأسطوانة سيراميك توزع الحرارة بالتساوي لتحصلي على تجعيدات محددة ولامعة تدوم طويلاً، مع حماية قصوى لشعرك.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=7&amp;slug=مكواة-تجعيد-الشعر</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762436303939408.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762436304749214.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -105,8 +105,8 @@
     <item>
       <g:id>8</g:id>
       <title>جهاز فرد الشعر كيراتين ثيرابي برو</title>
-      <description>جهاز فرد الشعر كيراتين ثيرابي برومن REMINGTON</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=8</link>
+      <description>امنحي شعرك عناية فائقة مع جهاز فرد الشعر كيراتين ثيرابي برو من Remington. مزود بألواح سيراميك متقدمة غنية بالكيراتين وزيت اللوز، ومستشعر حماية ذكي يقيس رطوبة الشعر باستمرار لتوفير حماية أكبر بثلاث مرات من التلف والتقصف.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=8&amp;slug=جهاز-فرد-الشعر-كيراتين-ثيرابي-برو</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762436636787346.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762436636541605.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -119,8 +119,8 @@
     <item>
       <g:id>9</g:id>
       <title>استشوار روزيا 9*1</title>
-      <description>استشوار روزيا 9*1</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=9</link>
+      <description>جهاز التصفيف المتكامل 9 في 1 من Rozia هو كل ما تحتاجينه للحصول على تسريحات متنوعة. يأتي مع 9 ملحقات مختلفة للتجفيف، الفرد، التجعيد، وإضافة الحجم. جهاز واحد يغنيكِ عن كل أجهزة تصفيف الشعر الأخرى.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=9&amp;slug=استشوار-روزيا-9-1</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762436923285864.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762436924240171.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -133,8 +133,8 @@
     <item>
       <g:id>10</g:id>
       <title>فرشاة تصفيف الشعر من كيمي</title>
-      <description>فرشاة تصفيف الشعر من كيمي</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=10</link>
+      <description>صففي شعرك وجففيه في خطوة واحدة مع فرشاة تصفيف الشعر من Kemei. تجمع بين قوة المجفف وشكل الفرشاة الدائرية لتمنح شعرك حجماً وكثافة مع نعومة فائقة. مثالية للاستخدام اليومي للحصول على إطلالة احترافية في دقائق.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=10&amp;slug=فرشاة-تصفيف-الشعر-من-كيمي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/176243717880434.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762437178976899.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -147,8 +147,8 @@
     <item>
       <g:id>11</g:id>
       <title>مقشرة الفواكه والخضار الأوتوماتيكية</title>
-      <description>مقشرة الفواكه والخضار الأوتوماتيكية</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=11</link>
+      <description>وفري وقتك وجهدك في المطبخ مع مقشرة الفواكه والخضار الأوتوماتيكية. تقوم بتقشير البطاطس، التفاح، والعديد من الخضروات والفواكه الأخرى بسرعة ودقة بضغطة زر واحدة، مع الحفاظ على أكبر قدر ممكن من الجزء القابل للأكل.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=11&amp;slug=مقشرة-الفواكه-والخضار-الأوتوماتيكية</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1765266085547384.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/176526608522086.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -161,8 +161,8 @@
     <item>
       <g:id>12</g:id>
       <title>جهاز إزالة الشعر المنزلي</title>
-      <description>جهاز إزالة الشعر المنزلي</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=12</link>
+      <description>استمتعي ببشرة ناعمة وخالية من الشعر لأسابيع مع جهاز إزالة الشعر المنزلي بتقنية IPL. يعمل الجهاز عن طريق إصدار نبضات ضوئية لطيفة تستهدف بصيلات الشعر، مما يقلل من نموه بشكل دائم مع الاستخدام المنتظم. آمن وفعال للاستخدام في راحة منزلك.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=12&amp;slug=جهاز-إزالة-الشعر-المنزلي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1765375207583617.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1765375207301236.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -175,8 +175,8 @@
     <item>
       <g:id>13</g:id>
       <title>مجموعة فيتامين سي للعناية بالبشرة</title>
-      <description>مجموعة فيتامين سي للعناية بالبشرة</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=13</link>
+      <description>امنحي بشرتك الإشراقة والنضارة التي تستحقها مع مجموعة فيتامين سي المتكاملة من Disaar. تحتوي المجموعة على غسول، تونر، سيروم، وكريم للوجه، كلها غنية بفيتامين سي المضاد للأكسدة الذي يعمل على تفتيح البشرة، توحيد لونها، ومحاربة علامات التقدم في السن.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=13&amp;slug=مجموعة-فيتامين-سي-للعناية-بالبشرة</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762349951775658.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762349951783840.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -189,8 +189,8 @@
     <item>
       <g:id>14</g:id>
       <title>مجموعة ميللي للعناية بالشعر</title>
-      <description>مجموعة ميللي للعناية بالشعر</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=14</link>
+      <description>عززي قوة شعرك وحفزي نموه مع مجموعة Mielle بإكليل الجبل والنعناع. تتكون المجموعة من شامبو، بلسم، ماسك، وزيت، كلها مصممة لتقوية الشعر من الجذور حتى الأطراف، تقليل التساقط، وتوفير ترطيب عميق لشعر صحي ولامع.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=14&amp;slug=مجموعة-ميللي-للعناية-بالشعر</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762350119527283.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762350119707818.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -203,53 +203,13 @@
     <item>
       <g:id>15</g:id>
       <title>زيت عشبي للعناية بالشعر</title>
-      <description>وصف سريع …
-
- زيت عشبي للعناية بالشعر
-
-زيت Sri Shivashakthi Herbal Bhrungamalaka هو زيت عشبي للعناية بالشعر يعتمد على تركيبة أيورفيدا طبيعية مُحضّرة من مجموعة مختارة من الأعشاب الهندية الشهيرة. صُمم خصيصًا للمساعدة في تنظيف فروة الرأس، والتقليل من القشرة، وتعزيز مظهر الشعر ليبدو أكثر صحة وكثافة.يأتي المنتج في عبوة داكنة لحماية الزيوت العشبية من الضوء والحفاظ على فعاليتها.
-
-المميزات:
-
-
-	
-	يساعد على التحكم في القشرة وتهدئة فروة الرأس
-	
-	
-	يمنح الشعر مظهرًا لامعًا وناعمًا
-	
-	
-	يساعد في دعم مظهر الشعر الكثيف والطويل
-	
-	
-	تغذية عميقة لجذور الشعر بفضل الأعشاب الأيورفيدية
-	
-	
-	مناسب للاستخدام المنتظم
-	
-	
-	مناسب للرجال والنساء
-	
-
-
-كلمات اعلانية  زيت عشبي للعناية بالشعر
-
-
-	
-	 ودّعي القشرة… وابدئي رحلة شعر صحي ينبض بالحياة
-	
-	
-	 سر الشعر الهندي الطويل بين يديك الآن
-	
-	
-	 تركيبة طبيعية… نتائج حقيقية
-	
-	
-	 شعر أكثر طولًا، قوةً، وكثافة — بلمسات الطبيعة
-	
-	
-	 قوة الأعشاب الأيورفيدية لشعر بلا قشرة بدون كيميائيات</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=15</link>
+      <description>زيت Sri Shivashakthi Herbal هو زيت عشبي للعناية بالشعر يعتمد على تركيبة أيورفيدا طبيعية مُحضّرة من مجموعة مختارة من الأعشاب الهندية. صُمم خصيصًا للمساعدة في تنظيف فروة الرأس، التقليل من القشرة، وتعزيز مظهر الشعر ليبدو أكثر صحة وكثافة.
+- يساعد على التحكم في القشرة وتهدئة فروة الرأس.
+- يمنح الشعر مظهرًا لامعًا وناعماً.
+- يساعد في دعم مظهر الشعر الكثيف والطويل.
+- تغذية عميقة لجذور الشعر بفضل الأعشاب الأيورفيدية.
+- مناسب للاستخدام المنتظم للرجال والنساء.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=15&amp;slug=زيت-عشبي-للعناية-بالشعر</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762350367878365.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762350367531128.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -262,67 +222,13 @@
     <item>
       <g:id>16</g:id>
       <title>شامبو  بزيت الأرجان</title>
-      <description>وصف سريع …
-
-شامبو Dexe بزيت الأرجان
-
-شامبو Dexe بزيت الأرجان لتلوين الشعر السريع هو الحل المثالي لاستعادة لون شعرك الطبيعي ولمعانه في دقائق قليلة فقط. تركيبته النباتية الغنية بزيت الأرجان المغربي تغذي الشعر بعمق وتمنحه مظهراً صحياً ولامعاً، مع تغطية كاملة للشيب دون الإضرار بفروة الرأس أو اسمرار الجلد.
-
-احصلي على شعر أسود طبيعي وكثيف بخطوة واحدة سهلة وسريعة — غسيل، تلوين، ولمعان في 8 دقائق فقط.
-
-المميزات:
-
-
-	
-	 تغطية كاملة للشيب بنسبة 100% من أول استخدام.
-	
-	
-	 نتيجة فورية خلال 5–8 دقائق فقط.
-	
-	
-	 غني بزيت الأرجان الطبيعي لتغذية وترطيب الشعر.
-	
-	
-	 لا يسبب اسمرار الجلد أو تهيج فروة الرأس.
-	
-	
-	 يمنح لمعاناً وانسيابية طبيعية للشعر بعد الاستخدام.
-	
-	
-	 يعمل كشامبو وبلسم وصبغة في آن واحد.
-	
-	
-	 يأتي مع قفازات مجانية لسهولة وسلامة الاستخدام.
-	
-	
-	 مكونات نباتية آمنة وخالية من الأمونيا والمواد الضارة.
-	
-
-
-كلمات اعلانية شامبو Dexe بزيت الأرجان
-
-
-	
-	تألقي بلون شعر جذّاب ولمسة فخامة في دقائق 
-	
-	
-	لا وقت للصالون؟ الحل عندك في البيت مع Dexe
-	
-	
-	زيت الأرجان الطبيعي… سر الشعر اللامع والصحي 
-	
-	
-	ودّعي الشيب، ورحّبي بالثقة والجمال من أول غسلة 
-	
-	
-	لون يدوم ولمعان يخطف الأنظار 
-	
-	
-	شعر لامع، لون مثالي، إحساس بالانتعاش 
-	
-	
-	تجربة تلوين مختلفة… بدون مجهود أو فوض</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=16</link>
+      <description>شامبو Dexe بزيت الأرجان لتلوين الشعر هو الحل المثالي لاستعادة لون شعرك الطبيعي وتغطية الشيب في دقائق. تركيبته النباتية الغنية بزيت الأرجان المغربي تغذي الشعر وتمنحه مظهراً صحياً ولامعاً.
+- تغطية كاملة للشيب 100% من أول استخدام.
+- نتيجة فورية خلال 5-8 دقائق فقط.
+- غني بزيت الأرجان الطبيعي لتغذية وترطيب الشعر.
+- لا يسبب اسمرار الجلد أو تهيج فروة الرأس.
+- يعمل كشامبو وبلسم وصبغة في آن واحد.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=16&amp;slug=شامبو-بزيت-الأرجان</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762350520640568.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762350521471761.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -335,61 +241,13 @@
     <item>
       <g:id>17</g:id>
       <title>مكنسة جيباس</title>
-      <description>وصف سريع …
-
-مكنسة GEEPAS 
-
-مكنسة GEEPAS تجمع بين القوة، السعة الكبيرة، والتصميم المعدني المتين لمستوى نظافة لا مثيل له.بقدرة مذهلة 2000 واط وسعة 18 لترًا، تمنحك تنظيفًا عميقًا وسريعًا لكل أنواع الأرضيات والمفروشات.بفضل وظيفتي الشفط والنفخ (2 في 1)، يمكنك تنظيف الغبار والأوساخ بسهولة وحتى تجفيف الأسطح أو نفخ الغبار من الأماكن الضيقة.المكنسة المثالية لكل منزل، مكتب أو ورشة، تجمع بين الأداء القوي والمتانة العالية لضمان استخدام طويل الأمد.
-
-المميزات:
-
-
-	
-	 محرك قوي بقدرة 2000 واط لتنظيف شامل وسريع.
-	
-	
-	 سعة كبيرة 18 لترًا لتجميع كمية أكبر من الغبار دون الحاجة للتفريغ المتكرر.
-	
-	
-	 وظيفتان في جهاز واحد (شفط + نفخ) لمزيد من الاستخدامات العملية.
-	
-	
-	 فوهة سهلة التثبيت للوصول إلى الزوايا الضيقة والمناطق الصعبة.
-	
-	
-	 عجلات متحركة بمرونة عالية لسهولة الحركة أثناء التنظيف.
-	
-	
-	 مؤشر امتلاء كيس الغبار لمعرفة الوقت المناسب للتفريغ.
-	
-	
-	 مكان مخصص لتخزين الإكسسوارات والحفاظ على التنظيم.
-	
-	
-	 سهولة لف سلك الكهرباء حول المقبض العلوي لتخزين مريح.
-
-	 
-	
-
-
-كلمات اعلانية مكنسة GEEPAS 
-
-
-	
-	 مكنسة قوية لكل الاستخدامات
-	
-	
-	تنظيف احترافي بمعايير GEEPAS 
-	
-	
-	مكنسة واحدة لكل المهام
-	
-	
-	لأن راحتك تبدأ من بيت نظيف 
-	
-	
-	احصل على نظافة احترافية في دقائق</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=17</link>
+      <description>مكنسة GEEPAS تجمع بين القوة والسعة الكبيرة والتصميم المعدني المتين. بقدرة 2000 واط وسعة 18 لترًا، تمنحك تنظيفًا عميقًا وسريعًا. بفضل وظيفتي الشفط والنفخ (2 في 1)، يمكنك تنظيف الغبار والأوساخ بسهولة وحتى تجفيف الأسطح.
+- محرك قوي بقدرة 2000 واط.
+- سعة كبيرة 18 لترًا.
+- وظيفتان في جهاز واحد (شفط + نفخ).
+- عجلات متحركة بمرونة عالية.
+- مؤشر امتلاء كيس الغبار.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=17&amp;slug=مكنسة-جيباس</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762351131520637.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762351131472403.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -402,70 +260,13 @@
     <item>
       <g:id>18</g:id>
       <title>موقد الطهي المزدوج</title>
-      <description>وصف سريع …
-
-موقد الطهي المزدوج من Sanford.
-
-احصلي على تجربة طهي عملية وسريعة مع العيون الكهربائية المزدوجة من Sanford.
-
-تصميم أنيق وقوي بعيون تسخين مزدوجة تناسب جميع أنواع أواني الطهي، وسطح مقاوم للحرارة يسهل تنظيفه.بفضل منظم الحرارة القابل للتعديل، يمكنك التحكم في درجة الحرارة بكل سهولة لطهي مثالي وآمن في أي مكان  سواء في المنزل، المكتب، أو أثناء السفر.
-
-المميزات:
-
-
-	
-	 قدرة عالية 2500 واط لتسخين سريع ومتوازن.
-	
-	
-	 عيون مزدوجة لطهي أكثر من طبق في نفس الوقت.
-	
-	
-	 منظم حرارة قابل للتعديل حسب نوع الطعام.
-	
-	
-	 سطح سهل التنظيف ومقاوم للحرارة.
-	
-	
-	 تصميم معدني متين يتحمل الاستخدام اليومي.
-	
-	
-	 قاعدة مضادة للانزلاق لثبات أثناء الاستخدام.
-	
-	
-	 مؤشرات ضوئية لبيان التشغيل والتسخين.
-	
-	
-	 مثالية للمطابخ الصغيرة، الرحلات، والمكاتب.
-	
-
-
-كلمات اعلانية موقد الطهي المزدوج من Sanford.
-
-
-	
-	 طهي أسرع... حرارة أقوى
-	
-	
-	 جهاز عملي يغنيك عن البوتاجاز التقليدي
-	
-	
-	 قوة مزدوجة لطهي متكامل في دقائق.
-	
-	
-	 تحكم مثالي في الحرارة لكل طبق.
-	
-	
-	 مثالية للمطبخ الصغير أو للرحلات
-	
-	
-	 أداء قوي – تصميم أنيق – تنظيف سهل.
-	
-	
-	 اختاري الراحة، اختاري Sanford
-	
-	
-	 رفيقك المثالي للطهي السريع أينما كنت.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=18</link>
+      <description>احصل على تجربة طهي عملية وسريعة مع موقد الطهي المزدوج من Sanford. تصميم أنيق وقوي بعيون تسخين مزدوجة تناسب جميع أنواع أواني الطهي، وسطح مقاوم للحرارة يسهل تنظيفه. مثالي للمنزل، المكتب، أو أثناء السفر.
+- قدرة عالية 2500 واط لتسخين سريع.
+- عيون مزدوجة لطهي أكثر من طبق في نفس الوقت.
+- منظم حرارة قابل للتعديل.
+- سطح سهل التنظيف ومقاوم للحرارة.
+- تصميم معدني متين وقاعدة مضادة للانزلاق.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=18&amp;slug=موقد-الطهي-المزدوج</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762351273864173.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762351273123082.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -478,56 +279,13 @@
     <item>
       <g:id>19</g:id>
       <title>الموقد الرقمي</title>
-      <description>وصف سريع …
-
-الموقد الرقمي من Hamilton 
-
-استمتعي بتجربة طهي ذكية وسريعة مع الموقد الرقمي بالأشعة تحت الحمراء من Hamilton تصميم عصري يجمع بين الأناقة والكفاءة. مثالي للمطابخ الصغيرة أو الرحلات، ويوفر تسخينًا فوريًا ودقيقًا بفضل التكنولوجيا المتطورة من Hamilton.
-
-المميزات:
-
-
-	
-	 قوة 2000 وات لأداء قوي وتسخين سريع.
-	
-	
-	 موقد مفرد مناسب لجميع أنواع الأواني.
-	
-	
-	 سطح زجاجي مقاوم لدرجات الحرارة العالية وسهل التنظيف.
-	
-	
-	 تحكم باللمس ناعم وسهل الاستخدام.
-	
-	
-	 وظائف القلي والشواء لتنوع طرق الطهي.
-	
-	
-	 جسم من الستانلس ستيل مع عنصر تسخين سيراميكي عالي الجودة.
-	
-	
-	 شاشة LED رقمية رباعية تعرض درجة الحرارة والمؤقت بدقة.
-	
-
-
-كلمات اعلانية الموقد الرقمي من Hamilton
-
-
-	
-	 طهي أسرع.. طعام ألذ.. مع Hamilton Infrared Cooker
-	
-	
-	 تصميم أنيق، أداء قوي، وسهولة في الاستخدام.
-	
-	
-	 وفّري الوقت والطاقة مع أحدث تكنولوجيا التسخين بالأشعة تحت الحمراء.
-	
-	
-	 Hamilton — الجودة التي تثقين بها في كل وجبة.
-	
-	
-	 الأناقة والعملية يجتمعان في موقد واحد</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=19</link>
+      <description>استمتع بتجربة طهي ذكية وسريعة مع الموقد الرقمي بالأشعة تحت الحمراء من Hamilton. تصميم عصري يجمع بين الأناقة والكفاءة، ويوفر تسخينًا فوريًا ودقيقًا.
+- قوة 2000 واط لأداء قوي وتسخين سريع.
+- مناسب لجميع أنواع الأواني.
+- سطح زجاجي مقاوم للحرارة وسهل التنظيف.
+- تحكم باللمس مع شاشة LED رقمية.
+- وظائف متعددة للقلي والشواء.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=19&amp;slug=الموقد-الرقمي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762351410888376.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762351410445485.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -540,8 +298,8 @@
     <item>
       <g:id>20</g:id>
       <title>موقد كريبتون بالاشعة تحت الحمراء</title>
-      <description>موقد كريبتون بالاشعة تحت الحمراء</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=20</link>
+      <description>موقد كريبتون بالأشعة تحت الحمراء يوفر لك طهيًا سريعًا وفعالًا. يتميز بسطح من السيراميك المقاوم للحرارة وسهل التنظيف، مع تحكم دقيق في درجة الحرارة. مثالي للاستخدام اليومي والمطابخ الصغيرة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=20&amp;slug=موقد-كريبتون-بالاشعة-تحت-الحمراء</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762351610352009.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762351610241252.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -554,8 +312,8 @@
     <item>
       <g:id>21</g:id>
       <title>ممسحة موب متعددة الاغراض</title>
-      <description>ممسحة موب متعددة الاغراض</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=21</link>
+      <description>اجعلي تنظيف الأرضيات أسهل وأسرع مع ممسحة الموب متعددة الأغراض. تتميز برأس دوار 360 درجة للوصول إلى أصعب الزوايا، مع قطعة قماش مايكروفايبر عالية الامتصاص تزيل الأوساخ والغبار بفعالية. مثالية لجميع أنواع الأرضيات.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=21&amp;slug=ممسحة-موب-متعددة-الاغراض</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762352546935743.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762352546681236.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -568,8 +326,8 @@
     <item>
       <g:id>22</g:id>
       <title>قطاعة خضراوات مع مصفاة</title>
-      <description>قطاعة خضراوات مع مصفاة</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=22</link>
+      <description>حضّري السلطات والوجبات الصحية في دقائق مع قطاعة الخضروات متعددة الوظائف. تأتي مع مجموعة من الشفرات المختلفة للتقطيع، البشر، والتشريح، بالإضافة إلى مصفاة مدمجة لغسل وتجفيف الخضروات بسهولة. أداة لا غنى عنها في كل مطبخ.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=22&amp;slug=قطاعة-خضراوات-مع-مصفاة</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762352730246039.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762352730789656.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -582,53 +340,13 @@
     <item>
       <g:id>23</g:id>
       <title>فرشاة  الاحترافية 8 في 1</title>
-      <description>وصف سريع …
-
-فرشاة VGR الاحترافية 8 في 1
-
-احصلي على تجربة صالون متكاملة في منزلك مع فرشاة VGR الاحترافية 8 في 1. جهاز واحد يجمع بين التجفيف، التصفيف، التمويج، والفرد بسهولة تامة. بفضل تصميمه الأنيق ولونه البنفسجي الجذاب، يمنحك نتائج مذهلة مع كل استخدام — مثالي لمواكبة فصل الخريف والشتاء بتسريحات أنيقة وشعر صحي لامع.يجفف ويصفف في آنٍ واحد, يمنحك 8 أنماط مختلفة لتسريحات متنوعة كل يوم.
-
-المميزات:
-
-
-	
-	8 قطع لتصفيف شامل – تمويج، فرد، تجفيف، وتمليس.
-	
-	
-	تصميم مريح وخفيف لسهولة الاستخدام الطويل.
-	
-	
-	توزيع حراري متوازن يحافظ على صحة الشعر.
-	
-	
-	قابل للتعديل لحرارة وسرعة الهواء حسب نوع الشعر.
-	
-	
-	مثالي للاستخدام اليومي والسفر.
-	
-	
-	نتائج احترافية ولمعان فوري.
-	
-
-
-كلمات اعلانية فرشاة VGR الاحترافية 8 في 1
-
-
-	
-	جمالك في كل تسريحة… مع لمسة VGR
-	
-	
-	8 وظائف في جهاز واحد – ودّعي صالون التجميل
-	
-	
-	شعرك، أسلوبك، اختيارك
-	
-	
-	من التجفيف إلى التمويج… تألقي كل يوم بسهولة.
-	
-	
-	تصميم احترافي يمنحك ثقة وإشراقة في دقائق.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=23</link>
+      <description>احصلي على تجربة صالون متكاملة في منزلك مع فرشاة VGR الاحترافية 8 في 1. جهاز واحد يجمع بين التجفيف، التصفيف، التمويج، والفرد بسهولة تامة. يمنحك 8 أنماط مختلفة لتسريحات متنوعة كل يوم.
+- 8 قطع لتصفيف شامل: تمويج، فرد، تجفيف، وتمليس.
+- تصميم مريح وخفيف لسهولة الاستخدام.
+- توزيع حراري متوازن يحافظ على صحة الشعر.
+- قابل للتعديل لحرارة وسرعة الهواء.
+- مثالي للاستخدام اليومي والسفر.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=23&amp;slug=فرشاة-الاحترافية-8-في-1</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762434400400299.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762434400253323.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -641,8 +359,8 @@
     <item>
       <g:id>24</g:id>
       <title>مشط تجفيف الشعر سريع المفعول من ماك ستايلر</title>
-      <description>مشط تجفيف الشعر سريع المفعول من ماك ستايلر</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=24</link>
+      <description>احصلي على شعر جاف ومصفف في وقت قياسي مع مشط تجفيف الشعر من Mac Styler. يجمع بين قوة الهواء الساخن وتصميم المشط ليسهل عملية التجفيف والتصفيف في آن واحد، مما يمنح شعرك نعومة ولمعاناً بدون مجهود.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=24&amp;slug=مشط-تجفيف-الشعر-سريع-المفعول-من-ماك-ستايلر</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762434804748936.png</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/176243480424460.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -655,8 +373,8 @@
     <item>
       <g:id>25</g:id>
       <title>غسالة محمولة قابلة للطي</title>
-      <description>غسالة محمولة قابلة للطي</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=25</link>
+      <description>الحل المثالي لغسل ملابس الأطفال، الملابس الداخلية، أو القطع الصغيرة أثناء السفر والتخييم. هذه الغسالة المحمولة قابلة للطي لتوفير المساحة، وتعمل بكفاءة لاستهلاك أقل للماء والكهرباء. سهلة الاستخدام والتخزين.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=25&amp;slug=غسالة-محمولة-قابلة-للطي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762096515955211.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -669,8 +387,8 @@
     <item>
       <g:id>26</g:id>
       <title>فرشاة تنظيف وتلميع كهربائية لاسلكية</title>
-      <description>فرشاة تنظيف وتلميع كهربائية لاسلكية</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=26</link>
+      <description>اجعل مهام التنظيف الصعبة سهلة وممتعة مع فرشاة التنظيف الكهربائية اللاسلكية. تأتي مع رؤوس متعددة لتناسب جميع الأسطح، من بلاط الحمام والمطبخ إلى إطارات السيارات والأفران. تصميم لاسلكي يمنحك حرية الحركة للوصول إلى أصعب الأماكن.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=26&amp;slug=فرشاة-تنظيف-وتلميع-كهربائية-لاسلكية</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762281019135920.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762281019779827.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -683,16 +401,12 @@
     <item>
       <g:id>27</g:id>
       <title>كحل كيكو</title>
-      <description>كحل KIKO Everlasting Kajal من كيكو ميلانو هو سر الإطلالة الجذّابة والنظرة الساحرة.تركيبته الغنية بالكثافة والنعومة تمنحك لون أسود فاحم يدوم لساعات طويلة بدون تلطخ أو بهتان، لتستمتعي بمكياج عيون مثالي من الصباح للمساء.
-
-المميزات:
-
-- ثبات يدوم طوال اليوم حتى في الأجواء الحارة والرطبة.
-- لون أسود مركز يمنح العين تحديدًا قويًا ولمسة درامية.
-- ملمس كريمي ناعم يسهل تطبيقه بدقة على الجفن أو داخل العين.
-- مناسب للعيون الحساسة ولا يسبب تهيجًا.
-- يناسب الإطلالات اليومية والسهرات على حد سواء.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=27</link>
+      <description>كحل KIKO Everlasting Kajal من كيكو ميلانو هو سر الإطلالة الجذّابة. تركيبته الغنية بالكثافة والنعومة تمنحك لون أسود فاحم يدوم لساعات طويلة بدون تلطخ أو بهتان.
+- ثبات يدوم طوال اليوم.
+- لون أسود مركز لتحديد قوي.
+- ملمس كريمي ناعم لسهولة التطبيق.
+- مناسب للعيون الحساسة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=27&amp;slug=كحل-كيكو</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762338975353227.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -705,16 +419,12 @@
     <item>
       <g:id>28</g:id>
       <title>ايلاينر توب فيس</title>
-      <description>احصلي على نظرة ساحرة وثابتة طوال اليوم مع Tiny Eyeliner من Topface. يتميز بتركيبة عالية الكثافة ولون أسود فاحم يمنحك تحديدًا دقيقًا وسهل الانسياب بفضل رأسه الرفيع للغاية. مثالي للحصول على خطوط دقيقة أو رسمة عين درامية بكل سهولة.
-
-المميزات:
-
-- لون أسود فاحم يمنحك نظرة عميقة وجذابة.
-- رأس فائق الدقة للتحكم الكامل أثناء الرسم.
-- مقاوم للماء لضمان ثبات يدوم لساعات طويلة.
-- تركيبة خفيفة لا تلطخ ولا تتشقق.
-- مناسب لجميع أنواع البشرة وسهل الإزالة بالمزيل المخصص.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=28</link>
+      <description>احصلي على نظرة ساحرة وثابتة طوال اليوم مع Tiny Eyeliner من Topface. يتميز بتركيبة عالية الكثافة ولون أسود فاحم ورأس فائق الدقة للتحكم الكامل أثناء الرسم.
+- لون أسود فاحم لنظرة عميقة.
+- رأس فائق الدقة لرسم سهل.
+- مقاوم للماء لثبات يدوم طويلاً.
+- تركيبة خفيفة لا تلطخ.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=28&amp;slug=ايلاينر-توب-فيس</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762339435412501.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762339435161279.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -727,16 +437,12 @@
     <item>
       <g:id>29</g:id>
       <title>بودرة معطرة للجسم</title>
-      <description>دلّلي بشرتك بنعومة فائقة مع بودرة الجسم Miss Rose Dusting Powder من Rose Berry. تمنحك لمسة حريرية ورائحة أنثوية منعشة تدوم طوال اليوم. تأتي بعبوة فاخرة مع إسفنجة ناعمة لتوزيع مثالي يجعل بشرتك مخملية ومتألقة برقة الورود.
-
-المميزات:
-
-- عطر ناعم وجذاب يمنحك إحساسًا بالانتعاش والأنوثة.
-- تركيبة خفيفة تمتص الرطوبة وتترك البشرة ناعمة كالحرير.
-- مناسبة لجميع أنواع البشرة وآمنة للاستخدام اليومي.
-- عبوة أنيقة مع إسفنجة فخمة لسهولة الاستخدام.
-- تمنح إحساسًا بالنظافة والانتعاش يدوم طوال اليوم.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=29</link>
+      <description>دلّلي بشرتك بنعومة فائقة مع بودرة الجسم Miss Rose من Rose Berry. تمنحك لمسة حريرية ورائحة أنثوية منعشة تدوم طوال اليوم. تأتي بعبوة فاخرة مع إسفنجة ناعمة لتوزيع مثالي.
+- عطر ناعم وجذاب.
+- تركيبة خفيفة تمتص الرطوبة.
+- تترك البشرة ناعمة كالحرير.
+- مناسبة لجميع أنواع البشرة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=29&amp;slug=بودرة-معطرة-للجسم</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762339640768606.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762339641633745.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -749,16 +455,12 @@
     <item>
       <g:id>30</g:id>
       <title>بودرة معطرة للجسم برائحة بلاك روز</title>
-      <description>دلّلي بشرتك بلمسة من الفخامة مع Black Rose Dusting Powder، بودرة الجسم التي تجمع بين النعومة والعطر الفاخر. تضفي على بشرتك لمسة حريرية ورائحة راقية تدوم طويلاً، لتمنحك إحساسًا بالانتعاش والثقة طوال اليوم.
-
-المميزات:
-
-- عطر أنثوي فاخر يعكس الأناقة والجاذبية.
-- تركيبة خفيفة تمتص الرطوبة وتمنح البشرة نعومة مخملية.
-- تدوم رائحتها لساعات طويلة بدون تكتل أو لزوجة.
-- مناسبة لجميع أنواع البشرة.
-- عبوة أنيقة مثالية للاستخدام اليومي أو كهدية راقية.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=30</link>
+      <description>دلّلي بشرتك بلمسة من الفخامة مع بودرة Black Rose، التي تجمع بين النعومة والعطر الفاخر. تضفي على بشرتك لمسة حريرية ورائحة راقية تدوم طويلاً، لتمنحك إحساسًا بالانتعاش والثقة.
+- عطر أنثوي فاخر وجذاب.
+- تركيبة خفيفة تمتص الرطوبة.
+- تمنح البشرة نعومة مخملية.
+- عبوة أنيقة مثالية كهدية.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=30&amp;slug=بودرة-معطرة-للجسم-برائحة-بلاك-روز</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762339925488577.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762339925772925.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -771,15 +473,12 @@
     <item>
       <g:id>31</g:id>
       <title>جل مثبت حواجب من شيجلام</title>
-      <description>احصلي على حواجب محددة، مرتبة، ومثبتة بإطلالة طبيعية مع جل الحواجب من SHEGLAM. تركيبته الخفيفة تمنحك ثباتًا قويًا دون الشعور بالتصلب أو الثقل، لتستمتعي بمظهر أنيق ومهذب يدوم لساعات طويلة.
-
-المميزات:
-
-- ثبات قوي وطويل الأمد – يحافظ على شكل الحواجب المثالي طوال اليوم.
-- إحساس خفيف بدون تصلب – مظهر طبيعي مريح كأنك لا تضعين شيئًا.
-- سهل الإزالة بالماء الدافئ – ودّعي المناديل القاسية والمنتجات المزيلة القوية.
-- تطبيق دقيق وسهل – بفضل الفرشاة المصممة خصيصًا لتوزيع الجل بالتساوي.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=31</link>
+      <description>احصلي على حواجب محددة ومرتبة بإطلالة طبيعية مع جل الحواجب من SHEGLAM. تركيبته الخفيفة تمنحك ثباتًا قويًا دون الشعور بالتصلب أو الثقل، لمظهر أنيق يدوم لساعات طويلة.
+- ثبات قوي وطويل الأمد.
+- إحساس خفيف ومظهر طبيعي.
+- سهل الإزالة بالماء الدافئ.
+- تطبيق دقيق وسهل بفضل الفرشاة المدمجة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=31&amp;slug=جل-مثبت-حواجب-من-شيجلام</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762343609149315.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762343610199217.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -792,17 +491,12 @@
     <item>
       <g:id>32</g:id>
       <title>قلم روج</title>
-      <description>اكتشفي جمال الشفاه الطبيعي مع أقلام الروج المات من فلورمار — مزيج مثالي بين الأناقة والراحة.ألوان دافئة وجذابة تناسب كل درجات البشرة، بتركيبة ناعمة تمنحك تغطية مخملية وثبات يدوم لساعات.اختيار مثالي لإطلالات الخريف والشتاء، حيث الألوان الهادئة واللمسات الكلاسيكية التي تكمّل كل لوك.
-
-المميزات:
-
-- تركيبة غنية بالأصباغ تمنح لونًا واضحًا وثابتًا.
-- ملمس ناعم يسهل الانزلاق على الشفاه دون تشققات.
-- تصميم عملي على شكل قلم لسهولة الاستخدام والدقة.
-- مجموعة ألوان تناسب كل الإطلالات والمناسبات.
-- يحتوي على مبراة مخصصة لضمان دقة الشكل دائمًا.
-- مثالي للحقائب اليومية والسفر.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=32</link>
+      <description>اكتشفي جمال الشفاه الطبيعي مع أقلام الروج المات من فلورمار. ألوان دافئة وجذابة تناسب كل درجات البشرة، بتركيبة ناعمة تمنحك تغطية مخملية وثبات يدوم لساعات.
+- تركيبة غنية بالأصباغ ولون واضح.
+- ملمس ناعم لا يسبب تشققات.
+- تصميم عملي على شكل قلم لسهولة الاستخدام.
+- يحتوي على مبراة مدمجة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=32&amp;slug=قلم-روج</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762343962894204.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762343962650417.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -815,8 +509,8 @@
     <item>
       <g:id>33</g:id>
       <title>كونسيلر ميبلين</title>
-      <description>كونسيلر ميبلين</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=33</link>
+      <description>خافي العيوب الفوري Age Rewind من Maybelline هو الحل السحري لإخفاء الهالات السوداء والانتفاخات تحت العين. تركيبته خفيفة وغنية بمضادات الأكسدة، تمنحك تغطية مثالية ومظهراً طبيعياً ومشرقاً.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=33&amp;slug=كونسيلر-ميبلين</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762344677514328.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762344192461358.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -829,8 +523,8 @@
     <item>
       <g:id>34</g:id>
       <title>مجموعة العناية بالبشرة 6*1</title>
-      <description>مجموعة العناية بالبشرة 6*1</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=34</link>
+      <description>مجموعة العناية المتكاملة للبشرة 6 في 1. توفر لك كل ما تحتاجينه لروتين عناية يومي، من التنظيف والترطيب إلى التغذية والحماية. مناسبة لجميع أنواع البشرة وتساعد على تحسين مظهرها بشكل ملحوظ.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=34&amp;slug=مجموعة-العناية-بالبشرة-6-1</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762348381500951.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762344223960884.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -843,17 +537,13 @@
     <item>
       <g:id>35</g:id>
       <title>مجموعة العناية بالبشرة</title>
-      <description>دلّلي بشرتك مع مجموعة BIOAQUA Rice Raw Pulp الغنية بخلاصة الأرز الطبيعي، لتمنحي وجهك ترطيب عميق ونضارة فورية. المجموعة مصممة لتغذية البشرة، تفتيحها، وتوحيد لونها من الاستخدام الأول. تحتوي على تركيبة فريدة تنظف بلطف، ترطب بعمق، وتعيد للبشرة إشراقتها الطبيعية.
-
-المميزات:
-
+      <description>دلّلي بشرتك مع مجموعة BIOAQUA Rice Raw Pulp الغنية بخلاصة الأرز الطبيعي، لتمنحي وجهك ترطيبًا عميقًا ونضارة فورية. مصممة لتغذية البشرة، تفتيحها، وتوحيد لونها.
 - تحتوي على خلاصة الأرز الطبيعي لتفتيح وتغذية البشرة.
 - ترطب بعمق دون أن تترك لمعة دهنية.
 - تقلل من مظهر البقع والتصبغات.
-- تمنح البشرة ملمس ناعم ومشرق.
-- مناسبة لجميع أنواع البشرة، حتى الحساسة.
-- تركيبة خفيفة تمتص بسرعة وتترك إحساس بالانتعاش.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=35</link>
+- تمنح البشرة ملمسًا ناعمًا ومشرقًا.
+- مناسبة لجميع أنواع البشرة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=35&amp;slug=مجموعة-العناية-بالبشرة</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762348570662563.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762348571126461.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -866,8 +556,8 @@
     <item>
       <g:id>36</g:id>
       <title>مجموعة العناية من الوفيرا بايو اكوا</title>
-      <description>مجموعة العناية من الوفيرا بايو اكوا</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=36</link>
+      <description>جددي حيوية بشرتك مع مجموعة الألوفيرا للعناية من Bioaqua. تتكون من غسول، تونر، لوشن، وكريم، كلها غنية بخلاصة الصبار الطبيعي لتهدئة البشرة، ترطيبها بعمق، وتحسين مرونتها. مثالية للبشرة المجهدة والجافة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=36&amp;slug=مجموعة-العناية-من-الوفيرا-بايو-اكوا</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1762348935282215.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1762348935138137.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -880,8 +570,8 @@
     <item>
       <g:id>37</g:id>
       <title>قطاعة خضراوات مندولين</title>
-      <description>قطاعة خضراوات مندولين</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=37</link>
+      <description>قطاعة الخضروات الاحترافية (مندولين) هي مساعدك الأول في المطبخ. تتيح لك تقطيع الخضروات والفواكه إلى شرائح، أصابع، أو مكعبات بسماكات مختلفة وبشكل متساوٍ في ثوانٍ. آمنة وسهلة الاستخدام والتنظيف.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=37&amp;slug=قطاعة-خضراوات-مندولين</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1759325792952117.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -894,8 +584,8 @@
     <item>
       <g:id>38</g:id>
       <title>مكواة فرد الشعر</title>
-      <description>مكواة فرد الشعر</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=38</link>
+      <description>مكواة فرد شعر مدمجة وعملية، مثالية للسفر والاستخدام السريع. تتميز بألواح سيراميك لتوزيع الحرارة بشكل متساوٍ وحماية الشعر. تسخن بسرعة وتمنحك شعرًا أملسًا في دقائق.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=38&amp;slug=مكواة-فرد-الشعر</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1759328137183192.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -908,8 +598,8 @@
     <item>
       <g:id>39</g:id>
       <title>ميزان تحليل رقمي</title>
-      <description>ميزان تحليل رقمي</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=39</link>
+      <description>تابع صحتك ولياقتك بدقة مع ميزان التحليل الرقمي الذكي. لا يقيس الوزن فقط، بل يحلل أيضاً نسبة الدهون، كتلة العضلات، نسبة الماء، وكتلة العظام. يتصل بتطبيق على هاتفك لتتبع تقدمك بسهولة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=39&amp;slug=ميزان-تحليل-رقمي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1759328225255348.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -922,18 +612,12 @@
     <item>
       <g:id>40</g:id>
       <title>وسادة تمديد الرقبة الهوائية</title>
-      <description>وسادة تمديد الرقبة الهوائية مصممة خصيصًا لتخفيف الضغط والتشنجات في عضلات الرقبة والكتفين. تعمل بتقنية النفخ الهوائي القابلة للتحكم، مما يسمح بتمديد فقرات الرقبة بلطف واستعادة الوضع الطبيعي للعمود الفقري. مصنوعة من خامات ناعمة ومريحة للبشرة، خفيفة الوزن وسهلة الاستخدام في أي مكان – في البيت، المكتب أو حتى أثناء السفر.تساعد على تحسين الدورة الدموية، وتخفيف الصداع الناتج عن التوتر، وتمنحك إحساسًا بالاسترخاء الفوري بعد يوم طويل.
-
-المميزات:
-
-- تصميم قابل للنفخ يسهل التحكم فيه حسب راحتك.
+      <description>تخلص من آلام الرقبة والكتف مع وسادة تمديد الرقبة الهوائية. مصممة لتخفيف الضغط والتشنجات، وتعمل بتقنية النفخ الهوائي القابلة للتحكم لتمديد فقرات الرقبة بلطف. مثالية للاسترخاء بعد يوم طويل أو لمستخدمي الكمبيوتر لفترات طويلة.
+- تصميم قابل للنفخ لسهولة التحكم.
 - تخفيف فوري لآلام الرقبة والكتفين.
-- يساعد في تصحيح وضع العمود الفقري والرقبة.
-- خامة فاخرة ناعمة على الجلد ومريحة في الاستخدام.
-- خفيفة وسهلة الحمل والتخزين.
-- مناسبة لجميع الأعمار ومثالية لمستخدمي الكمبيوتر أو الهواتف لفترات طويلة.
-- تحسن الدورة الدموية وتقلل من التوتر العضلي.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=40</link>
+- يساعد في تصحيح وضع العمود الفقري.
+- خامة ناعمة ومريحة على الجلد.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=40&amp;slug=وسادة-تمديد-الرقبة-الهوائية</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/176029022722060.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1760290228330888.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -946,8 +630,8 @@
     <item>
       <g:id>41</g:id>
       <title>جيباس مصفف شعر 4 في 1</title>
-      <description>جيباس مصفف شعر 4 في 1</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=41</link>
+      <description>جهاز تصفيف الشعر المتكامل 4 في 1 من Geepas. يجمع بين مجفف الشعر، فرشاة الفرد، وفرشاة التمويج في جهاز واحد. يمنحك القدرة على تجفيف وتصفيف شعرك في نفس الوقت، للحصول على إطلالات متنوعة بسهولة وسرعة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=41&amp;slug=جيباس-مصفف-شعر-4-في-1</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1760617266422799.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1760617268232475.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -960,8 +644,8 @@
     <item>
       <g:id>42</g:id>
       <title>مكواة الشعر من جيباس</title>
-      <description>مكواة الشعر من جيباس</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=42</link>
+      <description>احصلي على شعر أملس ولامع مع مكواة الشعر من Geepas. تتميز بألواح سيراميك تنزلق بسلاسة وتوزع الحرارة بالتساوي لحماية شعرك. تسخن بسرعة وتوفر تحكمًا دقيقًا في درجة الحرارة لتناسب جميع أنواع الشعر.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=42&amp;slug=مكواة-الشعر-من-جيباس</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1760617544167889.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1760617544662717.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -974,8 +658,8 @@
     <item>
       <g:id>43</g:id>
       <title>مجموعة التجفيف 2*1 من جيباس</title>
-      <description>مجموعة التجفيف 2*1 من جيباس</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=43</link>
+      <description>مجموعة التصفيف المثالية للسفر والاستخدام اليومي من Geepas. تتضمن مجفف شعر قوي ومكواة فرد شعر مدمجة. كلا الجهازين مصممان ليكونان خفيفي الوزن وسهلين في الحمل، مع توفير أداء احترافي.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=43&amp;slug=مجموعة-التجفيف-2-1-من-جيباس</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/176061777522225.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -988,8 +672,8 @@
     <item>
       <g:id>44</g:id>
       <title>Jeepas Ceramic Hair Brush</title>
-      <description>Jeepas Ceramic Hair Brush</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=44</link>
+      <description>فرشاة الشعر الحرارية من Geepas هي الحل السريع للحصول على شعر أملس وناعم. تجمع بين حرارة المكواة وسهولة استخدام الفرشاة لتصفيف شعرك في دقائق معدودة دون عناء. مثالية للاستخدام اليومي.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=44&amp;slug=jeepas-ceramic-hair-brush</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1761741684239327.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1761741684816410.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1002,8 +686,8 @@
     <item>
       <g:id>45</g:id>
       <title>Ceramic Hair Brush 2 in 1</title>
-      <description>Ceramic Hair Brush 2 in 1</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=45</link>
+      <description>فرشاة الشعر الحرارية 2 في 1 تمنحك القدرة على فرد وتجعيد شعرك بجهاز واحد. تتميز بأسنان سيراميك لتوزيع الحرارة بالتساوي وحماية الشعر، مع تصميم فريد يسمح لك بابتكار تسريحات متنوعة بسهولة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=45&amp;slug=ceramic-hair-brush-2-in-1</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1761741958488028.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/176174195888696.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1016,8 +700,8 @@
     <item>
       <g:id>46</g:id>
       <title>Hair Curling Irons</title>
-      <description>GEEPAS Hair Curling Irons</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=46</link>
+      <description>احصلي على تجعيدات شعر مثالية مع مكواة التجعيد من Geepas. تتميز بأسطوانة سيراميك تسخن بسرعة وتوزع الحرارة بالتساوي، مما يمنحك تجعيدات ثابتة ولامعة تدوم طويلاً.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=46&amp;slug=hair-curling-irons</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1761742204872415.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1761742204594518.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1030,8 +714,8 @@
     <item>
       <g:id>47</g:id>
       <title>Ceramic Hair Straighteners</title>
-      <description>Geepas Ceramic Hair Straighteners</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=47</link>
+      <description>مكواة فرد الشعر بالسيراميك من Geepas تمنحك شعرًا أملسًا وناعمًا في دقائق. تتميز بألواح سيراميك عائمة لتوزيع الضغط والحرارة بالتساوي، مع تحكم في درجة الحرارة لتناسب جميع أنواع الشعر.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=47&amp;slug=ceramic-hair-straighteners</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1761742337950030.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1044,8 +728,8 @@
     <item>
       <g:id>48</g:id>
       <title>GO SILKY STRAIGHTENER</title>
-      <description>GEEPAS GO SILKY STRAIGHTENER</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=48</link>
+      <description>احصلي على شعر ناعم كالحرير مع مكواة Go Silky من Geepas. تتميز بألواح سيراميك فائقة النعومة وتقنية تسخين متقدمة لتصفيف سريع وفعال مع حماية قصوى للشعر.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=48&amp;slug=go-silky-straightener</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1761742525562477.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1761742525812807.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1058,8 +742,8 @@
     <item>
       <g:id>49</g:id>
       <title>مدلك للقدم لتحفيز تدفق الدم وراحة القدمين</title>
-      <description>مدلك للقدم لتحفيز تدفق الدم وراحة القدمين</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=49</link>
+      <description>امنح قدميك الراحة التي تستحقها بعد يوم طويل مع مدلك القدمين الكهربائي. يعمل على تحفيز نقاط الضغط في باطن القدم لتحسين الدورة الدموية وتخفيف التعب والإجهاد. سهل الاستخدام ومثالي للاسترخاء في المنزل.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=49&amp;slug=مدلك-للقدم-لتحفيز-تدفق-الدم-وراحة-القدمين</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1758734480123651.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1072,8 +756,8 @@
     <item>
       <g:id>50</g:id>
       <title>عرض  سيروم نمو الشعر واللحية من فيج بلاس</title>
-      <description>عرض  سيروم نمو الشعر واللحية من فيج بلاس</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=50</link>
+      <description>احصل على شعر ولحية أكثر كثافة وقوة مع سيروم النمو من Vigplus. تركيبته الطبيعية تعمل على تغذية البصيلات وتحفيز نمو الشعر في الفراغات. مناسب للرجال والنساء.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=50&amp;slug=عرض-سيروم-نمو-الشعر-واللحية-من-فيج-بلاس</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1759187721150013.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1086,8 +770,8 @@
     <item>
       <g:id>51</g:id>
       <title>عرض مدلك للقدم لتحفيز تدفق الدم وراحة القدمين</title>
-      <description>عرض مدلك للقدم لتحفيز تدفق الدم وراحة القدمين</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=51</link>
+      <description>عرض خاص على مدلك القدمين الكهربائي. استمتع بتدليك مريح يحفز الدورة الدموية ويخفف من إجهاد القدمين بسعر لا يصدق. مثالي للاسترخاء بعد يوم عمل شاق.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=51&amp;slug=عرض-مدلك-للقدم-لتحفيز-تدفق-الدم-وراحة-القدمين</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1759187948946552.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1100,19 +784,13 @@
     <item>
       <g:id>52</g:id>
       <title>بخاخ طلاء لاسلكي</title>
-      <description>مسدس رش دهان محمول ببطارية 18 فولت لحرية الحركة وسهولة الاستخدام.مزود بـ 3 أوضاع رش (أفقي – عمودي – دائري) لنتائج احترافية على الجدران، الأخشاب والمعادن. خزان واسع، تنظيف سهل، وتصميم عملي يوفر وقتك ومجهودك.
-
-المميزات:
-
-- يعمل ببطارية ليثيوم 18V قابلة لإعادة الشحن لحرية الحركة.
-- 3 أنماط رش (أفقي – عمودي – دائري) تناسب مختلف الأعمال.
-- قوة عالية لرش الطلاء بشكل متساوي وسريع.
-- مناسب للدهان على الجدران، الأخشاب، المعادن، الأبواب، الأثاث وغيرها.
-- خزان واسع يسع كمية كبيرة من الطلاء لتقليل إعادة التعبئة.
-- تصميم خفيف الوزن ومقبض مريح لسهولة التحكم.
-- سهل الفك والتنظيف بعد الاستخدام.
-- يوفر وقت ومجهود مقارنة بالفرشاة أو الرول التقليدي.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=52</link>
+      <description>جدد أثاثك وجدرانك بسهولة مع بخاخ الطلاء اللاسلكي. يعمل ببطارية قابلة للشحن ليمنحك حرية الحركة، مع 3 أوضاع رش مختلفة لنتائج احترافية. مثالي لطلاء الجدران، الأخشاب، والمعادن بسرعة ودقة.
+- يعمل ببطارية ليثيوم 18V قابلة للشحن.
+- 3 أنماط رش (أفقي – عمودي – دائري).
+- قوة عالية لرش الطلاء بشكل متساوٍ.
+- مناسب لمختلف الأسطح.
+- سهل الفك والتنظيف.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=52&amp;slug=بخاخ-طلاء-لاسلكي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1759227942456736.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1759583704525396.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1125,17 +803,12 @@
     <item>
       <g:id>53</g:id>
       <title>صاروخ رش الحدائق</title>
-      <description>لعبة رشاش مياه للأطفال على شكل صاروخ فضائي للتسلية في الهواء الطلق. سهلة التوصيل بخرطوم المياه وتعمل بالضغط لتطير وتتناثر بالماء. ممتعة وآمنة، مثالية لألعاب الصيف والحدائق والشاطئ.
-
-المميزات:
-
-- تصميم مبتكر على شكل صاروخ فضائي يثير حماس الأطفال.
-- يعمل بالضغط المائي ليطير ويرش المياه في كل الاتجاهات.
-- سهل التوصيل بأي خرطوم مياه منزلي.
-- مثالي لألعاب الصيف والحدائق والشاطئ.
-- آمن ومناسب للأطفال ويشجع على اللعب الجماعي.
-- خفيف وسهل التركيب والاستخدام.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=53</link>
+      <description>أضف لمسة من المرح لألعاب الصيف مع صاروخ رش الحدائق. لعبة ممتعة للأطفال، سهلة التوصيل بخرطوم المياه وتعمل بضغط الماء لتطير في الهواء وترش الماء في كل الاتجاهات. مثالية للعب في الحديقة أو الشاطئ.
+- تصميم مبتكر على شكل صاروخ.
+- يعمل بضغط الماء ليطير ويرش.
+- سهل التوصيل بأي خرطوم مياه.
+- آمن ومناسب للأطفال.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=53&amp;slug=صاروخ-رش-الحدائق</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1759228049643992.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1759583862171827.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1148,19 +821,12 @@
     <item>
       <g:id>54</g:id>
       <title>مقوار المحشي الكهربائي</title>
-      <description>المقوار الكهربائي هو أداة مبتكرة مصممة لتوفير الوقت والجهد في تفريغ الكوسا والباذنجان بدقة وسهولة. يعمل بالكهرباء ليمنحك سرعة في الأداء وشكل متناسق للمحشي في ثوانٍ، دون تعب اليد أو مجهود طويل في المطبخ. مناسب للاستخدام المنزلي والعزائم وتحضير كميات كبيرة بأقل وقت.
-
-المميزات:
-
-- تشغيل كهربائي سريع: يوفر عليك الوقت مقارنة بالمقوار اليدوي.
-- حركة أوتوماتيكية دقيقة: يفرغ الخضار من الداخل بشكل متساوٍ واحترافي.
-- سهل الاستخدام: زر تشغيل بسيط ومقبض مريح لليد.
-- رأس قابل للفك والتركيب: يسهل تنظيفه بعد الاستخدام.
-- متعدد الاستخدامات: يناسب الكوسا، الباذنجان، الفلفل، البطاطس وغيرها.
-- تصميم صحي وآمن: خامات آمنة وسهلة الغسل.
-- خفيف الوزن: مناسب للحمل والاستخدام اليومي.
-- مثالي لتحضير كميات كبيرة في المناسبات والعزائم.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=54</link>
+      <description>ودّعي تعب تفريغ المحاشي مع المقوار الكهربائي. أداة مبتكرة توفر الوقت والجهد في تفريغ الكوسا والباذنجان بدقة وسهولة. يعمل بالكهرباء ليمنحك سرعة في الأداء وشكلًا متناسقًا للمحشي في ثوانٍ.
+- تشغيل كهربائي سريع يوفر الوقت.
+- حركة أوتوماتيكية دقيقة لتفريغ متساوٍ.
+- سهل الاستخدام والتنظيف.
+- متعدد الاستخدامات للكوسا، الباذنجان، البطاطس، وغيرها.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=54&amp;slug=مقوار-المحشي-الكهربائي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1759228286228543.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1759584002876153.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1173,17 +839,12 @@
     <item>
       <g:id>55</g:id>
       <title>فرشاة فرد و تجعيد الشعر 2*1</title>
-      <description>مكواة شعر 2 في 1 تجمع بين خاصية الفرد والكيرلي في جهاز واحد عملي وسهل الاستخدام. مزودة بسطح سيراميك يحافظ على نعومة الشعر ويمنع التلف الناتج عن الحرارة. مناسبة لجميع أنواع الشعر وتوفر تسريحات مختلفة خلال دقائق.
-
-المميزات:
-
-- جهاز واحد للفرد والتمويج (2×1)
-- تسخين سريع ودرجة حرارة ثابتة
-- سيراميك يحمي الشعر من الاحتراق والتقصف
-- تصميم مريح بمشبك لتثبيت الخصلة
-- مناسبة للشعر الطويل والقصير
-- خفيفة وآمنة للاستخدام المنزلي.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=55</link>
+      <description>جهاز تصفيف 2 في 1 يجمع بين فرشاة الفرد ومكواة التجعيد. يتميز بسطح سيراميك يحافظ على نعومة الشعر ويمنع التلف. مثالي للحصول على شعر أملس أو تموجات جذابة بجهاز واحد فقط.
+- جهاز واحد للفرد والتجعيد (2 في 1).
+- تسخين سريع ودرجة حرارة ثابتة.
+- سطح سيراميك لحماية الشعر.
+- تصميم مريح وسهل الاستخدام.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=55&amp;slug=فرشاة-فرد-و-تجعيد-الشعر-2-1</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1759228440706298.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1759917135454683.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1196,17 +857,13 @@
     <item>
       <g:id>56</g:id>
       <title>طائرة تحكم عن بعد L0721 المقاتلة</title>
-      <description>طائرة لعبة بمحرك رباعي تعمل بالريموت كنترول، بتصميم يحاكي الطائرات الحربية الحديثة لمنح تجربة لعب مميزة ومليئة بالحماس. خفيفة وآمنة وسهلة التحكم، ومزودة بإضاءة LED تجعلها ممتعة في الطيران ليلاً ونهاراً. مناسبة للهواة ومحبي الألعاب الجوية.
-
-المميزات:
-
-- ريموت كنترول للتحكم السهل والدقيق
-- نظام طيران رباعي المراوح لثبات أفضل في الجو
-- إضاءة LED ملونة لظهور مميز أثناء الطيران
-- خامة خفيفة مقاومة للصدمات
-- بطاريات قابلة للشحن مع بطاريات إضافية للاستخدام الطويل
-- تصميم انسيابي يحاكي الطائرات الحقيقية.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=56</link>
+      <description>استمتع بتجربة طيران مثيرة مع طائرة التحكم عن بعد L0721. بتصميم يحاكي الطائرات المقاتلة، تتميز بنظام طيران رباعي المراوح لثبات أفضل، وإضاءة LED للطيران الليلي. سهلة التحكم ومناسبة للهواة.
+- ريموت كنترول للتحكم السهل.
+- نظام طيران رباعي المراوح لثبات أفضل.
+- إضاءة LED ملونة.
+- خامة خفيفة ومقاومة للصدمات.
+- بطاريات قابلة للشحن.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=56&amp;slug=طائرة-تحكم-عن-بعد-l0721-المقاتلة</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/175922859147875.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1759917105448647.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1219,8 +876,8 @@
     <item>
       <g:id>57</g:id>
       <title>حامل اكواب السيارة</title>
-      <description>حامل اكواب السيارة</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=57</link>
+      <description>نظم سيارتك وزد من مساحة التخزين مع حامل الأكواب متعدد الوظائف. يتيح لك تثبيت أكواب إضافية، زجاجات الماء، وحتى هاتفك بشكل آمن وسهل الوصول. تصميم ذكي يناسب معظم السيارات.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=57&amp;slug=حامل-اكواب-السيارة</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1761531822825203.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1233,8 +890,8 @@
     <item>
       <g:id>58</g:id>
       <title>مشد الجسم للنساء</title>
-      <description>مشد الجسم للنساء</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=58</link>
+      <description>احصلي على قوام مثالي وثقة أكبر مع مشد الجسم الكامل. مصمم لشد ونحت الجسم وإخفاء الترهلات بشكل مريح وغير مرئي تحت الملابس. مصنوع من أقمشة عالية الجودة تسمح للبشرة بالتنفس.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=58&amp;slug=مشد-الجسم-للنساء</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1759238271352644.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1247,17 +904,13 @@
     <item>
       <g:id>59</g:id>
       <title>جهاز تلميع السيارات اللاسلكي</title>
-      <description>جهاز التلميع اللاسلكي 12V هو الحل المثالي للحصول على لمعان احترافي بكل سهولة وراحة.يعمل ببطاريتين ليثيوم قابلة للشحن تمنحك حرية الحركة بدون أسلاك، مع محرك قوي يحافظ على سرعة ثابتة لنتائج مذهلة. مزود بمجموعة متنوعة من إسفنجيات التلميع والصنفره، لتلميع السيارات وإزالة الخدوش الخفيفة، أو تجديد الأسطح الخشبية والمعدنية وحتى الأرضيات.
-
-المميزات:
-
-- تعمل ببطارية ليثيوم قابلة للشحن (12V) + بطاريتين احتياط.
-- محرك قوي يوفر سرعة ثابتة للتلميع والتشطيب المثالي.
-- عدة إسفنجيات بأشكال مختلفة تناسب كافة الاستخدامات.
-- متعددة الاستخدام (سيارات – أثاث – معادن – أرضيات).
-- تصميم مريح وخفيف لسهولة الحمل والاستخدام لفترات طويلة.
-- شاحن سريع مع إمكانية التبديل السهل بين البطاريات.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=59</link>
+      <description>احصل على لمعان احترافي لسيارتك مع جهاز التلميع اللاسلكي. يعمل ببطارية قابلة للشحن ليمنحك حرية الحركة، مع محرك قوي ومجموعة متنوعة من الإسفنجيات لتلميع وإزالة الخدوش الخفيفة.
+- يعمل ببطارية ليثيوم 12V قابلة للشحن.
+- محرك قوي يوفر سرعة ثابتة.
+- يأتي مع عدة إسفنجيات مختلفة.
+- متعدد الاستخدامات للسيارات، الأثاث، والمعادن.
+- تصميم مريح وخفيف الوزن.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=59&amp;slug=جهاز-تلميع-السيارات-اللاسلكي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1759238404920518.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1759917055646607.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1270,8 +923,8 @@
     <item>
       <g:id>60</g:id>
       <title>قطاعة خضراوات يدوية</title>
-      <description>قطاعة خضراوات يدوية</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=60</link>
+      <description>أداة المطبخ العملية التي توفر عليك الوقت والجهد. تتميز بتصميم دوار سهل الاستخدام لتقطيع وبشر الخضروات، الجبن، والمكسرات بسرعة وأمان. تأتي مع شفرات متعددة من الفولاذ المقاوم للصدأ.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=60&amp;slug=قطاعة-خضراوات-يدوية</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1759325667837398.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1284,8 +937,8 @@
     <item>
       <g:id>61</g:id>
       <title>ساعة رولكس سبرايت+البوكس الاصلي</title>
-      <description>ساعة رولكس سبرايت مع البوكس الاصلي.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=61</link>
+      <description>ساعة رولكس GMT-Master II 'سبرايت' الأيقونية، تتميز بإطارها ثنائي اللون بالأخضر والأسود. تصميم فريد وجريء يعكس الفخامة والدقة. تأتي مع البوكس الأصلي.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=61&amp;slug=ساعة-رولكس-سبرايت-البوكس-الاصلي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1750683168735371.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1750769346514640.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1298,16 +951,12 @@
     <item>
       <g:id>62</g:id>
       <title>ساعة رولكس ديت جاست مينا اسود+البوكس الاصلي</title>
-      <description>ساعة Rolex Datejust بمينا أسود تعكس الأناقة الكلاسيكية والقوة في تصميم فاخر يجمع بين الدقة والمتانة، لتكون الخيار الأمثل لمحبي التميز والفخامة.
-
-المميزات:
-
-- مينا أسود أنيق يضفي لمسة راقية وجذابة.
-- زجاج ياقوتي مقاوم للخدوش لضمان الحفاظ على رونق الساعة.
-- مقاومة للماء لتعزيز التحمل والاستخدام اليومي.
-- حركة أوتوماتيكية سويسرية دقيقة بأداء مثالي.
-- سوار متين بتصميم فاخر يعكس الفخامة الحقيقية.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=62</link>
+      <description>ساعة Rolex Datejust بمينا أسود، رمز الأناقة الكلاسيكية والقوة. تصميم فاخر يجمع بين الدقة والمتانة، مع زجاج ياقوتي مقاوم للخدوش وحركة أوتوماتيكية دقيقة. تأتي مع البوكس الأصلي.
+- مينا أسود أنيق وجذاب.
+- زجاج ياقوتي مقاوم للخدوش.
+- مقاومة للماء للاستخدام اليومي.
+- حركة أوتوماتيكية دقيقة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=62&amp;slug=ساعة-رولكس-ديت-جاست-مينا-اسود-البوكس-الاصلي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1750683377158133.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1750769201688720.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1320,17 +969,12 @@
     <item>
       <g:id>63</g:id>
       <title>ساعة رولكس GMT اسود+البوكس الاصلي</title>
-      <description>تميّز بإطلالة فاخرة لا تُخطئها الأنظار مع ساعة Rolex GMT Black، أيقونة تجمع بين التصميم الرياضي والدقة السويسرية، صُممت لتناسب محبّي السفر والأناقة بكل تفاصيلها.
-
-المميزات:
-
-- إطار دوّار ثنائي الاتجاه بلمسة سيراميكية سوداء فاخرة.
-- خاصية التوقيت المزدوج (GMT) لمتابعة منطقتين زمنيتين.
-- ميناء أسود أنيق مع مؤشرات واضحة وعقارب مضيئة.
-- حركة أوتوماتيكية عالية الدقة من Rolex.
-- مقاومة للماء حتى عمق 100 متر.
-- تصميم يجمع بين القوة، العملية، والفخامة.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=63</link>
+      <description>تميّز بإطلالة فاخرة مع ساعة Rolex GMT Black، أيقونة تجمع بين التصميم الرياضي والدقة. مصممة بخاصية التوقيت المزدوج (GMT) لتناسب محبي السفر والأناقة. تأتي مع البوكس الأصلي.
+- إطار سيراميك أسود فاخر.
+- خاصية التوقيت المزدوج (GMT).
+- ميناء أسود أنيق مع مؤشرات مضيئة.
+- حركة أوتوماتيكية عالية الدقة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=63&amp;slug=ساعة-رولكس-gmt-اسود-البوكس-الاصلي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1750683517436574.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1750768879522993.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1343,18 +987,12 @@
     <item>
       <g:id>64</g:id>
       <title>عرض الخلاط + كبة ومفرمة هدية</title>
-      <description>عرض الخلاط مع كبة هدية ومفرمة اللحوم.
-
-المميزات:
-
-- خلاط قوي متعدد الاستخدامات لتحضير العصائر، الصلصات، والشوربات بسهولة.
-- كبة هدية عملية لفرم وتقطيع الخضروات، البصل، والثوم بسرعة ودقة.
-- مفرمة لحوم قوية بشفرات حادة لتقطيع وفرم اللحوم بكفاءة وسرعة.
-- محرك عالي الأداء يضمن تشغيلًا قويًا ومتواصلًا لإنجاز المهام في ثوانٍ.
-- شفرات من الستانلس ستيل مقاومة للصدأ وتضمن تقطيعًا دقيقًا ومتجانسًا.
-- سهولة الفك والتنظيف تصميم مريح يسهل تنظيف الأجزاء بعد الاستخدام.
-- قاعدة ثابتة وآمنة مقاومة للانزلاق لضمان ثبات الأجهزة أثناء التشغيل.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=64</link>
+      <description>احصل على عرض لا يقاوم: خلاط كهربائي قوي، بالإضافة إلى كبة ومفرمة لحوم كهدية. جهز مطبخك بأدوات أساسية لتحضير العصائر، فرم الخضروات، وتقطيع اللحوم بسهولة وسرعة.
+- خلاط قوي متعدد الاستخدامات.
+- كبة هدية لفرم الخضروات.
+- مفرمة لحوم قوية بشفرات حادة.
+- محرك عالي الأداء وشفرات من الستانلس ستيل.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=64&amp;slug=عرض-الخلاط-كبة-ومفرمة-هدية</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1750768203907055.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1367,8 +1005,8 @@
     <item>
       <g:id>65</g:id>
       <title>بوكس رولكس اصلي</title>
-      <description>بوكس رولكس اصلي.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=65</link>
+      <description>أضف لمسة من الفخامة إلى هديتك مع بوكس رولكس الأصلي. تصميم أنيق وفاخر، مثالي لتقديم ساعات رولكس أو أي هدية ثمينة أخرى. يحافظ على الساعة ويبرز قيمتها.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=65&amp;slug=بوكس-رولكس-اصلي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1751321531741720.png</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1381,8 +1019,8 @@
     <item>
       <g:id>66</g:id>
       <title>طقم توابل دوار</title>
-      <description>طقم توابل دوار.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=66</link>
+      <description>نظم مطبخك وأضف لمسة من الأناقة مع طقم التوابل الدوار. يحتوي على عدة عبوات زجاجية لحفظ التوابل، مع قاعدة دوارة لسهولة الوصول إلى بهاراتك المفضلة أثناء الطهي.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=66&amp;slug=طقم-توابل-دوار</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1751380797726257.png</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1395,8 +1033,12 @@
     <item>
       <g:id>67</g:id>
       <title>عصا تجعيد الشعر 5*1</title>
-      <description>احصلي على تجعيدات مثالية لشعرك مع عصا التجعيد 5*1 التي توفر لك خيارات متعددة لتصفيف شعرك. تأتي مع خمسة ملحقات قابلة للتبديل لتلبية احتياجات تصفيف مختلفة. تسخن بسرعة وتوزع الحرارة بالتساوي للحصول على نتائج متساوية ولامعة. سهلة الاستخدام وآمنة على الشعر، مما يجعلك تبدين متألقة في كل مناسبة.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=67</link>
+      <description>ابتكري تسريحات شعر متنوعة مع عصا التجعيد 5 في 1. تأتي مع خمسة رؤوس قابلة للتبديل بأحجام مختلفة لتمنحك تجعيدات ضيقة، تموجات واسعة، أو أي شكل ترغبين به. تسخن بسرعة وتتميز بسطح سيراميك لحماية الشعر.
+- 5 رؤوس قابلة للتبديل.
+- تسخين سريع.
+- سطح سيراميك لحماية الشعر.
+- سهلة الاستخدام وآمنة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=67&amp;slug=عصا-تجعيد-الشعر-5-1</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1751886484258839.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1751886371837374.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1409,8 +1051,8 @@
     <item>
       <g:id>68</g:id>
       <title>عصا ترايبود مع اضاءة</title>
-      <description>عصا ترايبود مع اضاءة</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=68</link>
+      <description>التقط أفضل الصور والفيديوهات مع عصا السيلفي والترايبود المدمجة. تتميز بإضاءة LED قابلة للتعديل لتحسين جودة الصور في الإضاءة المنخفضة، مع ريموت كنترول لاسلكي لالتقاط الصور عن بعد. خفيفة الوزن وسهلة الحمل.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=68&amp;slug=عصا-ترايبود-مع-اضاءة</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1752152869392927.png</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1752152870227885.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1423,8 +1065,8 @@
     <item>
       <g:id>69</g:id>
       <title>مرآة سيارة مزودة بكاميرا</title>
-      <description>مرآة سيارة مزودة بكاميرا</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=69</link>
+      <description>عزز أمان سيارتك مع مرآة الرؤية الخلفية المزودة بكاميرا داش كام. تسجل الفيديو عالي الدقة للطريق أمامك، وتعمل كمرآة عادية في نفس الوقت. سهلة التركيب وتدعم الرؤية الليلية.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=69&amp;slug=مرآة-سيارة-مزودة-بكاميرا</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1753974590788545.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1437,8 +1079,8 @@
     <item>
       <g:id>70</g:id>
       <title>ساعة رولكس باللون الذهبي والأسود</title>
-      <description>ساعة رولكس باللون الذهبي والأسود</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=70</link>
+      <description>ساعة رولكس فاخرة تجمع بين أناقة اللون الأسود وفخامة اللون الذهبي. تصميم كلاسيكي يناسب جميع المناسبات، مع حركة أوتوماتيكية دقيقة وجودة سويسرية لا تضاهى.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=70&amp;slug=ساعة-رولكس-باللون-الذهبي-والأسود</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1757285162501891.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1757285162742325.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1451,8 +1093,8 @@
     <item>
       <g:id>71</g:id>
       <title>منفاخ هواء محمول</title>
-      <description>منفاخ هواء محمول</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=71</link>
+      <description>لا تدع إطارات سيارتك تخذلكم. منفاخ الهواء المحمول هو رفيقك المثالي في السفر والطوارئ. صغير الحجم، قوي الأداء، ويعمل على ولاعة السيارة لنفخ الإطارات بسرعة وسهولة في أي وقت وأي مكان.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=71&amp;slug=منفاخ-هواء-محمول</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1757852466915992.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1757852466419742.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1465,8 +1107,8 @@
     <item>
       <g:id>72</g:id>
       <title>سيروم نمو الشعر واللحية من فيج بلاس</title>
-      <description>سيروم نمو الشعر واللحية من فيج بلاس</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=72</link>
+      <description>عزز نمو شعرك ولحيتك مع سيروم Vigplus. تركيبته الطبيعية تعمل على تغذية البصيلات وتحفيز نمو الشعر في المناطق الخفيفة، مما يمنحك شعرًا ولحية أكثر كثافة وقوة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=72&amp;slug=سيروم-نمو-الشعر-واللحية-من-فيج-بلاس</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1758733815801172.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1479,16 +1121,12 @@
     <item>
       <g:id>73</g:id>
       <title>ساعة رولكس ديت جاست مينا اسود</title>
-      <description>ساعة Rolex Datejust بمينا أسود تعكس الأناقة الكلاسيكية والقوة في تصميم فاخر يجمع بين الدقة والمتانة، لتكون الخيار الأمثل لمحبي التميز والفخامة.
-
-المميزات:
-
-- مينا أسود أنيق يضفي لمسة راقية وجذابة.
-- زجاج ياقوتي مقاوم للخدوش لضمان الحفاظ على رونق الساعة.
-- مقاومة للماء لتعزيز التحمل والاستخدام اليومي.
-- حركة أوتوماتيكية سويسرية دقيقة بأداء مثالي.
-- سوار متين بتصميم فاخر يعكس الفخامة الحقيقية.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=73</link>
+      <description>ساعة Rolex Datejust بمينا أسود، رمز الأناقة الكلاسيكية والقوة. تصميم فاخر يجمع بين الدقة والمتانة، مع زجاج ياقوتي مقاوم للخدوش وحركة أوتوماتيكية دقيقة.
+- مينا أسود أنيق وجذاب.
+- زجاج ياقوتي مقاوم للخدوش.
+- مقاومة للماء للاستخدام اليومي.
+- حركة أوتوماتيكية دقيقة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=73&amp;slug=ساعة-رولكس-ديت-جاست-مينا-اسود</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1750584925164637.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1750584925948638.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1501,17 +1139,12 @@
     <item>
       <g:id>74</g:id>
       <title>ساعة رولكس GMT اسود</title>
-      <description>تميّز بإطلالة فاخرة لا تُخطئها الأنظار مع ساعة Rolex GMT Black، أيقونة تجمع بين التصميم الرياضي والدقة السويسرية، صُممت لتناسب محبّي السفر والأناقة بكل تفاصيلها.
-
-المميزات:
-
-- إطار دوّار ثنائي الاتجاه بلمسة سيراميكية سوداء فاخرة.
-- خاصية التوقيت المزدوج (GMT) لمتابعة منطقتين زمنيتين.
-- ميناء أسود أنيق مع مؤشرات واضحة وعقارب مضيئة.
-- حركة أوتوماتيكية عالية الدقة من Rolex.
-- مقاومة للماء حتى عمق 100 متر.
-- تصميم يجمع بين القوة، العملية، والفخامة.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=74</link>
+      <description>تميّز بإطلالة فاخرة مع ساعة Rolex GMT Black، أيقونة تجمع بين التصميم الرياضي والدقة. مصممة بخاصية التوقيت المزدوج (GMT) لتناسب محبي السفر والأناقة.
+- إطار سيراميك أسود فاخر.
+- خاصية التوقيت المزدوج (GMT).
+- ميناء أسود أنيق مع مؤشرات مضيئة.
+- حركة أوتوماتيكية عالية الدقة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=74&amp;slug=ساعة-رولكس-gmt-اسود</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1750683607882213.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1750587424207674.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1524,8 +1157,8 @@
     <item>
       <g:id>75</g:id>
       <title>ساعة NH34+البوكس الأصلي</title>
-      <description>ساعة NH34 تتميز بتصميمها الرياضي والأنيق الذي يجمع بين الأداء العالي والأناقة العصرية. مزودة بحركة أوتوماتيكية تضمن دقة الوقت واستمرارية التشغيل بدون الحاجة إلى بطارية. تتميز بميناء واضح وأرقام بارزة لسهولة قراءة الوقت في جميع الظروف. مقاومة للماء، مما يجعلها مثالية للأنشطة الرياضية والمائية المختلفة. تأتي بسوار معدني قوي يضفي لمسة من القوة والأناقة.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=75</link>
+      <description>ساعة NH34 تتميز بتصميمها الرياضي والأنيق الذي يجمع بين الأداء العالي والأناقة. مزودة بحركة أوتوماتيكية تضمن دقة الوقت واستمرارية التشغيل بدون بطارية. مقاومة للماء ومثالية للأنشطة الرياضية. تأتي مع البوكس الأصلي.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=75&amp;slug=ساعة-nh34-البوكس-الأصلي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1750681792976260.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1750761360347501.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1538,17 +1171,12 @@
     <item>
       <g:id>76</g:id>
       <title>oyster اسود في ذهبي (42mm)+البوكس الأصلي</title>
-      <description>أضف لمسة من الفخامة إلى إطلالتك مع ساعة Rolex Oyster بلون أسود في ذهبي، حيث يلتقي التصميم الرياضي بالأناقة الكلاسيكية. ساعة تعكس الثقة، الدقة، والرقي، وتناسب كل من يبحث عن التميز في كل لحظة.
-
-المميزات:
-
-- إطار ومينا بلون أسود جذاب مع تفاصيل ذهبية فاخرة.
-- تصميم Oyster المقاوم للماء والخدوش.
-- حركة أوتوماتيكية فائقة الدقة من Rolex.
-- خامات عالية الجودة تضمن المتانة والأداء الراقي.
-- مثالية للإطلالات الرسمية واليومية الراقية.
-- تجمع بين الطابع العصري والأصالة في التصميم.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=76</link>
+      <description>أضف لمسة من الفخامة إلى إطلالتك مع ساعة Rolex Oyster بلون أسود في ذهبي. تصميم يجمع بين الطابع الرياضي والأناقة الكلاسيكية، مع حركة أوتوماتيكية فائقة الدقة. تأتي مع البوكس الأصلي.
+- إطار ومينا بلون أسود جذاب مع تفاصيل ذهبية.
+- تصميم Oyster مقاوم للماء والخدوش.
+- حركة أوتوماتيكية فائقة الدقة.
+- مثالية للإطلالات الرسمية واليومية.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=76&amp;slug=oyster-اسود-في-ذهبي-42mm-البوكس-الأصلي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1763898987249389.png</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1750761553725632.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1561,8 +1189,8 @@
     <item>
       <g:id>77</g:id>
       <title>ساعة  باللون الازرق + البوكس الأصلي</title>
-      <description>ساعة Rolex باللون الأزرق تتميز بتصميمها الأنيق والجريء الذي يعكس الأناقة والفخامة. تعمل بحركة ميكانيكية أوتوماتيكية، مما يضمن دقة عالية وأداء موثوق. تأتي بميناء أزرق مذهل مع مؤشرات وأرقام بارزة تضفي لمسة من الرقي. مقاومة للماء حتى عمق 100 متر، مما يجعلها مثالية للأنشطة المائية والسباحة. مزودة بسوار معدني متين وعالي الجودة يضمن راحة فائقة عند الارتداء.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=77</link>
+      <description>ساعة Rolex باللون الأزرق تتميز بتصميمها الأنيق والجريء. تعمل بحركة ميكانيكية أوتوماتيكية، وتأتي بميناء أزرق مذهل. مقاومة للماء ومثالية للاستخدام اليومي. تأتي مع البوكس الأصلي.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=77&amp;slug=ساعة-باللون-الازرق-البوكس-الأصلي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1750682174586834.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1750766685247059.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1575,8 +1203,8 @@
     <item>
       <g:id>78</g:id>
       <title>ساعة  باللون الأسود. R21+ البوكس الأصلي</title>
-      <description>ساعة Rolex باللون الأسود R21 تتميز بتصميمها العصري والأنيق الذي يناسب جميع الأذواق. مزودة بحركة أوتوماتيكية دقيقة تضمن أداءً ممتازًا ودقة في قياس الوقت. تأتي بمينا أسود مع مؤشرات وعقارب فضية تضفي لمسة من الرقي. مقاومة للماء، مما يجعلها مثالية للاستخدام اليومي والأنشطة المختلفة. تأتي بسوار جلدي أسود أنيق.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=78</link>
+      <description>ساعة Rolex باللون الأسود R21 تتميز بتصميمها العصري والأنيق. مزودة بحركة أوتوماتيكية دقيقة، ومينا أسود مع مؤشرات فضية. مقاومة للماء ومثالية للاستخدام اليومي. تأتي مع البوكس الأصلي.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=78&amp;slug=ساعة-باللون-الأسود-r21-البوكس-الأصلي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1750682396140254.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1750770520964079.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1589,8 +1217,8 @@
     <item>
       <g:id>79</g:id>
       <title>ساعة  كلاسيكية 41 ملم 2022+البوكس الأصلي</title>
-      <description>ساعة Rolex كلاسيكية 41 ملم 2022 تجمع بين التصميم الكلاسيكي والأداء العالي. مزودة بحركة أوتوماتيكية دقيقة تضمن دقة الوقت وأداءً ممتازًا. تحتوي على مينا واضح مع مؤشرات بارزة لسهولة القراءة. مقاومة للماء، مما يجعلها مناسبة للاستخدام اليومي وفي الأنشطة المختلفة. تأتي بسوار معدني أنيق يضفي لمسة من الرقي والفخامة.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=79</link>
+      <description>ساعة Rolex كلاسيكية 41 ملم موديل 2022، تجمع بين التصميم الكلاسيكي والأداء العالي. مزودة بحركة أوتوماتيكية دقيقة ومينا واضح. مقاومة للماء ومناسبة للاستخدام اليومي. تأتي مع البوكس الأصلي.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=79&amp;slug=ساعة-كلاسيكية-41-ملم-2022-البوكس-الأصلي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1750682505896690.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1750770316218995.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1603,8 +1231,8 @@
     <item>
       <g:id>80</g:id>
       <title>ستيل  سيلفر و جولد+البوكس الأصلي</title>
-      <description>ساعة Rolex سيلفر وجولد: أناقة لا مثيل لها تجمع بين الفخامة والتميز. تألقي بأفضل الموديلات مع ساعة Rolex سيلفر وجولد، لمسة من الرفاهية لك. ساعة Rolex سيلفر وجولد: الفخامة التي لا تنتهي، تعكس ذوقك الرفيع. رفاهية وعراقة مع ساعة Rolex سيلفر وجولد، حيث يجتمع التصميم الفاخر مع الأداء الممتاز. ساعة Rolex سيلفر وجولد: قطعة فنية تزين معصمك وتُعبّر عن فخرك. المزيج المثالي من السيلفر والجولد، ساعة Rolex تضمن لك إطلالة لا تُنسى. تجمع ساعة Rolex سيلفر وجولد بين الأناقة الكلاسيكية واللمسات العصرية، لتكون الخيار الأمثل لك. مع ساعة Rolex سيلفر وجولد، لا تفوت فرصة التميز في كل لحظة.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=80</link>
+      <description>ساعة Rolex بتصميم يجمع بين اللونين الفضي والذهبي، رمز للأناقة والفخامة. تصميم كلاسيكي يناسب جميع المناسبات، مع حركة أوتوماتيكية دقيقة وجودة سويسرية. تأتي مع البوكس الأصلي.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=80&amp;slug=ستيل-سيلفر-و-جولد-البوكس-الأصلي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1750682603321426.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1750770203770511.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1617,8 +1245,8 @@
     <item>
       <g:id>81</g:id>
       <title>ستيل  جولد و سيلفر+البوكس الأصلي</title>
-      <description>ساعة Rolex ستيل جولد وسيلفر: تألق لا مثيل له في كل لحظة. اجعل كل دقيقة من يومك استثنائية مع ساعة Rolex ستيل جولد وسيلفر. ساعة Rolex ستيل جولد وسيلفر: الراحة، الفخامة، والأناقة في تصميم واحد. مزيج مثالي بين الذهب والفضة مع ساعة Rolex ستيل جولد وسيلفر. ساعة Rolex ستيل جولد وسيلفر: خيارك الأول للتميز في كل مناسبة. الأسلوب الراقي يلتقي بالفخامة مع ساعة Rolex ستيل جولد وسيلفر. ساعة Rolex ستيل جولد وسيلفر: تصميم عصري يتناغم مع ذوقك الرفيع. كل لحظة مميزة مع ساعة Rolex ستيل جولد وسيلفر.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=81</link>
+      <description>ساعة Rolex بتصميم يجمع بين اللونين الذهبي والفضي، رمز للأناقة والفخامة. تصميم كلاسيكي يناسب جميع المناسبات، مع حركة أوتوماتيكية دقيقة وجودة سويسرية. تأتي مع البوكس الأصلي.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=81&amp;slug=ستيل-جولد-و-سيلفر-البوكس-الأصلي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1750682731532520.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1750770030317323.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1631,16 +1259,12 @@
     <item>
       <g:id>82</g:id>
       <title>ساعة رولكس يخت ماستر - أسود+البوكس الأصلي</title>
-      <description>ساعة Rolex Yacht-Master باللون الأسود تجمع بين القوة والفخامة في تصميم رياضي أنيق، مثالية لعشاق المغامرات البحرية والأناقة الراقية.
-
-المميزات:
-
-- مينا أسود فاخر بإطار سيراميك متين.
-- زجاج ياقوتي مقاوم للخدوش للحفاظ على رونق الساعة.
-- مقاومة للماء حتى 100 متر، مثالية للمغامرات البحرية.
-- حركة أوتوماتيكية سويسرية فائقة الدقة.
-- سوار Oysterflex المريح بتصميم رياضي أنيق.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=82</link>
+      <description>ساعة Rolex Yacht-Master باللون الأسود، تجمع بين القوة والفخامة في تصميم رياضي أنيق. مثالية لعشاق المغامرات البحرية، مع مينا أسود فاخر وإطار سيراميك متين. تأتي مع البوكس الأصلي.
+- مينا أسود فاخر بإطار سيراميك.
+- زجاج ياقوتي مقاوم للخدوش.
+- مقاومة للماء حتى 100 متر.
+- حركة أوتوماتيكية سويسرية.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=82&amp;slug=ساعة-رولكس-يخت-ماستر-أسود-البوكس-الأصلي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1750682832469385.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1653,8 +1277,8 @@
     <item>
       <g:id>83</g:id>
       <title>ساعة رولكس يخت ماستر - ذهبي+البوكس الاصلي</title>
-      <description>ساعة رولكس يخت ماستر - ذهبي مع البوكس الاصلي.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=83</link>
+      <description>ساعة Rolex Yacht-Master باللون الذهبي، رمز الفخامة والأناقة البحرية. تصميم رياضي فاخر مع مينا جذاب وإطار دوار. تأتي مع البوكس الأصلي.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=83&amp;slug=ساعة-رولكس-يخت-ماستر-ذهبي-البوكس-الاصلي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1750682915840341.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1667,8 +1291,8 @@
     <item>
       <g:id>84</g:id>
       <title>ساعة رولكس يخت ماستر - فضي+البوكس الاصلي</title>
-      <description>ساعة رولكس يخت ماستر - فضي مع البوكس الاصلي.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=84</link>
+      <description>ساعة Rolex Yacht-Master باللون الفضي، تصميم كلاسيكي وعملي يجمع بين الأناقة والأداء الرياضي. مثالية للاستخدام اليومي والمناسبات. تأتي مع البوكس الأصلي.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=84&amp;slug=ساعة-رولكس-يخت-ماستر-فضي-البوكس-الاصلي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1750682972501766.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1681,8 +1305,8 @@
     <item>
       <g:id>85</g:id>
       <title>سيروم الريتينول للبشرة</title>
-      <description>احصلي على بشرة ناعمة وشابة مع سيروم الريتينول المصمم لمكافحة علامات الشيخوخة. يعمل على تقليل التجاعيد والخطوط الدقيقة، ويحفز تجديد خلايا البشرة. تركيبته الغنية بالفيتامينات تعمل على تحسين ملمس البشرة وتفتيح البقع الداكنة. مثالي للاستخدام الليلي للحصول على بشرة مشرقة وصحية في الصباح.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=85</link>
+      <description>احصلي على بشرة ناعمة وشابة مع سيروم الريتينول المصمم لمكافحة علامات الشيخوخة. يعمل على تقليل التجاعيد والخطوط الدقيقة، ويحفز تجديد خلايا البشرة. مثالي للاستخدام الليلي للحصول على بشرة مشرقة وصحية.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=85&amp;slug=سيروم-الريتينول-للبشرة</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747828361894864.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747828361902483.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1695,8 +1319,8 @@
     <item>
       <g:id>86</g:id>
       <title>ساعة NH34</title>
-      <description>ساعة NH34 تتميز بتصميمها الرياضي والأنيق الذي يجمع بين الأداء العالي والأناقة العصرية. مزودة بحركة أوتوماتيكية تضمن دقة الوقت واستمرارية التشغيل بدون الحاجة إلى بطارية. تتميز بميناء واضح وأرقام بارزة لسهولة قراءة الوقت في جميع الظروف. مقاومة للماء، مما يجعلها مثالية للأنشطة الرياضية والمائية المختلفة. تأتي بسوار معدني قوي يضفي لمسة من القوة والأناقة.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=86</link>
+      <description>ساعة NH34 تتميز بتصميمها الرياضي والأنيق الذي يجمع بين الأداء العالي والأناقة. مزودة بحركة أوتوماتيكية تضمن دقة الوقت واستمرارية التشغيل بدون بطارية. مقاومة للماء ومثالية للأنشطة الرياضية.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=86&amp;slug=ساعة-nh34</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747828572452893.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1709,17 +1333,12 @@
     <item>
       <g:id>87</g:id>
       <title>oyster اسود في ذهبي (42mm)</title>
-      <description>أضف لمسة من الفخامة إلى إطلالتك مع ساعة Rolex Oyster بلون أسود في ذهبي، حيث يلتقي التصميم الرياضي بالأناقة الكلاسيكية. ساعة تعكس الثقة، الدقة، والرقي، وتناسب كل من يبحث عن التميز في كل لحظة.
-
-المميزات:
-
-- إطار ومينا بلون أسود جذاب مع تفاصيل ذهبية فاخرة.
-- تصميم Oyster المقاوم للماء والخدوش.
-- حركة أوتوماتيكية فائقة الدقة من Rolex.
-- خامات عالية الجودة تضمن المتانة والأداء الراقي.
-- مثالية للإطلالات الرسمية واليومية الراقية.
-- تجمع بين الطابع العصري والأصالة في التصميم.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=87</link>
+      <description>أضف لمسة من الفخامة إلى إطلالتك مع ساعة Rolex Oyster بلون أسود في ذهبي. تصميم يجمع بين الطابع الرياضي والأناقة الكلاسيكية، مع حركة أوتوماتيكية فائقة الدقة.
+- إطار ومينا بلون أسود جذاب مع تفاصيل ذهبية.
+- تصميم Oyster مقاوم للماء والخدوش.
+- حركة أوتوماتيكية فائقة الدقة.
+- مثالية للإطلالات الرسمية واليومية.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=87&amp;slug=oyster-اسود-في-ذهبي-42mm</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1763898879168542.png</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1732,8 +1351,8 @@
     <item>
       <g:id>88</g:id>
       <title>ساعة  باللون الازرق</title>
-      <description>ساعة Rolex باللون الأزرق تتميز بتصميمها الأنيق والجريء الذي يعكس الأناقة والفخامة. تعمل بحركة ميكانيكية أوتوماتيكية، مما يضمن دقة عالية وأداء موثوق. تأتي بميناء أزرق مذهل مع مؤشرات وأرقام بارزة تضفي لمسة من الرقي. مقاومة للماء حتى عمق 100 متر، مما يجعلها مثالية للأنشطة المائية والسباحة. مزودة بسوار معدني متين وعالي الجودة يضمن راحة فائقة عند الارتداء.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=88</link>
+      <description>ساعة Rolex باللون الأزرق تتميز بتصميمها الأنيق والجريء. تعمل بحركة ميكانيكية أوتوماتيكية، وتأتي بميناء أزرق مذهل. مقاومة للماء ومثالية للاستخدام اليومي.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=88&amp;slug=ساعة-باللون-الازرق</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747828970879158.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747828970166934.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1746,8 +1365,8 @@
     <item>
       <g:id>89</g:id>
       <title>ساعة  باللون الأسود.  R21</title>
-      <description>ساعة Rolex باللون الأسود R21 تتميز بتصميمها العصري والأنيق الذي يناسب جميع الأذواق. مزودة بحركة أوتوماتيكية دقيقة تضمن أداءً ممتازًا ودقة في قياس الوقت. تأتي بمينا أسود مع مؤشرات وعقارب فضية تضفي لمسة من الرقي. مقاومة للماء، مما يجعلها مثالية للاستخدام اليومي والأنشطة المختلفة. تأتي بسوار جلدي أسود أنيق.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=89</link>
+      <description>ساعة Rolex باللون الأسود R21 تتميز بتصميمها العصري والأنيق. مزودة بحركة أوتوماتيكية دقيقة، ومينا أسود مع مؤشرات فضية. مقاومة للماء ومثالية للاستخدام اليومي.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=89&amp;slug=ساعة-باللون-الأسود-r21</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747829274500150.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1760,8 +1379,8 @@
     <item>
       <g:id>90</g:id>
       <title>ساعة  كلاسيكية 41 ملم 2022</title>
-      <description>ساعة Rolex كلاسيكية 41 ملم 2022 تجمع بين التصميم الكلاسيكي والأداء العالي. مزودة بحركة أوتوماتيكية دقيقة تضمن دقة الوقت وأداءً ممتازًا. تحتوي على مينا واضح مع مؤشرات بارزة لسهولة القراءة. مقاومة للماء، مما يجعلها مناسبة للاستخدام اليومي وفي الأنشطة المختلفة. تأتي بسوار معدني أنيق يضفي لمسة من الرقي والفخامة.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=90</link>
+      <description>ساعة Rolex كلاسيكية 41 ملم موديل 2022، تجمع بين التصميم الكلاسيكي والأداء العالي. مزودة بحركة أوتوماتيكية دقيقة ومينا واضح. مقاومة للماء ومناسبة للاستخدام اليومي.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=90&amp;slug=ساعة-كلاسيكية-41-ملم-2022</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747830644116837.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1774,8 +1393,8 @@
     <item>
       <g:id>91</g:id>
       <title>ستيل  سيلفر و جولد</title>
-      <description>ساعة Rolex سيلفر وجولد: أناقة لا مثيل لها تجمع بين الفخامة والتميز. تألقي بأفضل الموديلات مع ساعة Rolex سيلفر وجولد، لمسة من الرفاهية لك. ساعة Rolex سيلفر وجولد: الفخامة التي لا تنتهي، تعكس ذوقك الرفيع. رفاهية وعراقة مع ساعة Rolex سيلفر وجولد، حيث يجتمع التصميم الفاخر مع الأداء الممتاز. ساعة Rolex سيلفر وجولد: قطعة فنية تزين معصمك وتُعبّر عن فخرك. المزيج المثالي من السيلفر والجولد، ساعة Rolex تضمن لك إطلالة لا تُنسى. تجمع ساعة Rolex سيلفر وجولد بين الأناقة الكلاسيكية واللمسات العصرية، لتكون الخيار الأمثل لك. مع ساعة Rolex سيلفر وجولد، لا تفوت فرصة التميز في كل لحظة.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=91</link>
+      <description>ساعة Rolex بتصميم يجمع بين اللونين الفضي والذهبي، رمز للأناقة والفخامة. تصميم كلاسيكي يناسب جميع المناسبات، مع حركة أوتوماتيكية دقيقة وجودة سويسرية.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=91&amp;slug=ستيل-سيلفر-و-جولد</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1750150163204864.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1788,8 +1407,8 @@
     <item>
       <g:id>92</g:id>
       <title>ستيل  جولد و سيلفر</title>
-      <description>ساعة Rolex ستيل جولد وسيلفر: تألق لا مثيل له في كل لحظة. اجعل كل دقيقة من يومك استثنائية مع ساعة Rolex ستيل جولد وسيلفر. ساعة Rolex ستيل جولد وسيلفر: الراحة، الفخامة، والأناقة في تصميم واحد. مزيج مثالي بين الذهب والفضة مع ساعة Rolex ستيل جولد وسيلفر. ساعة Rolex ستيل جولد وسيلفر: خيارك الأول للتميز في كل مناسبة. الأسلوب الراقي يلتقي بالفخامة مع ساعة Rolex ستيل جولد وسيلفر. ساعة Rolex ستيل جولد وسيلفر: تصميم عصري يتناغم مع ذوقك الرفيع. كل لحظة مميزة مع ساعة Rolex ستيل جولد وسيلفر.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=92</link>
+      <description>ساعة Rolex بتصميم يجمع بين اللونين الذهبي والفضي، رمز للأناقة والفخامة. تصميم كلاسيكي يناسب جميع المناسبات، مع حركة أوتوماتيكية دقيقة وجودة سويسرية.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=92&amp;slug=ستيل-جولد-و-سيلفر</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747831251171126.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1802,8 +1421,8 @@
     <item>
       <g:id>93</g:id>
       <title>ساعة رولكس يخت ماستر - ذهبي</title>
-      <description>ساعة رولكس يخت ماستر - ذهبي</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=93</link>
+      <description>ساعة Rolex Yacht-Master باللون الذهبي، رمز الفخامة والأناقة البحرية. تصميم رياضي فاخر مع مينا جذاب وإطار دوار.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=93&amp;slug=ساعة-رولكس-يخت-ماستر-ذهبي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1749737705532735.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1816,16 +1435,12 @@
     <item>
       <g:id>94</g:id>
       <title>ساعة رولكس يخت ماستر - أسود</title>
-      <description>ساعة Rolex Yacht-Master باللون الأسود تجمع بين القوة والفخامة في تصميم رياضي أنيق، مثالية لعشاق المغامرات البحرية والأناقة الراقية.
-
-المميزات:
-
-- مينا أسود فاخر بإطار سيراميك متين.
-- زجاج ياقوتي مقاوم للخدوش للحفاظ على رونق الساعة.
-- مقاومة للماء حتى 100 متر، مثالية للمغامرات البحرية.
-- حركة أوتوماتيكية سويسرية فائقة الدقة.
-- سوار Oysterflex المريح بتصميم رياضي أنيق.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=94</link>
+      <description>ساعة Rolex Yacht-Master باللون الأسود، تجمع بين القوة والفخامة في تصميم رياضي أنيق. مثالية لعشاق المغامرات البحرية، مع مينا أسود فاخر وإطار سيراميك متين.
+- مينا أسود فاخر بإطار سيراميك.
+- زجاج ياقوتي مقاوم للخدوش.
+- مقاومة للماء حتى 100 متر.
+- حركة أوتوماتيكية سويسرية.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=94&amp;slug=ساعة-رولكس-يخت-ماستر-أسود</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1749560474526924.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1838,8 +1453,8 @@
     <item>
       <g:id>95</g:id>
       <title>ساعة رولكس يخت ماستر - فضي</title>
-      <description>ساعة رولكس يخت ماستر - فضي</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=95</link>
+      <description>ساعة Rolex Yacht-Master باللون الفضي، تصميم كلاسيكي وعملي يجمع بين الأناقة والأداء الرياضي. مثالية للاستخدام اليومي والمناسبات.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=95&amp;slug=ساعة-رولكس-يخت-ماستر-فضي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/174973765437420.webp</g:image_link>
       
       <g:availability>in_stock</g:availability>
@@ -1852,8 +1467,8 @@
     <item>
       <g:id>96</g:id>
       <title>ساعة رولكس سبرايت</title>
-      <description>ساعة رولكس سبرايت</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=96</link>
+      <description>ساعة رولكس GMT-Master II 'سبرايت' الأيقونية، تتميز بإطارها ثنائي اللون بالأخضر والأسود. تصميم فريد وجريء يعكس الفخامة والدقة.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=96&amp;slug=ساعة-رولكس-سبرايت</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/174999151579296.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1749991515189729.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1867,15 +1482,12 @@
       <g:id>97</g:id>
       <title>غلاية استانلس لتسخين الماء</title>
       <description>غلاية ستانلس ستيل لتسخين المياه بتصميم أنيق وقوة أداء عالية، توفر لك الماء الساخن بسرعة وكفاءة لكل احتياجاتك اليومية.
-
-المميزات:
-
 - مصنوعة من الستانلس ستيل المقاوم للصدأ لضمان المتانة والنظافة.
 - غليان سريع بفضل القدرة العالية للتسخين.
 - مقبض مريح وعازل للحرارة لضمان الأمان أثناء الاستخدام.
 - إيقاف تلقائي عند الغليان للحفاظ على السلامة.
 - تصميم أنيق يناسب جميع ديكورات المطبخ.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=97</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=97&amp;slug=غلاية-استانلس-لتسخين-الماء</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747789625756891.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747789625626926.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1889,9 +1501,6 @@
       <g:id>98</g:id>
       <title>مفرمة لحم 2 لتر</title>
       <description>مفرمة لحوم 2 لتر.
-
-المميزات:
-
 - سعة كبيرة 2 لتر تكفي لتحضير كميات مناسبة للعائلات بسهولة وسرعة.
 - محرك قوي بقدرة عالية يضمن فرمًا سريعًا ومتساويًا للحوم والخضروات في ثوانٍ.
 - شفرات حادة من الستانلس ستيل لنتائج دقيقة وكفاءة تدوم طويلًا.
@@ -1900,7 +1509,7 @@
 - تصميم آمن وسهل الاستخدام بزر تشغيل مريح لمزيد من التحكم.
 - قاعدة مضادة للانزلاق لضمان الثبات أثناء التشغيل ومنع الحركة غير المرغوبة.
 - سهولة الفك والتركيب لتنظيف سريع دون عناء.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=98</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=98&amp;slug=مفرمة-لحم-2-لتر</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747821735380541.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747821736747130.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1914,15 +1523,12 @@
       <g:id>99</g:id>
       <title>مكيف هواء مع مروحة</title>
       <description>مكيف هواء مع مروحة.
-
-المميزات:
-
 - يجمع بين وظيفة التبريد والمروحة لضمان تدفق هواء منعش ومريح.
 - تصميم صغير ومحمول، مثالي للاستخدام في المكتب، غرفة النوم أو أثناء السفر.
 - يعمل بكفاءة مع استهلاك منخفض للطاقة، مما يجعله خيارًا اقتصاديًا.
 - مزود بواجهة تشغيل سهلة مع إعدادات سرعة متعددة تناسب احتياجاتك.
 - تشغيل هادئ لضمان الراحة أثناء النوم أو العمل.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=99</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=99&amp;slug=مكيف-هواء-مع-مروحة</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747822925550196.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747822925149096.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1936,16 +1542,13 @@
       <g:id>100</g:id>
       <title>طاولة جانبية</title>
       <description>طاولة جانبية.
-
-المميزات:
-
 - تصميم بيضاوي عصري يضفي لمسة أنيقة تتناسب مع جميع الديكورات العصرية والكلاسيكية.
 - مصنوعة من خامات عالية الجودة تضمن المتانة والثبات، مع سطح مقاوم للخدوش وسهل التنظيف.
 - سطح واسع ومريح مثالي لوضع المشروبات، الكتب، الإكسسوارات، أو حتى جهاز اللابتوب.
 - تصميم خفيف وسهل النقل يمكنك تحريكها بسهولة بين الغرف واستخدامها في أماكن متعددة.
 - مثالية للاستخدام المتعدد كطاولة قهوة صغيرة، طاولة بجانب السرير، أو قطعة ديكور أنيقة.
 - قاعدة ثابتة ومستقرة تمنحك استخدامًا آمنًا دون قلق من الانزلاق أو الاهتزاز.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=100</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=100&amp;slug=طاولة-جانبية</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747823173560946.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747823173597317.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1959,15 +1562,12 @@
       <g:id>101</g:id>
       <title>ركن منظم لادوات الحمام</title>
       <description>ركن منظم لادوات الحمام.
-
-المميزات:
-
 - تصميم ذكي لاستغلال الزوايا بكفاءة، مما يوفر مساحة إضافية في الحمام.
 - مصنوع من مواد متينة ومقاومة للرطوبة لضمان الاستخدام طويل الأمد.
 - يوفر عدة أرفف لتخزين مستلزمات الاستحمام، مستحضرات العناية الشخصية، والمناشف.
 - سهل التركيب بدون الحاجة إلى أدوات معقدة، مما يجعله مناسبًا لجميع الحمامات.
 - تصميم أنيق وعصري يضيف لمسة جمالية لأي ديكور حمام.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=101</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=101&amp;slug=ركن-منظم-لادوات-الحمام</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747823752526628.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747823752736502.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -1981,15 +1581,12 @@
       <g:id>102</g:id>
       <title>جهاز تدليك الوجه والرقبة بالإهتزاز</title>
       <description>جهاز تدليك الوجه والرقبة بالإهتزاز.
-
-المميزات:
-
 - استرخي واشعري بالانتعاش مع جهاز تدليك الوجه والرقبة بالإهتزاز - لبشرة متألقة وناعمة.
 - تجديد البشرة والعناية بالوجه والرقبة في دقائق معدودة - مع جهاز التدليك المبتكر.
 - دللي نفسك بتدليك مريح للوجه والرقبة بتقنية الاهتزاز، للعناية المثلى يوميًا.
 - ودّعي التعب والإجهاد مع جهاز تدليك الوجه والرقبة - الراحة في متناول يديك.
 - احصلي على إطلالة مشدودة وشبابية مع جهاز تدليك الوجه والرقبة بالإهتزاز.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=102</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=102&amp;slug=جهاز-تدليك-الوجه-والرقبة-بالإهتزاز</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747824161943884.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747824161453402.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2003,7 +1600,7 @@
       <g:id>103</g:id>
       <title>ماكينة خياطة كهربائية صغيرة</title>
       <description>ماكينة خياطة كهربائية صغيرة</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=103</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=103&amp;slug=ماكينة-خياطة-كهربائية-صغيرة</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747825208490973.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747825209290392.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2017,9 +1614,6 @@
       <g:id>104</g:id>
       <title>جهاز تدليك فروة الرأس و توزيع الزيت</title>
       <description>جهاز تدليك فروة الرأس و توزيع الزيت.
-
-المميزات:
-
 - جهاز تدليك فروة الرأس: استرخاء وتحفيز للدورة الدموية لنمو شعر صحي.
 - تصميم عملي يوزع الزيت بالتساوي، ليمنح شعرك التغذية المطلوبة.
 - تجربة تدليك مريحة تساعد على تقليل التوتر وتحسين صحة فروة الرأس.
@@ -2028,7 +1622,7 @@
 - متوافق مع جميع أنواع الشعر ويمكن استخدامه مع الزيوت المغذية.
 - حجم مناسب وسهل الحمل، مما يجعله مثاليًا للاستخدام المنزلي أو أثناء السفر.
 - اجعل روتين العناية بشعرك أكثر فاعلية مع جهاز تدليك فروة الرأس المبتكر.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=104</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=104&amp;slug=جهاز-تدليك-فروة-الرأس-و-توزيع-الزيت</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747825661806590.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747825662400709.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2042,16 +1636,13 @@
       <g:id>105</g:id>
       <title>شاحن سريع للسيارة قابل للسحب بمنفذ USB C</title>
       <description>شاحن سريع للسيارة قابل للسحب بمنفذ USB C.
-
-المميزات:
-
 - اشحن أجهزتك بسرعة فائقة أثناء القيادة مع الشاحن السريع القابل للسحب بمنفذ USB-C - مثالي للأجهزة الحديثة.
 - وداعًا للفوضى! الشاحن القابل للسحب يحافظ على الكابل مرتبًا ويوفر لك شحنًا سريعًا دون تعقيدات.
 - تصميم عملي ومدمج يناسب جميع أنواع السيارات ويتيح لك استخدام سهل وآمن.
 - شاحن سيارة سريع بمنفذ USB-C: تقنية متقدمة لضمان شحن سريع وآمن لأجهزتك الذكية.
 - اجعل شحن هاتفك أو جهازك اللوحي أثناء التنقل أكثر كفاءة مع شاحن السيارة السريع بمنفذ USB-C.
 - شاحن قابل للتمدد لترتيب سيارتك على مزاجك بمنفذ USB-C.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=105</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=105&amp;slug=شاحن-سريع-للسيارة-قابل-للسحب-بمنفذ-usb-c</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747826027424011.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747826027118841.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2065,14 +1656,11 @@
       <g:id>106</g:id>
       <title>مدلك حراري للرقبة والكتف</title>
       <description>مدلك حراري للرقبة والكتف.
-
-المميزات:
-
 - استرخي وخلص نفسك من التوتر مع مدلك حراري للرقبة والكتف المزود بتقنية التدليك العميق.
 - يعمل على تخفيف آلام العضلات بفضل الحرارة المدمجة التي تزيد من فعالية التدليك.
 - يتميز بتصميم مريح يتيح لك استخدامه بسهولة في المنزل أو المكتب.
 - مزود بوظائف متعددة مثل التدليك بالاهتزاز والتسخين لضمان تجربة مريحة ومريحة.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=106</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=106&amp;slug=مدلك-حراري-للرقبة-والكتف</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747826412243275.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/174782641334925.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2086,7 +1674,7 @@
       <g:id>107</g:id>
       <title>كريم الريتينول للبشرة</title>
       <description>تمتعي ببشرة مشدودة وموحدة اللون مع كريم الريتينول المثالي لتجديد شباب البشرة. يعمل على تقليل ظهور التجاعيد والبقع العمرية بفضل خصائصه المضادة للأكسدة. تركيبته المرطبة تغذي البشرة بعمق وتمنحها ملمساً ناعماً كالحرير. مناسب لجميع أنواع البشرة ويستخدم كجزء من روتين العناية اليومية.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=107</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=107&amp;slug=كريم-الريتينول-للبشرة</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747826717626027.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747826718930576.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2100,15 +1688,12 @@
       <g:id>108</g:id>
       <title>مبخرة ملابس</title>
       <description>مبخرة أنيقة مع علاقة ملابس، تصميم عملي يجمع بين الفخامة والوظيفة، ليضفي لمسة راقية على ملابسك ومنزلك في آنٍ واحد.
-
-المميزات:
-
 - مبخرة عصرية لنشر الروائح الزكية بأناقة.
 - علاقة ملابس متينة للحفاظ على ترتيب ملابسك.
 - تصميم أنيق يضفي لمسة ديكور راقية.
 - مصنوعة من خامات عالية الجودة لضمان المتانة.
 - مثالية للاستخدام في المنزل، المكتب أو المجالس.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=108</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=108&amp;slug=مبخرة-ملابس</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747827176823662.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/174782717741078.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2122,7 +1707,7 @@
       <g:id>109</g:id>
       <title>جهاز تمرين دواسة الدراجة قابلة للطي</title>
       <description>حافظ على لياقتك البدنية مع جهاز تمرين دواسة الدراجة القابل للطي الذي يمكنك استخدامه في أي مكان. تصميمه القابل للطي يجعله سهل التخزين والنقل، مما يجعله مثالياً للاستخدام في المنزل أو المكتب. يتميز بمقاومة قابلة للتعديل تتيح لك تحديد مستوى التمرين المطلوب. يعمل على تقوية عضلات الساقين والذراعين ويعزز الدورة الدموية.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=109</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=109&amp;slug=جهاز-تمرين-دواسة-الدراجة-قابلة-للطي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747740656843961.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/174774065699795.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2136,9 +1721,6 @@
       <g:id>110</g:id>
       <title>ماكينة قص الشعر كيمي مقاومة للماء</title>
       <description>ماكينة قص الشعر كيمي مقاومة للماء.
-
-المميزات:
-
 - تصميم مقاوم للماء بالكامل يتيح الاستخدام أثناء الاستحمام والتنظيف السهل تحت الماء.
 - شفرات حادة وعالية الجودة تضمن دقة مثالية في قص الشعر دون تهيج البشرة.
 - محرك قوي وهادئ يوفر أداءً سلسًا مع تقليل الضوضاء أثناء الاستخدام.
@@ -2146,7 +1728,7 @@
 - أمشاط قابلة للتعديل تمنحك خيارات متعددة للتحكم في طول الشعر بسهولة.
 - تصميم مريح وخفيف الوزن لسهولة الاستخدام والتحكم أثناء الحلاقة.
 - مثالية للاستخدام الشخصي والاحترافي، مما يجعلها خيارًا مثاليًا للمنزل أو صالونات الحلاقة.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=110</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=110&amp;slug=ماكينة-قص-الشعر-كيمي-مقاومة-للماء</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747741058189898.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747741059307471.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2160,15 +1742,12 @@
       <g:id>111</g:id>
       <title>آلة غسل سيارات بندقية من الفوم رغوة لـ Karcher K</title>
       <description>آلة غسل سيارات بندقية من الفوم رغوة لـ Karcher K.
-
-المميزات:
-
 - احصل على تجربة تنظيف مهنية مع آلة غسل السيارات بندقية الفوم رغوة المصممة خصيصًا لـ Karcher K - مثالية للحصول على نتائج احترافية في وقت قصير.
 - وداعًا للأوساخ والبقع! تقوم بندقية الفوم بتوزيع الرغوة بشكل متساوٍ، مما يساعد على تفكيك الأوساخ بفعالية.
 - تصميم مريح وسهل الاستخدام، مما يجعل عملية الغسل أسرع وأكثر كفاءة، مع إمكانية التحكم في كمية الفوم الموزعة.
 - مصنوعة من مواد عالية الجودة لضمان المتانة وطول العمر، مما يجعلها استثمارًا مثاليًا لعشاق السيارات.
 - اجعل عملية غسل سيارتك تجربة ممتعة وسهلة مع آلة غسل السيارات بندقية الفوم رغوة لـ Karcher K.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=111</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=111&amp;slug=آلة-غسل-سيارات-بندقية-من-الفوم-رغوة-لـ-karcher-k</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747741360530310.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747741361311424.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2182,9 +1761,6 @@
       <g:id>112</g:id>
       <title>مطحنة كهربائية للحبوب والقهوة 200 w.</title>
       <description>مطحنة كهربائية للحبوب والقهوة 200 w.
-
-المميزات:
-
 - محرك قوي بقدرة 200 واط لطحن سريع وفعال لمختلف الحبوب والقهوة والتوابل.
 - شفرات ستانلس ستيل حادة توفر طحنًا دقيقًا ومتساويًا لجميع المكونات.
 - تصميم مدمج وأنيق يناسب أي مطبخ ولا يشغل مساحة كبيرة.
@@ -2193,7 +1769,7 @@
 - غطاء شفاف لمراقبة عملية الطحن وتحديد القوام المطلوب بسهولة.
 - آمن وسهل التنظيف مع وعاء غير لاصق يمكن تنظيفه بسهولة.
 - قاعدة مقاومة للانزلاق توفر ثباتًا أثناء التشغيل.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=112</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=112&amp;slug=مطحنة-كهربائية-للحبوب-والقهوة-200-w</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747742728169817.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747742729629097.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2207,7 +1783,7 @@
       <g:id>113</g:id>
       <title>بوتي بسلم للأطفال</title>
       <description>دعم طفلك خلال مراحل التدريب على استخدام الحمام مع بوتي بسلم للأطفال المصمم بعناية. يشجع التصميم الذكي الطفل على استخدام الحمام بثقة من خلال السلم المدمج السهل الاستخدام. مصنوع من مواد آمنة ومتينة، ويحتوي على قاعدة مضادة للانزلاق لضمان الاستقرار والأمان. سهل التركيب والفك، مما يجعله مثالياً للاستخدام المنزلي أو أثناء السفر. مناسب لمختلف المراحل العمرية، مما يجعله استثمارًا طويل الأمد في راحة وأمان الطفل.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=113</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=113&amp;slug=بوتي-بسلم-للأطفال</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747742993793093.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747742993285563.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2221,7 +1797,7 @@
       <g:id>114</g:id>
       <title>ممسحة روبوت ذكية</title>
       <description>تقوم الممسحة الروبوتية الذكية بتنظيف الأرضيات بشكل تلقائي وفعال، باستخدام تقنيات متقدمة مثل الملاحة الذكية والاستشعار لتجنب العقبات. تعمل بكفاءة على مختلف أنواع الأرضيات مثل البلاط، والخشب، والسجاد، مما يجعلها مثالية للاستخدام في جميع أنحاء المنزل. بفضل تصميمها المدمج، يمكنها الوصول إلى الزوايا والأماكن الضيقة تحت الأثاث. يتم التحكم بها بسهولة عبر تطبيق على الهاتف الذكي أو جهاز التحكم عن بعد. مزودة ببطارية قوية تدوم لفترة طويلة، وتعود تلقائيًا إلى محطة الشحن عند انخفاض مستوى البطارية، لتكون جاهزة للاستخدام في أي وقت. تأتي بوظيفة الممسحة التي تتيح لها مسح الأرضيات بالماء، مما يوفر تنظيفًا شاملاً يزيل الأوساخ والبقع بفعالية.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=114</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=114&amp;slug=ممسحة-روبوت-ذكية</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747743318569087.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747743318537319.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2235,7 +1811,7 @@
       <g:id>115</g:id>
       <title>مسدس المسامير</title>
       <description>يساعدك مسدس المسامير على تثبيت المسامير بسرعة وكفاءة في مختلف أنواع الأسطح، مما يوفر الوقت والجهد في المشاريع الكبيرة والصغيرة. يتميز بمقبض مريح وتصميم يتيح سهولة الاستخدام، حتى في الأماكن الضيقة والصعبة الوصول. يوفر المسدس تثبيتًا دقيقًا وثابتًا للمسامير، مما يضمن نتائج احترافية في كل مرة. يمكن استخدام مسدس المسامير على مجموعة متنوعة من المواد مثل الخشب، والمعدن، والبلاستيك، مما يجعله أداة متعددة الاستخدامات لمختلف المشاريع. يأتي مع ميزات أمان متقدمة لضمان استخدام آمن وموثوق في جميع الأوقات.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=115</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=115&amp;slug=مسدس-المسامير</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/175077084316225.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747743728601356.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2249,15 +1825,12 @@
       <g:id>116</g:id>
       <title>معجون تلميع الإستانلس</title>
       <description>معجون تلميع الاستانلس الحل الأمثل لاستعادة لمعان الأسطح المعدنية، يزيل البقع والتصبغات ويمنح الفولاذ مظهرًا لامعًا كالجديد.
-
-المميزات:
-
 - يعمل على تنظيف وتلميع الاستانلس ستيل بكفاءة عالية.
 - يزيل البقع والتصبغات ويعيد اللمعان الأصلي.
 - سهل الاستخدام ويوفر نتائج فورية.
 - تركيبة آمنة لا تترك آثارًا ضارة على الأسطح.
 - مناسب للأدوات المنزلية، الأحواض، الأجهزة والمزيد.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=116</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=116&amp;slug=معجون-تلميع-الإستانلس</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747744074984340.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747744074941205.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2271,15 +1844,12 @@
       <g:id>117</g:id>
       <title>حصالة للنقود والعملات المعدنية للأطفال</title>
       <description>حصالة نقود وعملات معدنية للأطفال بتصميم ممتع وتعليمي، تساعد الصغار على تعلم التوفير وتنمية عادات مالية جيدة بطريقة مسلية.
-
-المميزات:
-
 - تصميم جذاب يناسب الأطفال ويشجعهم على التوفير.
 - مصنوعة من مواد آمنة ومتينة.
 - مزودة بفتحة مريحة لإدخال النقود بسهولة.
 - آمنة وسهلة الفتح بفضل الغطاء القابل للإزالة.
 - خفيفة الوزن وسهلة الحمل.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=117</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=117&amp;slug=حصالة-للنقود-والعملات-المعدنية-للأطفال</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747744807772698.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747744807444572.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2292,14 +1862,13 @@
     <item>
       <g:id>118</g:id>
       <title>مجفف سيارة محمول لاسلكي</title>
-      <description>المميزات:
-
+      <description>مجفف سيارة محمول لاسلكي.
 - تصميم لاسلكي يمنحك حرية الحركة وسهولة الاستخدام في أي مكان.
 - محرك قوي يوفر تدفق هواء عالي السرعة لتجفيف السيارة بسرعة وكفاءة.
 - مزود ببطارية قابلة للشحن للاستخدام المتكرر دون الحاجة إلى التوصيل بالكهرباء.
 - خفيف الوزن ومريح في الحمل، مما يجعله مثاليًا للاستخدام المنزلي أو أثناء السفر.
 - مناسب لتجفيف مختلف أسطح السيارة، بما في ذلك الهيكل الخارجي والزجاج والمرايا.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=118</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=118&amp;slug=مجفف-سيارة-محمول-لاسلكي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/174774628016461.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747746280276182.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2313,15 +1882,12 @@
       <g:id>119</g:id>
       <title>مفرمة لحوم 3 لتر</title>
       <description>مفرمة لحوم 3 لتر.
-
-المميزات:
-
 - سعة كبيرة 3 لتر لتناسب احتياجات العائلة.
 - محرك قوي يوفر سرعة وكفاءة في الفرم.
 - شفرات حادة مصنوعة من الفولاذ المقاوم للصدأ لنتائج دقيقة ومتساوية.
 - وعاء متين وآمن للاستخدام الغذائي، سهل التنظيف والصيانة.
 - متعددة الاستخدامات، حيث يمكن استخدامها لفرم اللحوم، الخضروات، والمكونات الأخرى.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=119</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=119&amp;slug=مفرمة-لحوم-3-لتر</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747746666291125.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747746666377352.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2335,16 +1901,13 @@
       <g:id>120</g:id>
       <title>شواية كهربائية عمودية</title>
       <description>شواية كهربائية عمودية.
-
-المميزات:
-
 - مش محتاج تخرج برة عشان تاكل مشاوي ممكن تعملها فى البيت مع شواية كهربائية عمودية.
 - متقلقش من الكميات لان الشواية متعددة الاعمدة و ممكن تعمل مشاوي كثيرة.
 - توفير الوقت و المجهود اهم شي و الشواية الكهربائية وفرت لك كل دا.
 - اعمل عزايم براحتك و متشيلش هم تحضير الاكل.
 - استمتع بشواء صحي وسريع مع الشواية الكهربائية العمودية.
 - الاختيار الأمثل لمحبي الشواء الصحي.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=120</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=120&amp;slug=شواية-كهربائية-عمودية</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747789310896416.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747789310375447.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2357,19 +1920,8 @@
     <item>
       <g:id>122</g:id>
       <title>جهاز تنظيف البخار الكهربائي</title>
-      <description>مميزات جهاز التنظيف بالبخار:
-
-- يزيل الأوساخ والبكتيريا بنسبة تصل إلى 99.9% دون الحاجة إلى مواد كيميائية.
-- فعّال في تنظيف الأرضيات، السجاد، الزجاج، الأسطح، والمفروشات.
-- إمكانية التحكم في مستوى البخار حسب نوع السطح لضمان تنظيف آمن وفعّال.
-- جاهز للاستخدام خلال ثوانٍ مع تدفق بخار مستمر وقوي.
-- وزن خفيف ومقبض مريح لسهولة الحركة دون عناء.
-- بعض الطرازات تحتوي على ملحقات متعددة للوصول إلى الزوايا الضيقة.
-- يعتمد على الماء فقط، مما يجعله آمنًا وخاليًا من المواد الكيميائية الضارة.
-- يقلل الحاجة إلى المنظفات التقليدية، مما يوفر المال ويحمي البيئة.
-- يستخدم لتنظيف الأرضيات الخشبية، البلاط، السجاد، النوافذ، الأثاث، وحتى الملابس!
-- يوفر حرية أكبر في التنظيف دون الحاجة إلى تبديل المقابس باستمرار.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=122</link>
+      <description>يزيل الأوساخ والبكتيريا بنسبة تصل إلى 99.9% دون الحاجة إلى مواد كيميائية. فعّال في تنظيف الأرضيات، السجاد، الزجاج، الأسطح، والمفروشات. إمكانية التحكم في مستوى البخار حسب نوع السطح لضمان تنظيف آمن وفعّال. جاهز للاستخدام خلال ثوانٍ مع تدفق بخار مستمر وقوي. وزن خفيف ومقبض مريح لسهولة الحركة دون عناء. بعض الطرازات تحتوي على ملحقات متعددة للوصول إلى الزوايا الضيقة. يعتمد على الماء فقط، مما يجعله آمنًا وخاليًا من المواد الكيميائية الضارة. يقلل الحاجة إلى المنظفات التقليدية، مما يوفر المال ويحمي البيئة. يستخدم لتنظيف الأرضيات الخشبية، البلاط، السجاد، النوافذ، الأثاث، وحتى الملابس! يوفر حرية أكبر في التنظيف دون الحاجة إلى تبديل المقابس باستمرار.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=122&amp;slug=جهاز-تنظيف-البخار-الكهربائي</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747302520371987.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747788508368861.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2382,17 +1934,8 @@
     <item>
       <g:id>123</g:id>
       <title>خلاط كهربائي سيلفر- 4500 w</title>
-      <description>المميزات:
-
-- محرك قوي بقدرة 4500 واط: يضمن مزج وخلط جميع المكونات بسرعة فائقة وكفاءة عالية.
-- شفرات حادة من الستانلس ستيل: توفر تقطيعًا وطحنًا دقيقًا لجميع أنواع الفواكه، الخضروات، والمكسرات.
-- سعة كبيرة: يسمح بإعداد كميات كبيرة من العصائر، الشوربات، والصلصات بسهولة.
-- سرعات متعددة مع وظيفة النبض: تحكم كامل في قوة الخلط للحصول على القوام المثالي لكل وصفة.
-- تصميم متين من مواد عالية الجودة تضمن المتانة والمظهر الفاخر.
-- سهل الاستخدام والتنظيف: جميع الأجزاء قابلة للفك والغسل لتوفير تجربة مريحة بعد كل استخدام.
-- مثالي لتحضير المشروبات الصحية: مناسب للعصائر الطبيعية، السموذي، الكوكتيلات، وحتى طحن الحبوب والمكسرات.
-- قاعدة ثابتة مضادة للانزلاق: تضمن الاستقرار أثناء التشغيل لمنع الاهتزازات والانسكابات.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=123</link>
+      <description>محرك قوي بقدرة 4500 واط: يضمن مزج وخلط جميع المكونات بسرعة فائقة وكفاءة عالية. شفرات حادة من الستانلس ستيل: توفر تقطيعًا وطحنًا دقيقًا لجميع أنواع الفواكه، الخضروات، والمكسرات. سعة كبيرة: يسمح بإعداد كميات كبيرة من العصائر، الشوربات، والصلصات بسهولة. سرعات متعددة مع وظيفة النبض: تحكم كامل في قوة الخلط للحصول على القوام المثالي لكل وصفة. تصميم متين من مواد عالية الجودة تضمن المتانة والمظهر الفاخر. سهل الاستخدام والتنظيف: جميع الأجزاء قابلة للفك والغسل لتوفير تجربة مريحة بعد كل استخدام. مثالي لتحضير المشروبات الصحية: مناسب للعصائر الطبيعية، السموذي، الكوكتيلات، وحتى طحن الحبوب والمكسرات. قاعدة ثابتة مضادة للانزلاق: تضمن الاستقرار أثناء التشغيل لمنع الاهتزازات والانسكابات.</description>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=123&amp;slug=خلاط-كهربائي-سيلفر-4500-w</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747741916467286.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747741916898658.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2406,16 +1949,13 @@
       <g:id>124</g:id>
       <title>رف تجفيف الأطباق</title>
       <description>رف تنظيم لحوض المطبخ.
-
-المميزات:
-
 - من الوجبات المنزلية للأم هي غسيل الاطباق و من واجبنا توفير لها الراحة النفسية و رف تنظيم لحوض المطبخ هو الأداة المثالية لراحتها النفسية.
 - رف مكون من طبقتين كفيل انه يسهل عليكي غسل الأطباق في العزايم.
 - طريقة التركيب سهله جدا.
 - اجعلها هدية في الأعياد او تقديرا لتعب من هو مسؤول عن الوجبات المنزلية.
 - حول حوض مطبخك إلى مساحة منظمة وأنيقة.
 - تمتع بمساحة نظيفة ومنظمة في مطبخك مع رف تنظيم لحوض المطبخ.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=124</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=124&amp;slug=رف-تجفيف-الأطباق</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747302823378916.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747789053479153.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2429,15 +1969,12 @@
       <g:id>125</g:id>
       <title>وعاء الطهي الكهربائي متعدد الوظائف</title>
       <description>وعاء الطهي الكهربائي متعدد الوظائف هو الحل المثالي لطهي وتسخين الطعام بسهولة، بفضل تصميمه العملي وتقنيته المتطورة التي توفر لك تجربة طهي سريعة ومريحة.
-
-المميزات:
-
 - متعدد الوظائف: للطهي، التحمير، التبخير، والتسخين.
 - سعة مثالية تناسب العائلات والأفراد.
 - تصميم أنيق وسهل الاستخدام مع تحكم بدرجات الحرارة.
 - مصنوع من مواد عالية الجودة لضمان توزيع حرارة متساوٍ.
 - سهل التنظيف وآمن للاستخدام اليومي.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=125</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=125&amp;slug=وعاء-الطهي-الكهربائي-متعدد-الوظائف</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747302970101734.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747788071730857.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2450,8 +1987,7 @@
     <item>
       <g:id>126</g:id>
       <title>مطحنة الحبوب الاستانلس</title>
-      <description>المميزات:
-
+      <description>مطحنة الحبوب الاستانلس.
 - احصل على طحن مثالي وسريع للبن، البهارات، الحبوب، والأعشاب مع مطحنة كهربائية قوية الأداء.
 - محرك عالي الكفاءة بسرعة دوران فائقة يضمن الحصول على مسحوق ناعم في ثوانٍ معدودة.
 - تصميم متين من الفولاذ المقاوم للصدأ لمتانة تدوم طويلاً وسهولة في التنظيف بعد الاستخدام.
@@ -2459,7 +1995,7 @@
 - غطاء محكم الإغلاق يحافظ على المكونات داخل المطحنة ويمنع الانسكاب.
 - زر تشغيل/إيقاف مريح مع أمان عالي أثناء التشغيل.
 - مثالية للمطابخ المنزلية، المقاهي، ومحلات تحضير البهارات.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=126</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=126&amp;slug=مطحنة-الحبوب-الاستانلس</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1755059145174856.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1755059248446912.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2473,15 +2009,12 @@
       <g:id>127</g:id>
       <title>جوي مجفف ومصفف الشعر 2*1</title>
       <description>جوي مجفف ومصفف الشعر 2*1.
-
-المميزات:
-
 - احصلي على تجربة تصفيف شعر متعددة الوظائف مع جوي مجفف ومصفف الشعر 2*1.
 - يجمع بين تقنية التصفيف والتجفيف في جهاز واحد، مما يوفر لك الوقت والجهد.
 - مزود بإعدادات حرارة متعددة وسرعات لتناسب جميع أنواع الشعر وتوفير نتائج مثالية.
 - يتميز بتصميم مريح وخفيف الوزن، مما يجعله سهل الاستخدام والتحكم.
 - يأتي مع ملحقات إضافية، مثل فرشاة للتصفيف، لضمان تجربة تصفيف احترافية في المنزل.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=127</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=127&amp;slug=جوي-مجفف-ومصفف-الشعر-2-1</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/1747733561484853.png</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747733561528817.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2495,9 +2028,6 @@
       <g:id>128</g:id>
       <title>عصارة كهربائية لاسلكية</title>
       <description>عصارة كهربائية لاسلكية.
-
-المميزات:
-
 - تصميم لاسلكي محمول يمنحك حرية الاستخدام في أي مكان دون الحاجة إلى توصيل بالكهرباء.
 - بطارية قابلة للشحن عبر USB تدوم لفترة طويلة مع شحن سريع لمزيد من الراحة.
 - محرك قوي وكفاءة عالية تعصر الفواكه بسرعة لاستخلاص عصير طازج بلمسة زر واحدة.
@@ -2505,7 +2035,7 @@
 - تصميم مدمج وخفيف الوزن يجعلها سهلة الحمل والتخزين، مثالية للمنزل، العمل، والرحلات.
 - سهل الفك والتنظيف حيث يمكن إزالة جميع الأجزاء بسهولة لتنظيف سريع وصحي.
 - متعددة الاستخدامات مناسبة لعصر مختلف أنواع الفواكه مثل البرتقال، الليمون، الرمان، والجريب فروت.</description>
-      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=128</link>
+      <link>https://sherow1982.github.io/matjar-makhzoon-oman/product-details.html?id=128&amp;slug=عصارة-كهربائية-لاسلكية</link>
       <g:image_link>https://m5zoon.com/public/uploads/products/174773787160233.webp</g:image_link>
       <g:additional_image_link>https://m5zoon.com/public/uploads/products/1747737872252722.webp</g:additional_image_link>
       <g:availability>in_stock</g:availability>
@@ -2518,9 +2048,6 @@
     <item>
       <g:id>129</g:id>
       <title>مبشرة الخضار اليدويه متعددة الوظائف</title>
-      <description>مبشرة الخضار اليدويه متعددة الوظائف.
-
-المميزات:
 
 - اجعل تحضير الخضار سريعًا وسهلاً مع مبشرة الخضار اليدوية متعددة الوظائف - كل ما تحتاجه لمطبخ أكثر ذكاءً.
 - تقطيع، بشر، وتقطيع مكعبات بكل سهولة مع مبشرة الخضار اليدوية متعددة الوظائف - الحل المثالي للطهي المبتكر.
