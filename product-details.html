@@ -156,12 +156,19 @@
     document.addEventListener('DOMContentLoaded', function() {
         const urlParams = new URLSearchParams(window.location.search);
         const productId = parseInt(urlParams.get('id'));
+        
+        // انتظر حتى يتم تحميل المنتجات في loader.js
+        const checkProductsLoaded = setInterval(() => {
+            if (window.allProducts && window.allProducts.length > 0) {
+                clearInterval(checkProductsLoaded);
+                renderProductDetails(window.allProducts, productId);
+            }
+        }, 100);
 
-        fetch('products.json')
-            .then(response => response.json())
-            .then(products => {
-                const product = products.find(p => p.id === productId);
-                if (product) {
+        function renderProductDetails(allProducts, productId) {
+            const product = allProducts.find(p => p.id === productId);
+            if (product) {
+                try {
                     // ملء بيانات الصفحة
                     const cleanDescription = product.description.replace(/\\n|\\t/g, ' ').replace(/\s+/g, ' ').trim();
                     const metaDescription = cleanDescription.substring(0, 155) + (cleanDescription.length > 155 ? '...' : '');
@@ -198,7 +205,7 @@
                     }
 
                     // عرض المنتجات ذات الصلة
-                    displayRelatedProducts(products, product.id);
+                    displayRelatedProducts(allProducts, product.id);
 
                     // *** هذا هو الجزء الأهم: إنشاء وإضافة سكيما المنتج ***
                     const schema = {
@@ -230,11 +237,17 @@
                     const schemaScript = document.createElement('script');
                     schemaScript.type = 'application/ld+json';
                     schemaScript.textContent = JSON.stringify(schema);
+                    // إزالة أي سكيما قديمة قبل إضافة الجديدة
+                    const oldSchema = document.querySelector('script[type="application/ld+json"]');
+                    if(oldSchema) oldSchema.remove();
                     document.head.appendChild(schemaScript);
-                } else {
-                    document.querySelector('.single-product-container').innerHTML = `<p class="error-message">عفواً، المنتج الذي تبحث عنه غير موجود.</p>`;
+                } catch (error) {
+                    console.error("Error rendering product details:", error);
                 }
-            });
+            } else {
+                    document.querySelector('.single-product-container').innerHTML = `<p class="error-message">عفواً، المنتج الذي تبحث عنه غير موجود.</p>`;
+            }
+        }
     });
 
     // دالة لعرض المنتجات ذات الصلة

@@ -24,6 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- دالة إتمام الطلب (الانتقال لصفحة الدفع) ---
     window.checkoutPage = function() {
         // لاحقاً، يمكنك إضافة المنتجات هنا قبل الانتقال
-        window.location.href = 'checkout.html';
+        // التحقق إذا كنا داخل مجلد pages أم لا
+        if (window.location.pathname.includes('/pages/')) {
+            window.location.href = 'checkout.html';
+        } else {
+            window.location.href = 'pages/checkout.html';
+        }
     };
 });
