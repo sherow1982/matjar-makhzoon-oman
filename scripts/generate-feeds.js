@@ -111,7 +111,8 @@ try {
       <g:image_link>${escapeXml(p['image link'])}</g:image_link>
       ${p['additional image link'] ? `<g:additional_image_link>${escapeXml(p['additional image link'])}</g:additional_image_link>` : ''}
       <g:availability>${p.availability}</g:availability>
-      <g:price>${p.sale_price} OMR</g:price>
+      <g:price>${p.price} OMR</g:price>
+      ${p.price > p.sale_price ? `<g:sale_price>${p.sale_price} OMR</g:sale_price>` : ''}
       <g:condition>${p.condition}</g:condition>
       <g:brand>${escapeXml(p.brand || 'مخزون عمان')}</g:brand>
       <g:mpn>${p.sku}</g:mpn>

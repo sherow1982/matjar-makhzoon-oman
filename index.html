@@ -52,13 +52,16 @@
     <meta name="twitter:image" content="https://sherow1982.github.io/matjar-makhzoon-oman/images/og-default.jpg" />
 
     <!-- تحسينات السرعة القصوى (Prefetch) -->
+    <!-- Preload LCP image and critical assets -->
+    <link rel="preload" fetchpriority="high" as="image" href="images/og-default.jpg" type="image/jpeg">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
     <!-- الخطوط والستايل -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <!-- Fallback for Font Awesome if JS is disabled -->
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     
     <link rel="stylesheet" href="style.css">
@@ -84,6 +87,12 @@
       }
     }
     </script>
+    <style>
+    .hero-banner img {
+        aspect-ratio: 1200 / 630;
+        background-color: #f0f0f0; /* لون مؤقت لحجز المساحة */
+    }
+    </style>
 </head>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T67556JM"
@@ -187,7 +196,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- بانر احترافي متجاوب -->
     <section class="hero-banner">
-        <img src="images/og-default.jpg" alt="بانر متجر مخزون عمان" loading="lazy">
+        <img src="images/og-default.jpg" alt="بانر متجر مخزون عمان" fetchpriority="high" width="1200" height="630">
     </section>
 
     <!-- المحتوى المتغير -->

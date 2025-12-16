@@ -2,6 +2,9 @@
 User-agent: *
 Allow: /
 
+User-agent: Googlebot-Image
+Allow: /
+
 # حجب صفحات معينة عن الأرشفة
 Disallow: /checkout.html
 Disallow: /pages/checkout.html
@@ -11,6 +14,8 @@ Disallow: /404.html
 
 # حجب الروبوتات الضارة وغير المرغوب فيها
 User-agent: GPTBot
+Disallow: /
+User-agent: Claude-Web
 Disallow: /
 User-agent: CCBot
 Disallow: /
@@ -23,6 +28,10 @@ Disallow: /
 User-agent: DotBot
 Disallow: /
 User-agent: PetalBot
+Disallow: /
+User-agent: Bytespider
+Disallow: /
+User-agent: Yandex
 Disallow: /
 
 # رابط خريطة الموقع (هام جداً لجوجل)
